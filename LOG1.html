@@ -35,14 +35,28 @@
       text-align: center;
     }
 
-    button {
+    button.login {
       border-radius: 40px;
       padding: 12px 70px;
-      background-color: blue;
+      background-color: blue; /* لون الأزرق للزر Login */
       color: #fff;
       box-shadow: 0 0 10px green;
       font-family: 'Lemon', serif;
       cursor: pointer;
+    }
+
+    button.show {
+      border-radius: 40px;
+      padding: 12px 70px;
+      background-color: green; /* لون الأخضر للزر Show */
+      color: #fff;
+      box-shadow: 0 0 10px green;
+      font-family: 'Lemon', serif;
+      cursor: pointer;
+    }
+
+    button.hide {
+      background-color: red; /* لون الأحمر للزر Hide */
     }
 
     button[disabled] {
@@ -70,16 +84,18 @@
     #notification {
       display: none;
       position: fixed;
-      top: 50%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 20px;
       background-color: #000;
       color: #FFF;
-      border-radius: 10px;
+      border-radius: 30px;
       z-index: 1000;
       animation: fadeIn 0.5s ease-out;
       text-align: center;
+   box-shadow: -10px -10px 10px red, 10px 10px 10px blue, 0 0 10px purple;
+
     }
 
     @keyframes fadeIn {
@@ -97,7 +113,8 @@
       background-color: #8B008B;
       padding: 20px;
     }
-  .GIVE{
+
+    .GIVE {
       border-radius: 40px;
       padding: 12px 70px;
       background-color: green;
@@ -121,13 +138,15 @@
     <label for="password">PASSWORD :</label>
     <br>
     <br>
-    <input type="password" id="password" placeholder="PASS" onfocus="this.removeAttribute('readonly');"><br>
+    <input type="password" id="password" placeholder="PASS" onfocus="this.removeAttribute('readonly');" class="pass">
     <br>
-    <button type="button" onclick="authenticate()" id="loginButton">Login</button>
+    <button type="button" onclick="togglePasswordVisibility()" id="togglePasswordButton" class="show">SHOW</button>
     <br>
     <br>
-<button class="GIVE"><a href="library.html" target="_blank" style="text-decoration: none;">Click here to take the username and password</a></button>
-
+    <button type="button" onclick="authenticate()" id="loginButton" class="login">Login</button>
+    <br>
+    <br>
+    <button class="GIVE"><a href="library.html" target="_blank" style="text-decoration: none;">Click here to take the username and password</a></button>
   </form>
 
   <div id="notification">
@@ -150,6 +169,21 @@
       }
     }
 
+    function togglePasswordVisibility() {
+      var passwordField = document.getElementById('password');
+      var passwordButton = document.getElementById('togglePasswordButton');
+
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        passwordButton.innerText = 'HIDE';
+        passwordButton.classList.add('hide');
+      } else {
+        passwordField.type = 'password';
+        passwordButton.innerText = 'SHOW';
+        passwordButton.classList.remove('hide');
+      }
+    }
+
     function showNotification(message) {
       var notificationDiv = document.getElementById('notification');
       var notificationMessage = document.getElementById('notificationMessage');
@@ -168,7 +202,7 @@
       var password = document.getElementById('password').value;
       var loginButton = document.getElementById('loginButton');
 
-      if (usernameInput.value.startsWith('HACK-X_') && password === 'H890lm76') {
+      if (usernameInput.value.startsWith('HACK-X_') && password === 'IO9PO9') {
         showNotification('Login successful! Redirecting...');
         loginButton.innerText = 'Loading';
 
