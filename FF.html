@@ -14,6 +14,12 @@
 
     <style>
         body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             font-family: 'Agbalumo', Arial, sans-serif;
             text-align: center;
             margin: 5vh;
@@ -241,7 +247,7 @@
 <body>
       
       <div id="board" >
-        <h2>HACK-X EXTERMINEL FOR TOOLBOX</h2>
+        <h2>HACK-X EXTERMINEL FOR FREE FIRE</h2>
 
 
         <form>
@@ -313,11 +319,13 @@
     var selectedGame = document.getElementById("game").value;
     var bitSelect = document.getElementById("bit");
     var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
 
     // إعادة الخيارات إلى الحالة الأصلية
     bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
     choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
-
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASS(link 1)</option><option value="(PASS1)">PASS (link 2)</option>';
+    
     if (selectedGame === "SICRIPT") {
         removeOption("bit", "32");
         removeOption("bit", "64");
@@ -325,8 +333,14 @@
         removeOption("choice", "APK");
         removeOption("bit", "Nothing");
         removeOption("choice", "Nothing");
-        bitSelect.innerHTML += '<option value="ERROR">ERROR</option>';
+        removeOption("action", "(PASS1)");
+        removeOption("action", "(APK1)");
+        removeOption("action", "(PASS)");
+        removeOption("action", "(APK)");
+        bitSelect.innerHTML += '<option value="ERROR">32+64</option>';
         choiceSelect.innerHTML += '<option value="FILE">FILE</option>';
+        actionSelect.innerHTML += '<option value="download">download</option>';
+        actionSelect.innerHTML += '<option value="PASSWORD">PASSWORD</option>';
     } else if (selectedGame === "FF1") {
         // تعديل الخيارات حسب لعبة FF1
     } else if (selectedGame === "FF2") {
