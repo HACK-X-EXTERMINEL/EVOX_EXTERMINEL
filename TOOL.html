@@ -118,14 +118,15 @@
         #notification {
             display: none;
             position: fixed;
-            top: 50%;
+            top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 20px;
             background-color: #000;
-            color: #FFF;
+            color: grenn;
             border-radius: 10px;
             z-index: 1000;
+            font-size:15px;
         }
 
         .footer {
@@ -404,8 +405,8 @@ function redirectUser() {
         // إعادة تحميل الصفحة بعد 5 ثواني
         setTimeout(function () {
             location.reload();
-        }, 5000);
-    }, 5000);
+        }, 2000);
+    }, 2000);
 }
 
 function removeOption(selectId, optionValue) {
@@ -419,7 +420,7 @@ function removeOption(selectId, optionValue) {
 // Disqus Configuration
 var disqus_config = function () {
     this.page.url = window.location.href;
-    this.page.identifier = 'unique_page_identifier';
+    this.page.identifier = 'TOOLBOX';
 };
 
 (function () {
