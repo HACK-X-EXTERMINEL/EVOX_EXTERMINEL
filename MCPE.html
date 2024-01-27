@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="MCPE.png"/>
+    <title>HACK-X EXTERMINEL FOR MINECRAFT PE </title>
+
+    <style>
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-family: 'Agbalumo', Arial, sans-serif;
+            text-align: center;
+            margin: 5vh;
+            color: white;
+            background: linear-gradient(45deg, #9e9e9e,#616161,#9e9e9e,#9e9e9e ,#00c853,#3e2723,#3e2723,#3e2723, #3e2723);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        }
+
+        #board {
+            border-radius: 40px;
+            color: black;
+            padding: 20px;
+            background: linear-gradient(45deg, #9e9e9e,#616161,#9e9e9e,#9e9e9e ,#00c853,#3e2723,#3e2723,#3e2723, #3e2723);
+            padding: 10px 30px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+
+        label {
+            margin: 2vh;
+            display: block;
+            color: #3e2723;
+            background: black;
+            border-radius: 20px;
+            padding: 2vh 3vw;
+            font-size: 20px;
+        }
+
+        select {
+            width: 60vw;
+            padding: 2vh;
+            border-radius: 30px;
+            background-color: white;
+            color: blue;
+            font-size: 15px;
+            font-family: 'Lemon', serif;
+        }
+
+        #B1,
+        #B2 {
+            margin-top: 4vh;
+            padding: 1vh 9vw;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: 'Lemon', serif;
+        }
+
+        #B1 {
+            background-color: #FF0000;
+            color: blue;
+        }
+
+        #B1:active {
+            background-color: #000000;
+        }
+
+        #B2 {
+            background-color: pink;
+            color: black;
+        }
+
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #000;
+            color: grenn;
+            border-radius: 10px;
+            z-index: 1000;
+            font-size:15px;
+        }
+
+        .footer {
+            color: #0000FF;
+            padding: 2em;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #9e9e9e,#616161,#9e9e9e,#9e9e9e ,#00c853,#3e2723,#3e2723,#3e2723, #3e2723);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .arabic {
+            font-family: 'Reem Kufi Fun', sans-serif;
+        }
+
+        #Parag {
+            color: white;
+            background-color: black;
+            border-radius: 50px;
+        }
+        #disqus_thread{
+          background: linear-gradient(45deg, #9e9e9e,#616161,#9e9e9e,#9e9e9e ,#00c853,#3e2723,#3e2723,#3e2723, #3e2723);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .footer-title{
+          background: linear-gradient(45deg, #3e2723, #3e2723,#3e2723, #3e2723,#9e9e9e,#9e9e9e,#9e9e9e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontMINECRAFT 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontMINECRAFT{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        h2{
+          background: linear-gradient(45deg, #3e2723, #3e2723,#3e2723, #3e2723,#9e9e9e,#9e9e9e,#9e9e9e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 200%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontMINECRAFT 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontMINECRAFT{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="board" class="board">
+        <h2>HACK-X EXTERMINEL FOR MINECRAFT</h2>
+
+        <form>
+            <label for="game">Your favorite game:</label>
+            <select id="game" name="game" onchange="handleGameChange()">
+                <option value="Nothing">Nothing</option>
+                <option value="MINECRAFT1">MINECRAFT(64)</option>
+                <option value="MINECRAFT2">MINECRAFT (32)</option>
+                
+            </select>
+
+            <br>
+
+            <label for="bit">Bit:</label>
+            <select id="bit" name="bit">
+                <option value="Nothing">Nothing</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+               
+            </select>
+
+            <br>
+
+            <label for="choice">Choice:</label>
+            <select id="choice" name="choice">
+                <option value="Nothing">Nothing</option>
+                <option value="APK">APK </option>
+                <option value="PASS">PASS</option>
+                
+            </select>
+
+            <br>
+
+            <label for="action">Link quality:</label>
+            <select id="action" name="action">
+                <option value="Nothing">Nothing</option>
+                <option value="(APK)">APK (link 1)</option>
+                <option value="(APK1)">APK (link2)</option>
+                <option value="(PASS)">PASS(link 1)</option>
+                <option value="(PASS1)">PASS (link 2)</option>
+            </select>
+
+            <br>
+
+            <button type="button" onclick="redirectUser()" id="B1" target="_blank">CONFIRMATION</button>
+
+            <br>
+
+            <p class="arabic" id="Parag">ننصح بهذا المتصفح 🌐 لنزع الاعلانات 🚫 </p>
+            <p id="Parag">We recommend this browser 🌐 to remove ads 🚫</p>
+            <button id="B2"><a href="https://play.google.com/store/apps/details?id=com.brave.browser" style="text-decoration:none">BROWSER LINK</a></button>
+            <p id="Parag" class="arabic"> هذا الرابط لدعم المادي</p>
+            <p id="Parag">This link is for financial support through link shortening</p>
+            <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support link</a></button>
+            <br>
+            <p></p>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>HACK-X EXTERMINEL</span></p>
+    </footer>
+
+    <div id="notification">Please select a valid link combination!</div>
+
+    <!-- كود Disqus -->
+    <div id="disqus_thread"></div>
+    <script>
+
+function redirectUser() {
+    var confirmationButton = document.getElementById("B1");
+    
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
+
+    var selectedGame = document.getElementById("game").value;
+    var selectedBit = document.getElementById("bit").value;
+    var selectedChoice = document.getElementById("choice").value;
+    var selectedAction = document.getElementById("action").value;
+
+    // التحقق من اختيار المستخدم
+    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+        document.getElementById("notification").innerHTML = "Please select a valid link combination!";
+        document.getElementById("notification").style.display = "block";
+
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 3000);
+
+        return;
+    }
+
+    // إذا كان المستخدم اختار PASS و APK
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+        document.getElementById("notification").innerHTML = "Invalid link combination!";
+        document.getElementById("notification").style.display = "block";
+
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
+    var links = {
+        MINECRAFT1: {
+            32: {
+                PASS: {
+                    "(PASS)": "LINK",
+                    "(PASS1)": "LINK"
+                },
+                APK: {
+                    "(APK)": "LINK",
+                    "(APK1)": "LINK"
+                }
+            },
+            64: {
+                PASS: {
+                    "(PASS)": "LINK",
+                    "(PASS1)": "LINK"
+                },
+                APK: {
+                    "(APK)": "LINK",
+                    "(APK1)": "LINK"
+                }
+            }
+        },
+        MINECRAFT2: {
+            32: {
+                PASS: {
+                    "(PASS)": "LINK",
+                    "(PASS1)": "LINK"
+                },
+                APK: {
+                    "(APK)": "LINK",
+                    "(APK1)": "LINK"
+                }
+            },
+            64: {
+                PASS: {
+                    "(PASS)": "LINK",
+                    "(PASS1)": "LINK"
+                },
+                APK: {
+                    "(APK)": "LINK",
+                    "(APK1)": "LINK"
+                }
+            }
+        },
+    };
+
+    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+
+    // إعادة نص الزر إلى "CONFIRMATION"
+    confirmationButton.innerText = "Loading...";
+
+    // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+    setTimeout(function () {
+        window.open(link, '_blank');
+        // إعادة تحميل الصفحة بعد 5 ثواني
+        setTimeout(function () {
+            location.reload();
+        }, 2000);
+    }, 2000);
+}
+
+function removeOption(selectId, optionValue) {
+    var select = document.getElementById(selectId);
+    var option = select.querySelector("option[value='" + optionValue + "']");
+    if (option) {
+        select.removeChild(option);
+    }
+}
+
+// Disqus Configuration
+var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'MINECRAFT';
+};
+
+(function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+// Disqus Counter
+var dsqCountScript = document.createElement('script');
+dsqCountScript.id = 'dsq-count-scr';
+dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+dsqCountScript.async = true;
+(document.head || document.body).appendChild(dsqCountScript);
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+
+</html>

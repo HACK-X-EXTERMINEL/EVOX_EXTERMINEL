@@ -290,6 +290,49 @@
           font-size:7px;
           font-family: 'Agbalumo', system-ui;
         }
+        .MCPE {
+            background: linear-gradient(45deg, #3e2723,#3e2723, #00c853,#616161,#616161);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-mcpe {
+            background: linear-gradient(45deg, #616161,#3e2723,#00c853);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
@@ -313,7 +356,15 @@
             </a>
         </div>
     </section>
-      
+    
+    <section class="MCPE">
+        <div class="social-button">
+            <img src="MCPE.png" alt="MINECRAFT ICON" class="social-icon">
+            <a href="LOG4.html" style="text-decoration:none">
+                <div class="font-mcpe" id="SIZE">MINECRAFT PE (ALL VERSION)</div>
+            </a>
+        </div>
+    </section>
     <section class="toolbox">
         <div class="social-button">
             <img src="TOL.png" alt="TOOLBOX ICON" class="social-icon">
