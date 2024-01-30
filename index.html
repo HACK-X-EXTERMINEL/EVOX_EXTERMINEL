@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+         <link rel="shortcut icon" href="list.png"/>
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
+     crossorigin="anonymous"></script>
+  <style>
+        body {
+            margin: 0;
+            font-family: 'Agbalumo', system-ui;
+            background-color: purple;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header img.SIZE {
+            border-radius: 50%;
+            width: 110px;
+            height: 100px;
+        }
+
+        .options {
+            display: flex;
+        }
+
+        .option {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        footer {
+           background-color: black;
+           border-radius: 20px;
+           padding: 10px;
+           text-align: center;
+        }
+
+        .copyright {
+            font-size: 12px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .social-options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .social-option {
+            padding: 9px 240px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        section {
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .social-option.YT {
+            background-color: red;
+        }
+
+        .social-option.Telegram {
+            background-color: blue;
+        }
+
+        .spacing1 {
+            letter-spacing: 1px;
+            background-color: red;
+        }
+
+        .spacing2 {
+            letter-spacing: 2px;
+            background: blue;
+        }
+
+        .social-optionyt {
+            padding: 6px 1px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social-optiontl {
+            padding: 6px 1px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+ 
+
+        .toolbox {
+            background: linear-gradient(45deg, #008000, #8B4513);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .font-toolbox {
+            background: linear-gradient(45deg, #5d4037, #5d4037,green,green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+       .font-pubg{
+            background: linear-gradient(45deg, #29b6f6,#29b6f6, yellow,white,white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontPubg 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontPubg{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .background {
+            background: linear-gradient(45deg, black, blue, purple, purple, blue, black);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 200% 200%;
+            animation: gradientMoveBackground 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .pubg {
+            background: linear-gradient(45deg, yellow, #03a9f4, white);
+            background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .freefire{
+            background: linear-gradient(45deg, red, red,black,black,red,red);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMoveFreefire 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveFreefire {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .font-freefire {
+            background: linear-gradient(45deg, black,black,red,black,black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontFreefire 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontFreefire{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #SIZE{
+          font-size:10px;
+          
+        }
+        #SIZE1{
+          font-size:7px;
+          font-family: 'Agbalumo', system-ui;
+        }
+        .MCPE {
+            background: linear-gradient(45deg, #3e2723,#3e2723, #00c853,#616161,#616161);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-mcpe {
+            background: linear-gradient(45deg,#00c853 ,#00c853, #616161,#616161,#3e2723,#3e2723);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .ads{
+          background-color: black;
+           border-radius: 20px;
+           padding: 10px;
+           text-align: center;
+        }
+    </style>
+    <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Circular Image" class="SIZE">
+        <br>
+        <iframe data-aa='2299014' src='//ad.a-ads.com/2299014?size=468x60' style='width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+        <br>
+        <h5>Welcome, to HACK-X WORLD</h5>
+        <div class="options"></div>
+    </div>
+
+    <section class="background">
+      
+      
+    <section class="freefire">
+        <div class="social-button">
+            <img src="FF.png" alt="FREE FIRE ICON" class="social-icon">
+            <a href="LOGFF.html" style="text-decoration:none">
+                <div class="font-freefire" id="SIZE">FREE FIRE (HACK AND SICPRIT)</div>
+            </a>
+        </div>
+    </section>
+     <section class="pubg">
+        <div class="social-button">
+            <img src="PUB.png" alt="PUBG ICON" class="social-icon">
+            <a href="LOGPUBG.html" style="text-decoration:none">
+                <div class="font-pubg" id="SIZE">PUBG : HACKS (FREE)</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="toolbox">
+        <div class="social-button">
+            <img src="TOL.png" alt="TOOLBOX ICON" class="social-icon">
+            <a href="LOGTOOLBOX.html" style="text-decoration:none">
+                <div class="font-toolbox" id="SIZE">TOOLBOX PREMIUM (ALL VERSION)</div>
+            </a>
+        </div>
+    </section>
+    <section class="MCPE">
+        <div class="social-button">
+            <img src="MCPE.png" alt="MINECRAFT ICON" class="social-icon">
+            <a href="LOGMCPE.html" style="text-decoration:none">
+                <div class="font-mcpe" id="SIZE">MINECRAFT PE (ALL VERSION)</div>
+            </a>
+        </div>
+    </section>
+   
+
+    <footer>
+        <section class="spacing1">
+            <div class="social-optionsyt">
+                <div class="social-button" onclick="window.location.href='https://www.youtube.com'">
+                    <img src="YT.jpg" alt="YouTube Icon" class="social-icon">
+                    <div class="social-option YT social-optionyt" id="SIZE1">YouTube : SUBSCRIBE</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="spacing2">
+            <div class="social-optionsyt">
+                <div class="social-button" onclick="window.location.href='https://t.me'">
+                    <img src="TL.png" alt="Telegram Icon" class="social-icon">
+                    <div class="social-option Telegram social-optiontl" id="SIZE1">Telegram : Join</div>
+                </div>
+            </div>
+        </section>
+        </footer>
+        
+<script type="text/javascript">
+	atOptions = {
+		'key' : '2f659b71cec329b8211fe6e2a59d707a',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2f659b71cec329b8211fe6e2a59d707a/invoke.js"></scr' + 'ipt>');
+</script>
+
+    <div class="copyright" >CopyRight@HACK-X FOR ALL GAMES</div>
+    <br>
+  
+    </section>
+<section class="ads">
+  <script type="text/javascript" src="https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g"></script>
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '2f659b71cec329b8211fe6e2a59d707a',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/2f659b71cec329b8211fe6e2a59d707a/invoke.js"></scr' + 'ipt>');
+</script>
+<iframe data-aa='2299155' src='//ad.a-ads.com/2299155?size=468x60' style='width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+</section>
+
+</body>
+
+</html>
