@@ -383,6 +383,19 @@ function redirectUser() {
     // تغيير نص الزر إلى "Loading"
     confirmationButton.innerText = "Loading...";
 
+    // عرض الإعلان
+    var adScript = document.createElement("script");
+    adScript.setAttribute("async", "async");
+    adScript.setAttribute("data-cfasync", "false");
+    adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
+
+    var adContainer = document.createElement("div");
+    adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
+
+    // إضافة العنصرين إلى الصفحة
+    countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+    countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+
     // عداد تنازلي من 5 إلى 0
     var countdownValue = 5;
     var countdownInterval = setInterval(function() {
@@ -393,19 +406,6 @@ function redirectUser() {
             countdownDiv.style.display = "none";
             countdownDiv.innerText = "5";
             confirmationButton.innerText = "This is your link";
-            
-            // إضافة الإعلان بعد ظهور العداد
-            var adScript = document.createElement("script");
-            adScript.setAttribute("async", "async");
-            adScript.setAttribute("data-cfasync", "false");
-            adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
-
-            var adContainer = document.createElement("div");
-            adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
-
-            // إضافة العنصرين إلى الصفحة
-            countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
-            countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
 
             var links = {
                 MCPE1_20_60: {
