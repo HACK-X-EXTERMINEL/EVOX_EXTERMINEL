@@ -315,7 +315,8 @@
 
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
-    <script>function handleGameChange() {
+    <script>
+    function handleGameChange() {
     var selectedGame = document.getElementById("game").value;
     var bitSelect = document.getElementById("bit");
     var choiceSelect = document.getElementById("choice");
@@ -350,17 +351,12 @@ actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="
 
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
-    
-    // تغيير نص الزر إلى "Loading"
-    confirmationButton.innerText = "Loading...";
-
+    var countdownDiv = document.createElement("div");
     var selectedGame = document.getElementById("game").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
-
-    // التحقق من اختيار المستخدم
-    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+  if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -373,23 +369,39 @@ function redirectUser() {
 
         return;
     }
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
-    // إذا كان المستخدم اختار CODE و APK
-    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
-        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
-        document.getElementById("notification").innerHTML = "Invalid link combination!";
-        document.getElementById("notification").style.display = "block";
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
 
-        // إعادة نص الزر إلى "CONFIRMATION"
-        confirmationButton.innerText = "CONFIRMATION";
+    // عرض الإعلان
+    var adScript = document.createElement("script");
+    adScript.setAttribute("async", "async");
+    adScript.setAttribute("data-cfasync", "false");
+    adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
 
-        setTimeout(function () {
-            document.getElementById("notification").style.display = "none";
-        }, 5000);
+    var adContainer = document.createElement("div");
+    adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
 
-        return;
-    }
+    // إضافة العنصرين إلى الصفحة
+    countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+    countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
 
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
+
+            // إخفاء الإعلان بعد انتهاء العداد
+            adScript.remove();
+            adContainer.remove();
     var links = {
         FF1: {
             32: {
@@ -447,18 +459,18 @@ function redirectUser() {
 
     var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
 
-    // إعادة نص الزر إلى "CONFIRMATION"
-    confirmationButton.innerText = "Loading...";
-
-    // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-    setTimeout(function () {
-        window.open(link, '_blank');
-        // إعادة تحميل الصفحة بعد 5 ثواني
-        setTimeout(function () {
-            location.reload();
-        }, 2000);
-    }, 2000);
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                window.open(link, '_blank');
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }, 1000);
+        }
+    }, 1000);
 }
+
 
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
