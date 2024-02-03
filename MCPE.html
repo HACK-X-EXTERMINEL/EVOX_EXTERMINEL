@@ -240,25 +240,25 @@
 
         <form>
             <label for="game">Your favorite game:</label>
-            <select id="game" name="game" onchange="handleGameChange()">
-                <option value="Nothing">Nothing</option>
-                <option value="1_20_60">MC PE(1-20-60-20)</option>
-                <option value="1_20_51">MC PE(1-20-51-01)</option>
-                <option value="1_20_41">MC PE(1-20-41)</option>
-               <option value="1_20_40">MC PE(1-20-40</option>
-               <option value="1_20_32">MC PE(1-20-32)</option>
-                <option value="1_20_31">MC PE(1-20-31)</option>
-                <option value="1_20_30">MC PE(1-20-30)</option>
-                 <option value="1_20_15">MC PE(1-20-15)</option>
-                 <option value="1_20_12">MC PE(1-20-12)</option>
-                  <option value="1_20_10">MC PE(1-20-10)</option>
-                  <option value="1_19_83">MC PE(1-19-83)</option>
-                   <option value="1_19_81">MC PE(1-19-81)</option>
-                   <option value="1_19_80">MC PE(1-19-80)</option>
-                   <option value="1_19_73">MC PE(1-19-73)</option>
-                   <option value="1_19_71">MC PE(1-19-71)</option>
-                   <option value="1_19_70">MC PE(1-19-70)</option>
-                   <option value="1_19_63">MC PE(1-19-63)</option>
+        <select id="game" name="game" onchange="handleGameChange()">
+            <option value="Nothing">Nothing</option>
+                <option value="MCPE1_20_60">MC PE(1-20-60-20)</option>
+                <option value="MCPE1_20_51">MC PE(1-20-51-01)</option>
+                <option value="MCPE1_20_41">MC PE(1-20-41)</option>
+               <option value="MCPE1_20_40">MC PE(1-20-40</option>
+               <option value="MCPE1_20_32">MC PE(1-20-32)</option>
+                <option value="MCPE1_20_31">MC PE(1-20-31)</option>
+                <option value="MCPE1_20_30">MC PE(1-20-30)</option>
+                 <option value="MCPE1_20_15">MC PE(1-20-15)</option>
+                 <option value="MCPE1_20_12">MC PE(1-20-12)</option>
+                  <option value="MCPE1_20_10">MC PE(1-20-10)</option>
+                  <option value="MCPE1_19_83">MC PE(1-19-83)</option>
+                   <option value="MCPE1_19_81">MC PE(1-19-81)</option>
+                   <option value="MCPE1_19_80">MC PE(1-19-80)</option>
+                   <option value="MCPE1_19_73">MC PE(1-19-73)</option>
+                   <option value="MCPE1_19_71">MC PE(1-19-71)</option>
+                   <option value="MCPE1_19_70">MC PE(1-19-70)</option>
+                   <option value="MCPE1_19_63">MC PE(1-19-63)</option>
                    <option value="1_19_62">MC PE(1-19-62)</option>
                    <option value="1_19_60">MC PE(1-19-60)</option>
                    <option value="1_19_51">MC PE(1-19-51)</option>
@@ -319,8 +319,8 @@
             <br>
 
             <label for="bit">Bit:</label>
-            <select id="bit" name="bit">
-                <option value="Nothing">Nothing</option>
+        <select id="bit" name="bit">
+            <option value="Nothing">Nothing</option>
                 <option value="bit36">32+64</option>
                
             </select>
@@ -328,24 +328,23 @@
             <br>
 
             <label for="choice">Choice:</label>
-            <select id="choice" name="choice">
-              
-                <option value="Nothing">Nothing</option>
+        <select id="choice" name="choice">
+            <option value="Nothing">Nothing</option>
                 <option value="APK">APK </option>
             </select>
 
             <br>
 
             <label for="action">Link quality:</label>
-            <select id="action" name="action">
-                <option value="Nothing">Nothing</option>
+        <select id="action" name="action">
+            <option value="Nothing">Nothing</option>
                 <option value="(APK)">APK (link 1)</option>
                 <option value="(APK1)">APK (link2)</option>
             </select>
 
             <br>
 
-            <button type="button" onclick="redirectUser()" id="B1" target="_blank">CONFIRMATION</button>
+            <button type="button" onclick="redirectUser()" id="B1" >CONFIRMATION</button>
 
             <br>
 
@@ -372,56 +371,87 @@
 
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
-    
-    // تغيير نص الزر إلى "Loading"
-    confirmationButton.innerText = "Loading...";
-
+    var countdownDiv = document.createElement("div");
     var selectedGame = document.getElementById("game").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
 
-    // التحقق من اختيار المستخدم
-    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
-        document.getElementById("notification").innerHTML = "Please select a valid link combination!";
-        document.getElementById("notification").style.display = "block";
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
-        // إعادة نص الزر إلى "CONFIRMATION"
-        confirmationButton.innerText = "CONFIRMATION";
-
-        setTimeout(function () {
-            document.getElementById("notification").style.display = "none";
-        }, 3000);
-
-        return;
-    }
-
-    var links = {
-        1_20_60: {
-            bit36: {
-                APK: {
-                    "(APK)": "https://wwww.youtu.be",
-                    "(APK1)": "LINK"
-                }
-            },
-        },
-  
-    };
-
-    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
-
-    // إعادة نص الزر إلى "CONFIRMATION"
+    // تغيير نص الزر إلى "Loading"
     confirmationButton.innerText = "Loading...";
 
-    // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-    setTimeout(function () {
-        window.open(link, '_blank');
-        // إعادة تحميل الصفحة بعد 5 ثواني
-        setTimeout(function () {
-            location.reload();
-        }, 2000);
-    }, 2000);
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
+            
+            // إضافة الإعلان بعد ظهور العداد
+            var adScript = document.createElement("script");
+            adScript.setAttribute("async", "async");
+            adScript.setAttribute("data-cfasync", "false");
+            adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
+
+            var adContainer = document.createElement("div");
+            adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
+
+            // إضافة العنصرين إلى الصفحة
+            countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+            countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+
+            var links = {
+                MCPE1_20_60: {
+                    bit36: {
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    }
+                },
+                MCPE1_20_51:{
+                  bit36: {
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    }
+                },
+                MCPE1_20_41:{
+                  bit36: {
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    }
+                }
+            };
+
+            var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                window.open(link, '_blank');
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }, 1000);
+        }
+    }, 1000);
 }
+
+
+
+
+
 
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
