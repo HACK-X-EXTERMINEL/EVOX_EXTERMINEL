@@ -122,8 +122,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 20px;
-            background-color: #000;
-            color: grenn;
+            background-color: black;
+            color: green;
             border-radius: 10px;
             z-index: 1000;
             font-size:15px;
@@ -242,8 +242,8 @@
             <label for="game">Your favorite game:</label>
             <select id="game" name="game" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
-                <option value="TOOLBOX1">TOOLBOX(64)</option>
-                <option value="TOOLBOX2">TOOLBOX (32)</option>
+                <option value="lotusclient">Lotus Client</option>
+                
                 
             </select>
 
@@ -262,8 +262,8 @@
             <label for="choice">Choice:</label>
             <select id="choice" name="choice">
                 <option value="Nothing">Nothing</option>
-                <option value="APK">APK </option>
-                <option value="CODE">CODE</option>
+                <option value="APK">APK</option>
+                <option value="PASS">PASSWORD</option>
                 
             </select>
 
@@ -274,8 +274,8 @@
                 <option value="Nothing">Nothing</option>
                 <option value="(APK)">APK (link 1)</option>
                 <option value="(APK1)">APK (link2)</option>
-                <option value="(CODE)">CODE(link 1)</option>
-                <option value="(CODE1)">CODE (link 2)</option>
+                <option value="(PASS)">PASSWORD (link 1)</option>
+                <option value="(PASS1)">PASSWORD (link 2)</option>
             </select>
 
             <br>
@@ -284,9 +284,6 @@
 
             <br>
 
-            <p class="arabic" id="Parag">ننصح بهذا المتصفح 🌐 لنزع الاعلانات 🚫 </p>
-            <p id="Parag">We recommend this browser 🌐 to remove ads 🚫</p>
-            <button id="B2"><a href="https://play.google.com/store/apps/details?id=com.brave.browser" style="text-decoration:none">BROWSER LINK</a></button>
             <p id="Parag" class="arabic"> هذا الرابط لدعم المادي</p>
             <p id="Parag">This link is for financial support through link shortening</p>
             <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support link</a></button>
@@ -304,19 +301,36 @@
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
     <script>
+    function handleGameChange() {
+    var selectedGame = document.getElementById("game").value;
+    var bitSelect = document.getElementById("bit");
+    var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
 
+    // إعادة الخيارات إلى الحالة الأصلية
+    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASSWORD (link 1)</option><option value="(PASS1)">PASSWORD (link 2)</option>';
+    
+    if (selectedGame === "lotusclient") {
+        removeOption("bit", "32");
+        removeOption("bit", "64");
+        removeOption("bit","Nothing");
+        bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
+    } else if (selectedGame === "FF1") {
+        // تعديل الخيارات حسب لعبة FF1
+    } else if (selectedGame === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
+    }
+}
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
-    
-    // تغيير نص الزر إلى "Loading"
-    confirmationButton.innerText = "Loading...";
-
+    var countdownDiv = document.createElement("div");
     var selectedGame = document.getElementById("game").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
 
-    // التحقق من اختيار المستخدم
     if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
@@ -331,9 +345,8 @@ function redirectUser() {
         return;
     }
 
-    // إذا كان المستخدم اختار CODE و APK
-    if ((selectedChoice === "CODE" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
-        (selectedChoice === "APK" && (selectedAction === "(CODE)" || selectedAction === "(CODE1)"))) {
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
         document.getElementById("notification").innerHTML = "Invalid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -347,66 +360,67 @@ function redirectUser() {
         return;
     }
 
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
+
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
+
+    // عرض الإعلان
+    var adScript = document.createElement("script");
+    adScript.setAttribute("async", "async");
+    adScript.setAttribute("data-cfasync", "false");
+    adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
+
+    var adContainer = document.createElement("div");
+    adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
+
+    // إضافة العنصرين إلى الصفحة
+    countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+    countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
+
+            // إخفاء الإعلان بعد انتهاء العداد
+            adScript.remove();
+            adContainer.remove();
+
     var links = {
-        TOOLBOX1: {
-            32: {
-                CODE: {
-                    "(CODE)": "LINK",
-                    "(CODE1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            },
-            64: {
-                CODE: {
-                    "(CODE)": "LINK",
-                    "(CODE1)": "LINK"
+        lotusclient: {
+            BIT36: {
+                PASS: {
+                    "(PASS)": "LINK",
+                    "(PASS1)": "LINK"
                 },
                 APK: {
                     "(APK)": "LINK",
                     "(APK1)": "LINK"
                 }
             }
-        },
-        TOOLBOX2: {
-            32: {
-                CODE: {
-                    "(CODE)": "LINK",
-                    "(CODE1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            },
-            64: {
-                CODE: {
-                    "(CODE)": "LINK",
-                    "(CODE1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            }
-        },
+        }
     };
 
     var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
 
-    // إعادة نص الزر إلى "CONFIRMATION"
-    confirmationButton.innerText = "Loading...";
-
-    // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-    setTimeout(function () {
-        window.open(link, '_blank');
-        // إعادة تحميل الصفحة بعد 5 ثواني
-        setTimeout(function () {
-            location.reload();
-        }, 2000);
-    }, 2000);
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                window.open(link, '_blank');
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }, 1000);
+        }
+    }, 1000);
 }
 
 function removeOption(selectId, optionValue) {
