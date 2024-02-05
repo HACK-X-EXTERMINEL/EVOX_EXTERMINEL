@@ -256,7 +256,7 @@
                 <option value="Nothing">Nothing</option>
                 <option value="FF1">Free Fire(64)</option>
                 <option value="FF2">Free Fire (32)</option>
-                <option value="SICRIPT">SICRIPT </option>
+                <option value="SCRIPT">SCRIPT </option>
             </select>
 
             <br>
@@ -293,11 +293,6 @@
             <button type="button" onclick="redirectUser()" id="B1" target="_blank">CONFIRMATION</button>
 
             <br>
-
-            <p class="arabic" id="Parag">ننصح بهذا المتصفح 🌐 لنزع الاعلانات 🚫 </p>
-            <p id="Parag">We recommend this browser 🌐 to remove ads 🚫</p>
-            <button id="B2"><a href="https://play.google.com/store/apps/details?id=com.brave.browser"
-                    style="text-decoration:none">BROWSER LINK</a></button>
             <p id="Parag" class="arabic"> هذا الرابط لدعم المادي</p>
             <p id="Parag">This link is for financial support through link shortening</p>
             <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support
@@ -327,7 +322,7 @@
     choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
 actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASS(link 1)</option><option value="(PASS1)">PASS (link 2)</option>';
     
-    if (selectedGame === "SICRIPT") {
+    if (selectedGame === "SCRIPT") {
         removeOption("bit", "32");
         removeOption("bit", "64");
         removeOption("choice", "PASS");
@@ -356,7 +351,8 @@ function redirectUser() {
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
-  if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+
+    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -369,6 +365,22 @@ function redirectUser() {
 
         return;
     }
+
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+        document.getElementById("notification").innerHTML = "Invalid link combination!";
+        document.getElementById("notification").style.display = "block";
+
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
     // إضافة العداد التنازلي قبل الزر
     confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
@@ -402,62 +414,63 @@ function redirectUser() {
             // إخفاء الإعلان بعد انتهاء العداد
             adScript.remove();
             adContainer.remove();
-    var links = {
-        FF1: {
-            32: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            },
-            64: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            }
-        },
-        FF2: {
-            32: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            },
-            64: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
-                },
-                APK: {
-                    "(APK)": "LINK",
-                    "(APK1)": "LINK"
-                }
-            }
-        },
-        SICRIPT: {
-            ERROR: {
-                FILE: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
-                }
-            }
-        },
-    };
 
-    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+            var links = {
+                FF1: {
+                    32: {
+                        PASS: {
+                            "(PASS)": "LINK",
+                            "(PASS1)": "LINK"
+                        },
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    },
+                    64: {
+                        PASS: {
+                            "(PASS)": "LINK",
+                            "(PASS1)": "LINK"
+                        },
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    }
+                },
+                FF2: {
+                    32: {
+                        PASS: {
+                            "(PASS)": "LINK",
+                            "(PASS1)": "LINK"
+                        },
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    },
+                    64: {
+                        PASS: {
+                            "(PASS)": "LINK",
+                            "(PASS1)": "LINK"
+                        },
+                        APK: {
+                            "(APK)": "LINK",
+                            "(APK1)": "LINK"
+                        }
+                    }
+                },
+                SCRIPT: {
+                    ERROR: {
+                        FILE: {
+                            "(PASS)": "LINK",
+                            "(PASS1)": "LINK"
+                        }
+                    }
+                },
+            };
+
+            var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
 
             // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
             setTimeout(function () {

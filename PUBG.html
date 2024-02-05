@@ -246,7 +246,7 @@
                 <option value="Nothing">Nothing</option>
                 <option value="PUBG1">PUBG(64)</option>
                 <option value="PUBG2">PUBG (32)</option>
-                <option value="SICRIPT">SICRIPT </option>
+                <option value="SCRIPT">SCRIPT </option>
             </select>
 
             <br>
@@ -264,7 +264,7 @@
             <select id="choice" name="choice">
                 <option value="Nothing">Nothing</option>
                 <option value="APK">APK </option>
-                <option value="PASS">PASSWORD</option>
+                <option value="CODE">CODE</option>
             </select>
 
             <br>
@@ -274,8 +274,8 @@
                 <option value="Nothing">Nothing</option>
                 <option value="(APK)">APK (link 1)</option>
                 <option value="(APK1)">APK (link2)</option>
-                <option value="(PASS)">PASS(link 1)</option>
-                <option value="(PASS1)">PASS (link 2)</option>
+                <option value="(CODE)">CODE(link 1)</option>
+                <option value="(CODE1)">CODE (link 2)</option>
             </select>
 
             <br>
@@ -284,10 +284,7 @@
 
             <br>
 
-            <p class="arabic" id="Parag">ننصح بهذا المتصفح 🌐 لنزع الاعلانات 🚫 </p>
-            <p id="Parag">We recommend this browser 🌐 to remove ads 🚫</p>
-            <button id="B2"><a href="https://play.google.com/store/apps/details?id=com.brave.browser"
-                    style="text-decoration:none">BROWSER LINK</a></button>
+            
             <p id="Parag" class="arabic"> هذا الرابط لدعمنا بالمال لشراء الهكرات المدفوعة </p>
             <p id="Parag">This link is to support us to buy paid hacks</p>
             <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support
@@ -314,24 +311,24 @@ function handleGameChange() {
     var actionSelect = document.getElementById("action");
     // إعادة الخيارات إلى الحالة الأصلية
     bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
-    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
-    actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASS(link 1)</option><option value="(PASS1)">PASS (link 2)</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="CODE">CODE</option>';
+    actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(CODE)">CODE(link 1)</option><option value="(CODE1)">CODE (link 2)</option>';
     
-    if (selectedGame === "SICRIPT") {
+    if (selectedGame === "SCRIPT") {
         removeOption("bit", "32");
         removeOption("bit", "64");
-        removeOption("choice", "PASS");
+        removeOption("choice", "CODE");
         removeOption("choice", "APK");
         removeOption("bit", "Nothing");
         removeOption("choice", "Nothing");
-        removeOption("action", "(PASS1)");
+        removeOption("action", "(CODE1)");
         removeOption("action", "(APK1)");
-        removeOption("action", "(PASS)");
+        removeOption("action", "(CODE)");
         removeOption("action", "(APK)");
         bitSelect.innerHTML += '<option value="ERROR">32+64</option>';
         choiceSelect.innerHTML += '<option value="FILE">FILE</option>';
         actionSelect.innerHTML += '<option value="download">download</option>';
-        actionSelect.innerHTML += '<option value="PASSWORD">PASSWORD</option>';
+        actionSelect.innerHTML += '<option value="CODE">CODE</option>';
     } else if (selectedGame === "PUBG1") {
         // تعديل الخيارات حسب لعبة PUBG1
     } else if (selectedGame === "PUBG2") {
@@ -341,17 +338,12 @@ function handleGameChange() {
 
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
-    
-    // تغيير نص الزر إلى "Loading"
-    confirmationButton.innerText = "Loading...";
-
+    var countdownDiv = document.createElement("div");
     var selectedGame = document.getElementById("game").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
-
-    // التحقق من اختيار المستخدم
-    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+  if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -364,10 +356,8 @@ function redirectUser() {
 
         return;
     }
-
-    // إذا كان المستخدم اختار CODE و APK
-    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
-        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+    if ((selectedChoice === "CODE" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(CODE)" || selectedAction === "(CODE1)"))) {
         document.getElementById("notification").innerHTML = "Invalid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -380,13 +370,45 @@ function redirectUser() {
 
         return;
     }
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
+
+    // عرض الإعلان
+    var adScript = document.createElement("script");
+    adScript.setAttribute("async", "async");
+    adScript.setAttribute("data-cfasync", "false");
+    adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
+
+    var adContainer = document.createElement("div");
+    adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
+
+    // إضافة العنصرين إلى الصفحة
+    countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+    countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
+
+            // إخفاء الإعلان بعد انتهاء العداد
+            adScript.remove();
+            adContainer.remove();
     var links = {
         PUBG1: {
             32: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
+                CODE: {
+                    "(CODE)": "LINK",
+                    "(CODE1)": "LINK"
                 },
                 APK: {
                     "(APK)": "LINK",
@@ -394,9 +416,9 @@ function redirectUser() {
                 }
             },
             64: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
+                CODE: {
+                    "(CODE)": "LINK",
+                    "(CODE1)": "LINK"
                 },
                 APK: {
                     "(APK)": "LINK",
@@ -406,9 +428,9 @@ function redirectUser() {
         },
         PUBG2: {
             32: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
+                CODE: {
+                    "(CODE)": "LINK",
+                    "(CODE1)": "LINK"
                 },
                 APK: {
                     "(APK)": "LINK",
@@ -416,9 +438,9 @@ function redirectUser() {
                 }
             },
             64: {
-                PASS: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
+                CODE: {
+                    "(CODE)": "LINK",
+                    "(CODE1)": "LINK"
                 },
                 APK: {
                     "(APK)": "LINK",
@@ -426,11 +448,11 @@ function redirectUser() {
                 }
             }
         },
-        SICRIPT: {
+        SCRIPT: {
             ERROR: {
                 FILE: {
-                    "(PASS)": "LINK",
-                    "(PASS1)": "LINK"
+                    "(CODE)": "LINK",
+                    "(CODE1)": "LINK"
                 }
             }
         },
@@ -438,18 +460,18 @@ function redirectUser() {
 
     var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
 
-    // إعادة نص الزر إلى "CONFIRMATION"
-    confirmationButton.innerText = "Loading...";
-
-    // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-    setTimeout(function () {
-        window.open(link, '_blank');
-        // إعادة تحميل الصفحة بعد 5 ثواني
-        setTimeout(function () {
-            location.reload();
-        }, 2000);
-    }, 2000);
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                window.open(link, '_blank');
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }, 1000);
+        }
+    }, 1000);
 }
+
 
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
