@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="search.png"/>
+<title>Search Bar</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Agbalumo', system-ui;
+    background: linear-gradient(45deg, #6a1b9a, #29b6f6);
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-size: 300% 300%;
+    animation: gradientMove 5s linear infinite;
+    backdrop-filter: blur(10px);
+    filter: brightness(120%) saturate(150%);
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .search-container {
+    grid-row: 1;
+  }
+
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+  input[type=text] {
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  /* Styles for game images */
+  .game {
+    text-align: center;
+  }
+
+  .game img {
+    width: 80%; /* تقليل عرض الصورة */
+    height: auto;
+    cursor: pointer;
+  }
+
+  .game p {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  #notification {
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 30px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+    box-shadow: -10px -10px 10px red, 10px 10px 10px blue, 0 0 10px purple;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+</style>
+</head>
+<body>
+<audio id="errorSound">
+  <source src="ERROR.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search here...">
+    <div id="suggestions"></div>
+    <button onclick="search()">Search</button>
+  </div>
+  <div class="games-container" id="games"></div>
+</div>
+<div id="notification"></div>
+<script>
+  // Games data
+  var games = [
+    { name: "PUBG", imageUrl: "PUB.png", downloadLink: "PUBG.html" },
+    { name: "FREE FIRE", imageUrl: "FF.png", downloadLink: "FF.html" },
+    // You can add more games here
+  ];
+
+  // Load games when the page loads
+  window.onload = function() {
+    displayGames(games);
+  };
+
+  // Display games on the page
+  function displayGames(games) {
+    var gamesContainer = document.getElementById("games");
+    gamesContainer.innerHTML = ""; // Clear previous content
+
+    games.forEach(function(game) {
+      var existingGame = document.getElementById(game.name.replace(/\s/g, ''));
+      if (!existingGame) {
+        var gameDiv = document.createElement("div");
+        gameDiv.classList.add("game");
+        gameDiv.id = game.name.replace(/\s/g, ''); // Remove spaces from game name to use as id
+
+        var img = document.createElement("img");
+        img.src = game.imageUrl;
+        img.alt = "Game Image";
+        img.onclick = function() {
+          window.location.href = game.downloadLink;
+        };
+
+        var namePara = document.createElement("p");
+        namePara.textContent = game.name;
+
+        gameDiv.appendChild(img);
+        gameDiv.appendChild(namePara);
+
+        gamesContainer.appendChild(gameDiv);
+      }
+    });
+  }
+
+  // Search and display suggestions
+  document.getElementById("searchInput").addEventListener("input", function() {
+    search();
+  });
+
+  function search() {
+    var input = document.getElementById("searchInput").value.toUpperCase();
+    var games = document.querySelectorAll('.game');
+    var noResults = document.getElementById("noResults");
+    var found = false;
+
+    games.forEach(function(game) {
+      var gameName = game.querySelector('p').textContent.toUpperCase();
+      if (gameName.startsWith(input) || input === "") {
+        game.style.display = "block";
+        found = true;
+      } else {
+        game.style.display = "none";
+      }
+    });
+
+    if (!found) {
+      showNotification("Invalid code, please try again");
+      playErrorSound();
+    }
+  }
+
+  function showNotification(message) {
+    var notification = document.getElementById("notification");
+    notification.textContent = message;
+    notification.style.display = "block";
+    setTimeout(function() {
+      notification.style.display = "none";
+    }, 5000);
+  }
+
+  function playErrorSound() {
+    var errorSound = document.getElementById("errorSound");
+    errorSound.play();
+  }
+</script>
+</body>
+</html>

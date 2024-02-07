@@ -173,28 +173,6 @@
                 background-position: 0% 50%;
             }
         }
-       .font-pubg{
-            background: linear-gradient(45deg, #29b6f6,#29b6f6, yellow,white,white);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 300% 300%;
-            padding: 10px;
-            border-radius: 10px;
-            animation: gradientMoveFontPubg 5s linear infinite;
-        }
-
-        @keyframes gradientMoveFontPubg{
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
         .background {
             background: linear-gradient(45deg, black, blue, purple, purple, blue, black);
             padding: 10px 20px;
@@ -216,9 +194,31 @@
                 background-position: 0% 50%;
             }
         }
+        .font-pubg{
+            background: linear-gradient(45deg,#29b6f6,#29b6f6,#29b6f6, yellow,yellow,yellow,white,white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontPubg 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontPubg{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
         .pubg {
-            background: linear-gradient(45deg, yellow, #03a9f4, white);
+            background: linear-gradient(45deg, yellow,yellow, white, white,#29b6f6,#29b6f6);
             background-size: 200% 200%;
             padding: 10px 20px;
             border-radius: 40px;
@@ -239,7 +239,7 @@
             }
         }
         .freefire{
-            background: linear-gradient(45deg, red, red,black,black,red,red);
+            background: linear-gradient(45deg, red, red ,black,black,red,red);
             padding: 10px 20px;
             border-radius: 40px;
             background-size: 300% 300%;
@@ -261,7 +261,7 @@
         }
 
         .font-freefire {
-            background: linear-gradient(45deg, black,black,red,black,black);
+            background: linear-gradient(45deg, black,black,black,red,black,black,black);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -339,6 +339,92 @@
            padding: 10px;
            text-align: center;
         }
+        .PROTO {
+            background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-proto {
+            background: linear-gradient(45deg,#29b6f6,#29b6f6 , #6a1b9a,#6a1b9a,#6a1b9a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .search {
+            background: linear-gradient(45deg, #ffff00,#ffff00, #212121,#212121);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-search {
+            background: linear-gradient(45deg,#212121,#212121,#212121,#212121 , #ffff00,#ffff00,#ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
@@ -367,7 +453,14 @@
 
     <section class="background">
       
-      
+      <section class="search">
+        <div class="social-button">
+            <img src="SEARCH.png" alt="SEARCH ICON" class="social-icon">
+            <a href="SEARCH.html" style="text-decoration:none">
+                <div class="font-search" id="SIZE">FREE FIRE (HACK AND SICPRIT)</div>
+            </a>
+        </div>
+    </section>
     <section class="freefire">
         <div class="social-button">
             <img src="FF.png" alt="FREE FIRE ICON" class="social-icon">
@@ -390,6 +483,14 @@
             <img src="TOL.png" alt="TOOLBOX ICON" class="social-icon">
             <a href="LOGTOOLBOX.html" style="text-decoration:none">
                 <div class="font-toolbox" id="SIZE">TOOLBOX PREMIUM (ALL VERSION)</div>
+            </a>
+        </div>
+    </section>
+    <section class="PROTO">
+        <div class="social-button">
+            <img src="PROTO.png" alt="PROTO HACK ICON" class="social-icon">
+            <a href="LOGPROTO.html" style="text-decoration:none">
+                <div class="font-proto" id="SIZE">MINECRAFT PE (ALL VERSION)</div>
             </a>
         </div>
     </section>

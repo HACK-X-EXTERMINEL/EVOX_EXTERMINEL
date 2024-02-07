@@ -275,6 +275,11 @@
       }, 3000);
     }
 
+    function playSound() {
+      var audio = new Audio('SUCCESS.mp3'); // استبدل بمسار الملف الصوتي الخاص بك
+      audio.play();
+    }
+
     function authenticate() {
       var usernameInput = document.getElementById('username');
       var password = document.getElementById('password').value;
@@ -283,9 +288,9 @@
       if (usernameInput.value.startsWith('HACK-X_EXTERMINEL') && password === 'IO9PO9') {
         showNotification('Login successful! Redirecting...');
         loginButton.innerText = 'Loading';
-
+        playSound(); // تشغيل الصوت
         setTimeout(function () {
-          window.location.href = 'PUBG.html';
+          window.location.href ='PUBG.html';
         }, 3000);
 
       } else {
