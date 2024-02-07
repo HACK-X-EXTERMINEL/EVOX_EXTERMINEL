@@ -253,8 +253,8 @@
       }, 3000);
     }
 
-    function playSound() {
-      var audio = new Audio('SUCCESS.mp3'); // استبدل بمسار الملف الصوتي الخاص بك
+    function playSound(soundFile) {
+      var audio = new Audio(soundFile);
       audio.play();
     }
 
@@ -266,7 +266,7 @@
       if (usernameInput.value.startsWith('HACK-X_EXTERMINEL') && password === 'IO9PO9') {
         showNotification('Login successful! Redirecting...');
         loginButton.innerText = 'Loading';
-        playSound(); // تشغيل الصوت
+        playSound('SUCCESS.mp3');
         setTimeout(function () {
           window.location.href ='PROTOHACK.html';
         }, 3000);
@@ -274,6 +274,7 @@
       } else {
         showNotification('Incorrect username or password.');
         loginButton.innerText = 'ERROR';
+        playSound('ERROR.mp3');
 
         setTimeout(function () {
           location.reload();
