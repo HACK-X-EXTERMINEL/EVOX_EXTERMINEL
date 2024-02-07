@@ -12,6 +12,12 @@
   <title>Login Page</title>
   <style>
     body {
+      -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
       font-family: 'Agbalumo', system-ui;
       display: flex;
       justify-content: center;
@@ -274,8 +280,8 @@
       }, 3000);
     }
 
-    function playSound() {
-      var audio = new Audio('SUCCESS.mp3'); // استبدل بمسار الملف الصوتي الخاص بك
+    function playSound(soundFile) {
+      var audio = new Audio(soundFile);
       audio.play();
     }
 
@@ -287,7 +293,7 @@
       if (usernameInput.value.startsWith('HACK-X_EXTERMINEL') && password === 'IO9PO9') {
         showNotification('Login successful! Redirecting...');
         loginButton.innerText = 'Loading';
-        playSound(); // تشغيل الصوت
+        playSound('SUCCESS.mp3');
         setTimeout(function () {
           window.location.href ='MCPE.html';
         }, 3000);
@@ -295,6 +301,7 @@
       } else {
         showNotification('Incorrect username or password.');
         loginButton.innerText = 'ERROR';
+        playSound('ERROR.mp3');
 
         setTimeout(function () {
           location.reload();
