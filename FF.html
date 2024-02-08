@@ -378,7 +378,21 @@ function redirectUser() {
 
         return;
     }
+    if ((selectedChoice === "PASS" && (selectedAction === "(FILE)" || selectedAction === "(FILE1)")) || 
+        (selectedChoice === "FILE" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+        document.getElementById("notification").innerHTML = "Invalid link combination!";
+        document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('ERROR.mp3');
+        errorSound.play();
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
 
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
     // إضافة العداد التنازلي قبل الزر
     confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
