@@ -355,13 +355,15 @@ function redirectUser() {
     if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('ERROR.mp3');
+        errorSound.play();
 
         // إعادة نص الزر إلى "CONFIRMATION"
         confirmationButton.innerText = "CONFIRMATION";
 
         setTimeout(function () {
             document.getElementById("notification").style.display = "none";
-        }, 3000);
+        }, 5000);
 
         return;
     }
@@ -465,14 +467,16 @@ function redirectUser() {
                     ERROR: {
                         FILE: {
                             "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
+                            "(PASS1)": "LINK",
+                            "(APK)": "https://try2link.com/rmzWWCg",
+                            "(APK1)": "https://shrinkme.us/JATogl"
                         }
                     }
                 },
             };
 
             var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
-
+         
             // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
             setTimeout(function () {
                 window.open(link, '_blank');
@@ -483,6 +487,8 @@ function redirectUser() {
             }, 1000);
         }
     }, 1000);
+        var verificationSound = new Audio('CONF.mp3');
+        verificationSound.play();
 }
 
 
