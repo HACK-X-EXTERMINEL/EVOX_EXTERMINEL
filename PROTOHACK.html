@@ -113,7 +113,7 @@
         }
 
         #B1 {
-            background-color: #PROTO0000;
+            background-color: #FF0000;
             color: blue;
         }
 
@@ -140,7 +140,7 @@
         }
 
         .footer {
-            color: #0000PROTO;
+            color: #0000FF;
             padding: 2em;
             display: flex;
             justify-content: space-between;
@@ -303,7 +303,8 @@
     </footer>
 
     <div id="notification">Please select a valid link combination!</div>
-
+<audio id="verificationSound" src="verified.mp3"></audio>
+<audio id="errorSound" src="verified.mp3"></audio>
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
     <script>
@@ -315,19 +316,28 @@
 
     // إعادة الخيارات إلى الحالة الأصلية
     bitSelect.innerHTML = '<option value="bity36">32+64</option>';
-    choiceSelect.innerHTML = '<option value="APK">APK</option>;
-actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>;
+    choiceSelect.innerHTML = '<option value="APK">APK</option>';
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
     
     if (selectedGame === "SCRIPT") {
-        
+        removeOption("bit", "32");
+        removeOption("bit", "64");
+        removeOption("choice", "PASS");
+        removeOption("choice", "APK");
+        removeOption("bit", "Nothing");
+        removeOption("choice", "Nothing");
+        removeOption("action", "(PASS1)");
+        removeOption("action", "(APK1)");
+        removeOption("action", "(PASS)");
+        removeOption("action", "(APK)");
         bitSelect.innerHTML += '<option value="ERROR">32+64</option>';
         choiceSelect.innerHTML += '<option value="FILE">FILE</option>';
         actionSelect.innerHTML += '<option value="download">download</option>';
         actionSelect.innerHTML += '<option value="PASSWORD">PASSWORD</option>';
-    } else if (selectedGame === "PROTO1") {
-        // تعديل الخيارات حسب لعبة PROTO1
-    } else if (selectedGame === "PROTO2") {
-        // تعديل الخيارات حسب لعبة PROTO2
+    } else if (selectedGame === "FF1") {
+        // تعديل الخيارات حسب لعبة FF1
+    } else if (selectedGame === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
     }
 }
 
@@ -340,6 +350,10 @@ function redirectUser() {
     var selectedAction = document.getElementById("action").value;
 
     if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+        // تشغيل الصوت للخطأ
+        var errorSound = new Audio('ERROR.mp3');
+        errorSound.play();
+
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
 
@@ -357,7 +371,8 @@ function redirectUser() {
         (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
         document.getElementById("notification").innerHTML = "Invalid link combination!";
         document.getElementById("notification").style.display = "block";
-
+        var errorSound = new Audio('ERROR.mp3');
+        errorSound.play();
         // إعادة نص الزر إلى "CONFIRMATION"
         confirmationButton.innerText = "CONFIRMATION";
 
@@ -425,7 +440,13 @@ function redirectUser() {
             }, 1000);
         }
     }, 1000);
-}
+        // تشغيل الصوت للتأكيد
+        var verificationSound = new Audio('CONF.mp3');
+        verificationSound.play();
+    }
+
+
+
 
 
 function removeOption(selectId, optionValue) {
