@@ -231,6 +231,76 @@
                 background-position: 0% 50%;
             }
         }
+              #container {
+  position: fixed;
+  top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width: 340px;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease;
+  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+            background-size: 200% 200%;
+            padding: 20px 40px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+#container-content {
+  font-size:12px;
+}
+
+#container-content p {
+  color: black;
+  text-align: left;
+}
+#container-content h4 {
+  color: red;
+  text-align: left;
+}
+#close-btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Agbalumo', Arial, sans-serif;
+  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+            background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
     </style>
 </head>
 
@@ -290,7 +360,7 @@
             <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support
                     link</a></button>
             <br>
-            <p></p>
+            
         </form>
     </div>
 
@@ -299,11 +369,34 @@
     </footer>
 
     <div id="notification">Please select a valid link combination!</div>
-
+     <div id="container">
+  <div id="container-content">
+    <p >Hello! Welcome to our website.</p>
+    <h4>NEW :</h4>
+    <!-- يمكنك إضافة وسم img هنا لإدراج صورة -->
+    <button id="close-btn">Close</button>
+  </div>
+</div>
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
     <script>
+window.onload = function() {
+  var container = document.getElementById('container');
+  var closeBtn = document.getElementById('close-btn');
 
+  // يأتي الإشعار من الأعلى
+  setTimeout(function() {
+    container.style.top = '300px';
+  }, 1000);
+
+  // إغلاق الإشعار عند النقر على زر الإغلاق
+  closeBtn.onclick = function() {
+    container.style.top = '-500px';
+  };
+  setTimeout(function() {
+    container.style.top = '-500px';
+  }, 20000);
+};
 function handleGameChange() {
     var selectedGame = document.getElementById("game").value;
     var bitSelect = document.getElementById("bit");
