@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="PROTO.png" />
-    <title>HACK-X EXTERMINEL FOR FREE FIRE</title>
+    <title>HACK-X EXTERMINEL FOR PROTOHACK</title>
 
     <style>
         body {
@@ -251,34 +251,28 @@
 <body>
       
       <div id="board" >
-        <h2>HACK-X EXTERMINEL FOR FREE FIRE</h2>
+        <h2>HACK-X EXTERMINEL FOR PROTOHACK</h2>
 
 
         <form>
-            <label for="game">Your favorite game:</label>
+            <label for="game">Your favorite App:</label>
             <select id="game" name="game" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
-                <option value="PROTO1">Free Fire(64)</option>
-                <option value="PROTO2">Free Fire (32)</option>
-                <option value="SCRIPT">SCRIPT </option>
+                <option value="PROTO1">PROTOHACK 1.20.60</option>
             </select>
 
             <br>
 
             <label for="bit">Bit:</label>
             <select id="bit" name="bit">
-                <option value="Nothing">Nothing</option>
-                <option value="32">32</option>
-                <option value="64">64</option>
+                <option value="bity36">32+64</option>
             </select>
 
             <br>
 
             <label for="choice">Choice:</label>
             <select id="choice" name="choice">
-                <option value="Nothing">Nothing</option>
                 <option value="APK">APK </option>
-                <option value="PASS">PASSWORD</option>
             </select>
 
             <br>
@@ -288,8 +282,6 @@
                 <option value="Nothing">Nothing</option>
                 <option value="(APK)">APK (link 1)</option>
                 <option value="(APK1)">APK (link2)</option>
-                <option value="(PASS)">PASS(link 1)</option>
-                <option value="(PASS1)">PASS (link 2)</option>
             </select>
 
             <br>
@@ -322,21 +314,12 @@
     var actionSelect = document.getElementById("action");
 
     // إعادة الخيارات إلى الحالة الأصلية
-    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
-    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
-actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASS(link 1)</option><option value="(PASS1)">PASS (link 2)</option>';
+    bitSelect.innerHTML = '<option value="bity36">32+64</option>';
+    choiceSelect.innerHTML = '<option value="APK">APK</option>;
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>;
     
     if (selectedGame === "SCRIPT") {
-        removeOption("bit", "32");
-        removeOption("bit", "64");
-        removeOption("choice", "PASS");
-        removeOption("choice", "APK");
-        removeOption("bit", "Nothing");
-        removeOption("choice", "Nothing");
-        removeOption("action", "(PASS1)");
-        removeOption("action", "(APK1)");
-        removeOption("action", "(PASS)");
-        removeOption("action", "(APK)");
+        
         bitSelect.innerHTML += '<option value="ERROR">32+64</option>';
         choiceSelect.innerHTML += '<option value="FILE">FILE</option>';
         actionSelect.innerHTML += '<option value="download">download</option>';
@@ -421,57 +404,13 @@ function redirectUser() {
 
             var links = {
                 PROTO1: {
-                    32: {
-                        PASS: {
-                            "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
-                        },
+                    bity36: {
                         APK: {
-                            "(APK)": "LINK",
-                            "(APK1)": "LINK"
-                        }
-                    },
-                    64: {
-                        PASS: {
-                            "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
-                        },
-                        APK: {
-                            "(APK)": "LINK",
-                            "(APK1)": "LINK"
+                            "(APK)": "https://try2link.com/hiZLa",
+                            "(APK1)": "https://shrinkme.us/Pmn8"
                         }
                     }
-                },
-                PROTO2: {
-                    32: {
-                        PASS: {
-                            "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
-                        },
-                        APK: {
-                            "(APK)": "LINK",
-                            "(APK1)": "LINK"
-                        }
-                    },
-                    64: {
-                        PASS: {
-                            "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
-                        },
-                        APK: {
-                            "(APK)": "LINK",
-                            "(APK1)": "LINK"
-                        }
-                    }
-                },
-                SCRIPT: {
-                    ERROR: {
-                        FILE: {
-                            "(PASS)": "LINK",
-                            "(PASS1)": "LINK"
-                        }
-                    }
-                },
+                }
             };
 
             var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
