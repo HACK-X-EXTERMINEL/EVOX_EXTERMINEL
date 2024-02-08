@@ -388,15 +388,17 @@
   var container = document.getElementById('container');
   var closeBtn = document.getElementById('close-btn');
 
-  // يأتي الإشعار من الأعلى
+  var closeSound = new Audio('ERROR.mp3');
+
   setTimeout(function() {
     container.style.top = '300px';
   }, 1000);
 
-  // إغلاق الإشعار عند النقر على زر الإغلاق
   closeBtn.onclick = function() {
     container.style.top = '-500px';
+    closeSound.play();
   };
+
   setTimeout(function() {
     container.style.top = '-500px';
   }, 20000);
