@@ -123,6 +123,9 @@
       opacity: 1;
     }
   }
+.description {
+  text-align: right;
+}
 
 </style>
 </head>
@@ -142,88 +145,115 @@
 </div>
 <div id="notification"></div>
 <script>
-  // Games data
-  var games = [
-    { name: "PUBG", imageUrl: "PUB.png", downloadLink: "PUBG.html" },
-    { name: "FREE FIRE", imageUrl: "FF.png", downloadLink: "FF.html" },
-    // You can add more games here
-  ];
+var games = [
+  { name: "PUBG (3.0)", imageUrl: "PUB.png", downloadLink: "https://try2link.com/eEu77n", description: "هذي النسخة لنزع مشاكل تحميل الخرائط داخل اللعبة التي تواجه اغلب اللاعبين" },
+  { name: "FREE FIRE", imageUrl: "FF.png", downloadLink: "FF.html", description: "" },
+  // You can add more games here
+];
 
-  // Load games when the page loads
-  window.onload = function() {
-    displayGames(games);
-  };
+var currentGame = null; // To keep track of the game with open description
 
-  // Display games on the page
-  function displayGames(games) {
-    var gamesContainer = document.getElementById("games");
-    gamesContainer.innerHTML = ""; // Clear previous content
+// Load games when the page loads
+window.onload = function () {
+  displayGames(games);
+};
 
-    games.forEach(function(game) {
-      var existingGame = document.getElementById(game.name.replace(/\s/g, ''));
-      if (!existingGame) {
-        var gameDiv = document.createElement("div");
-        gameDiv.classList.add("game");
-        gameDiv.id = game.name.replace(/\s/g, ''); // Remove spaces from game name to use as id
+// Display games on the page
+function displayGames(games) {
+  var gamesContainer = document.getElementById("games");
+  gamesContainer.innerHTML = ""; // Clear previous content
 
-        var img = document.createElement("img");
-        img.src = game.imageUrl;
-        img.alt = "Game Image";
-        img.onclick = function() {
-          window.location.href = game.downloadLink;
-        };
+  games.forEach(function (game) {
+    var existingGame = document.getElementById(game.name.replace(/\s/g, ''));
+    if (!existingGame) {
+      var gameDiv = document.createElement("div");
+      gameDiv.classList.add("game");
+      gameDiv.id = game.name.replace(/\s/g, ''); // Remove spaces from game name to use as id
 
-        var namePara = document.createElement("p");
-        namePara.textContent = game.name;
+      var img = document.createElement("img");
+      img.src = game.imageUrl;
+      img.alt = "Game Image";
+      img.onclick = function () {
+        window.location.href = game.downloadLink;
+      };
 
-        gameDiv.appendChild(img);
-        gameDiv.appendChild(namePara);
+      var namePara = document.createElement("p");
+      namePara.textContent = game.name;
 
-        gamesContainer.appendChild(gameDiv);
+      if (game.description) {
+        var descriptionPara = document.createElement("p");
+        descriptionPara.textContent = game.description;
+        descriptionPara.classList.add("description");
+        descriptionPara.style.display = "none";
       }
-    });
-  }
 
-  // Search and display suggestions
-  document.getElementById("searchInput").addEventListener("input", function() {
-    search();
+      var toggleButton = document.createElement("button");
+      toggleButton.textContent = "Learn more";
+      toggleButton.onclick = function () {
+        if (descriptionPara.style.display === "none") {
+          descriptionPara.style.display = "block";
+          currentGame = gameDiv.id;
+        } else {
+          descriptionPara.style.display = "none";
+          currentGame = null;
+        }
+      };
+
+      gameDiv.appendChild(img);
+      gameDiv.appendChild(namePara);
+      if (game.description) {
+        gameDiv.appendChild(descriptionPara);
+      }
+      if (game.description) {
+        gameDiv.appendChild(toggleButton);
+      }
+
+      gamesContainer.appendChild(gameDiv);
+    }
+  });
+}
+
+// Search and display suggestions
+document.getElementById("searchInput").addEventListener("input", function () {
+  search();
+});
+
+function search() {
+  var input = document.getElementById("searchInput").value.toUpperCase();
+  var games = document.querySelectorAll('.game');
+  var noResults = document.getElementById("noResults");
+  var found = false;
+
+  games.forEach(function (game) {
+    var gameName = game.querySelector('p').textContent.toUpperCase();
+    if (gameName.startsWith(input) || input === "") {
+      game.style.display = "block";
+      found = true;
+    } else {
+      game.style.display = "none";
+    }
   });
 
-  function search() {
-    var input = document.getElementById("searchInput").value.toUpperCase();
-    var games = document.querySelectorAll('.game');
-    var noResults = document.getElementById("noResults");
-    var found = false;
-
-    games.forEach(function(game) {
-      var gameName = game.querySelector('p').textContent.toUpperCase();
-      if (gameName.startsWith(input) || input === "") {
-        game.style.display = "block";
-        found = true;
-      } else {
-        game.style.display = "none";
-      }
-    });
-
-    if (!found) {
-      showNotification("Invalid code, please try again");
-      playErrorSound();
-    }
+  if (!found) {
+    showNotification("Invalid code, please try again");
+    playErrorSound();
   }
+}
 
-  function showNotification(message) {
-    var notification = document.getElementById("notification");
-    notification.textContent = message;
-    notification.style.display = "block";
-    setTimeout(function() {
-      notification.style.display = "none";
-    }, 5000);
-  }
+function showNotification(message) {
+  var notification = document.getElementById("notification");
+  notification.textContent = message;
+  notification.style.display = "block";
+  setTimeout(function () {
+    notification.style.display = "none";
+  }, 5000);
+}
 
-  function playErrorSound() {
-    var errorSound = document.getElementById("errorSound");
-    errorSound.play();
-  }
+function playErrorSound() {
+  var errorSound = document.getElementById("errorSound");
+  errorSound.play();
+}
+
 </script>
 </body>
 </html>
