@@ -313,6 +313,7 @@
             <select id="game" name="game" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
                 <option value="lotusclient">Lotus Client 1.20.51</option>
+                <option value="cezarclient">Cezar Client 1.20.51</option>
                 
                 
             </select>
@@ -413,8 +414,11 @@ actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="
         removeOption("bit", "64");
         removeOption("bit","Nothing");
         bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
-    } else if (selectedGame === "FF1") {
-        // تعديل الخيارات حسب لعبة FF1
+    } else if (selectedGame === "cezarclient") {
+      removeOption("bit", "32");
+        removeOption("bit", "64");
+        removeOption("bit","Nothing");
+        bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
     } else if (selectedGame === "FF2") {
         // تعديل الخيارات حسب لعبة FF2
     }
@@ -468,16 +472,28 @@ function redirectUser() {
 
     // عرض الإعلان
     var adScript = document.createElement("script");
-    adScript.setAttribute("async", "async");
-    adScript.setAttribute("data-cfasync", "false");
-    adScript.setAttribute("src", "//streetmonumentemulate.com/ced0cf5e606f757ac7083384139582d4/invoke.js");
+adScript.setAttribute("type", "text/javascript");
+adScript.setAttribute("async", "async");
+adScript.setAttribute("src", "//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js");
 
-    var adContainer = document.createElement("div");
-    adContainer.setAttribute("id", "container-ced0cf5e606f757ac7083384139582d4");
+var adContainer = document.createElement("div");
+adContainer.setAttribute("id", "container-6b06c616fd56534111ed2480216ef224");
 
-    // إضافة العنصرين إلى الصفحة
-    countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
-    countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+var atOptions = {
+    'key': '6b06c616fd56534111ed2480216ef224',
+    'format': 'iframe', // إضافة format هنا
+    'height': 250,
+    'width': 300,
+    'params': {}
+};
+
+var adScript2 = document.createElement("script");
+adScript2.setAttribute("type", "text/javascript");
+adScript2.innerHTML = "var atOptions = " + JSON.stringify(atOptions) + ";";
+document.head.appendChild(adScript2);
+
+countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
 
     // عداد تنازلي من 5 إلى 0
     var countdownValue = 5;
@@ -506,6 +522,18 @@ function redirectUser() {
                     "(APK1)": "https://try2link.com/lotusclient1"
                 }
             }
+        },
+        cezarclient:{
+          BIT36:{
+            PASS:{
+                   "(PASS)": "https://exe.io/OG28H",
+                   "(PASS1)": "https://cuty.io/KxJsd67n"
+            },
+            APK:{
+                  "(APK)": "https://try2link.com/Lduf",
+                  "(APK1)": "https://shrinkme.us/uBIpPe2"
+            }
+          }
         }
     };
 
