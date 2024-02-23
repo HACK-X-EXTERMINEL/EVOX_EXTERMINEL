@@ -302,7 +302,16 @@
                 background-position: 0% 50%;
             }
 }
+            .header {
+            text-align: center;
+        }
 
+        .header img.SIZE {
+            border-radius: 50%;
+            width: 110px;
+            height: 110px;
+            box-shadow: 0 0 10px black;
+        }
 
     </style>
 </head>
@@ -310,11 +319,16 @@
 <body>
 
     <div id="board" class="board">
+      <div class="header">
+        <img src="MCPE.png" alt="Circular Image" class="SIZE">
+        <br>
+        </div>
         <h2>HACK-X EXTERMINEL FOR MINECRAFT</h2>
         <form>
             <label for="game">Your favorite App:</label>
         <select id="game" name="game" onchange="handleGameChange()">
             <option value="Nothing">Nothing</option>
+            <option value="MCPE1_20_62">MC PE(1-20-62)</option>
                 <option value="MCPE1_20_60">MC PE(1-20-60-20)</option>
                 <option value="MCPE1_20_51">MC PE(1-20-51-01)</option>
                 <option value="MCPE1_20_41">MC PE(1-20-41)</option>
@@ -535,6 +549,14 @@ countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
             adContainer.remove();
 
             var links = {
+              MCPE1_20_62: {
+                    bit36: {
+                        APK: {
+                            "(APK)": "https://try2link.com/3nWwF1",
+                            "(APK1)": "https://shrinkme.us/ew5p"
+                        }
+                    }
+                },
                 MCPE1_20_60: {
                     bit36: {
                         APK: {

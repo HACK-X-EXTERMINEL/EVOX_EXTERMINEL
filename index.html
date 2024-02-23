@@ -31,8 +31,8 @@
 
         .header img.SIZE {
             border-radius: 50%;
-            width: 110px;
-            height: 100px;
+            width: 120px;
+            height: 115px;
         }
 
         .options {
@@ -425,6 +425,27 @@
                 background-position: 0% 50%;
             }
         }
+        #disqus_thread{
+          background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 200% 200%;
+            animation: gradientMoveBackground 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+       }
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
@@ -527,7 +548,7 @@
 
     <div class="copyright" >CopyRight@HACK-X FOR ALL GAMES</div>
     <br>
-  
+  <div id="disqus_thread"></div>
     </section>
 <section class="ads">
   <script type="text/javascript" src="https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g"></script>
@@ -552,7 +573,27 @@
 	document.write('<scr' + 'ipt type="text/javascript" src="//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js"></scr' + 'ipt>');
 </script>
 </section>
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'HOME';
+};
 
+(function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+// Disqus Counter
+var dsqCountScript = document.createElement('script');
+dsqCountScript.id = 'dsq-count-scr';
+dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+dsqCountScript.async = true;
+(document.head || document.body).appendChild(dsqCountScript);
+
+</script>
 </body>
 
 </html>
