@@ -448,25 +448,26 @@
                 background-position: 0% 50%;
             }
        }
-       #container {
-         position: fixed;
-         top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
-         left: 50%;
-         width: 340px;
-         height:auto;
-         transform: translateX(-50%);
-         border: 1px solid black;
-         border-radius: 18px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-         transition: top 0.5s ease;
-         background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
-         background-size: 200% 200%;
-         padding: 20px 40px;
-         border-radius: 40px;
-         animation: gradientMovePubg 5s linear infinite;
-         backdrop-filter: blur(10px);
-         filter: brightness(120%) saturate(150%);
-         }
+       #container{
+  position: fixed;
+  z-index:999;
+  top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width: 340px;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease;
+  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+            background-size: 200% 200%;
+            padding: 20px 40px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
 
         @keyframes gradientMovePubg {
             0% {
@@ -492,22 +493,19 @@
   color: red;
   text-align: left;
 }
-#close-btn {
-  border: none;
-  padding: 5px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: 'Agbalumo', Arial, sans-serif;
-  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
-            background-size: 200% 200%;
+#close-btn{
+  left: 50%;
+        cursor: pointer;
+       font-family: 'Agbalumo', Arial, sans-serif;
+        background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+             background-size: 200% 200%;
             padding: 10px 20px;
             border-radius: 40px;
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-        }
-
-        @keyframes gradientMovePubg {
+            }
+      @keyframes gradientMovePubg {
             0% {
                 background-position: 0% 50%;
             }
