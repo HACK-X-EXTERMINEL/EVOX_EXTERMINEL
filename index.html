@@ -450,7 +450,7 @@
        }
        #container{
   position: fixed;
-  z-index:999;
+ 
   top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
   width: 340px;
@@ -460,13 +460,14 @@
   border-radius: 18px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: top 0.5s ease;
-  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+  background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
             background-size: 200% 200%;
             padding: 20px 40px;
             border-radius: 40px;
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
+            z-index:999;
         }
 
         @keyframes gradientMovePubg {
@@ -494,10 +495,10 @@
   text-align: left;
 }
 #close-btn{
-  left: 50%;
+  margin-left:35%;
         cursor: pointer;
        font-family: 'Agbalumo', Arial, sans-serif;
-        background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+        background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
              background-size: 200% 200%;
             padding: 10px 20px;
             border-radius: 40px;
