@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HACK-X EXTERMINEL">
-  <meta name="description" lang="ar" content="هاكس اكس ">
+  <meta name="description" content="Download all hacked games, download all games for free, and download PUBG and Free Fire scripts and Minecraft hacks ">
+  <meta name="description" lang="ar" content="تحميل جميع العاب مهكرة و تحميل العاب المدفوعة مجانا و تحميل سكريبتات ببجي و فري فاير و تحميل هكرات للعبة ماين كرافت">
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
@@ -448,12 +448,89 @@
                 background-position: 0% 50%;
             }
        }
+       #container {
+         position: fixed;
+         top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
+         left: 50%;
+         width: 340px;
+         height:auto;
+         transform: translateX(-50%);
+         border: 1px solid black;
+         border-radius: 18px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         transition: top 0.5s ease;
+         background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+         background-size: 200% 200%;
+         padding: 20px 40px;
+         border-radius: 40px;
+         animation: gradientMovePubg 5s linear infinite;
+         backdrop-filter: blur(10px);
+         filter: brightness(120%) saturate(150%);
+         }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+#container-content {
+  font-size:12px;
+}
+
+#container-content p {
+  color: black;
+  text-align: left;
+}
+#container-content h4 {
+  color: red;
+  text-align: left;
+}
+#close-btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Agbalumo', Arial, sans-serif;
+  background: linear-gradient(45deg, yellow,yellow, #03a9f4,#03a9f4,white, white);
+            background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
 
 <body>
-
+      <div id="container">
+  <div id="container-content">
+    <p >Hello! Welcome to our website.</p>
+    <h4>NEW :</h4>
+    <!-- يمكنك إضافة وسم img هنا لإدراج صورة -->
+    <button id="close-btn">Close</button>
+  </div>
+</div>
     <div class="header">
         <img src="logo.png" alt="Circular Image" class="SIZE">
         <br>
@@ -594,7 +671,26 @@ dsqCountScript.id = 'dsq-count-scr';
 dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
 dsqCountScript.async = true;
 (document.head || document.body).appendChild(dsqCountScript);
+ 
+ window.onload = function() {
+  var container = document.getElementById('container');
+  var closeBtn = document.getElementById('close-btn');
 
+  var closeSound = new Audio('ERROR.mp3');
+
+  setTimeout(function() {
+    container.style.top = '300px';
+  }, 1000);
+
+  closeBtn.onclick = function() {
+    container.style.top = '-500px';
+    closeSound.play();
+  };
+
+  setTimeout(function() {
+    container.style.top = '-500px';
+  }, 20000);
+};
 </script>
 </body>
 
