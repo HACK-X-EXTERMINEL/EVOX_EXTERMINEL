@@ -15,6 +15,46 @@
          <link rel="shortcut icon" href="list.png"/>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
+     <script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'HOME';
+};
+
+(function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+// Disqus Counter
+var dsqCountScript = document.createElement('script');
+dsqCountScript.id = 'dsq-count-scr';
+dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+dsqCountScript.async = true;
+(document.head || document.body).appendChild(dsqCountScript);
+ 
+ window.onload = function() {
+  var container = document.getElementById('container');
+  var closeBtn = document.getElementById('close-btn');
+
+  var closeSound = new Audio('ERROR.mp3');
+
+  setTimeout(function() {
+    container.style.top = '250px';
+  }, 1000);
+
+  closeBtn.onclick = function() {
+    container.style.top = '-800px';
+    closeSound.play();
+  };
+
+  setTimeout(function() {
+    container.style.top = '-800px';
+  }, 20000);
+};
+</script>
   <style>
         body {
             margin: 0;
@@ -506,6 +546,7 @@
 }
 #close-btn{
   margin-left:35%;
+  margin-top:-20%;
         cursor: pointer;
        font-family: 'Agbalumo', Arial, sans-serif;
         background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
@@ -667,46 +708,7 @@
 	document.write('<scr' + 'ipt type="text/javascript" src="//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js"></scr' + 'ipt>');
 </script>
 </section>
-<script>
-  var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = 'HOME';
-};
 
-(function () {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
-
-// Disqus Counter
-var dsqCountScript = document.createElement('script');
-dsqCountScript.id = 'dsq-count-scr';
-dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
-dsqCountScript.async = true;
-(document.head || document.body).appendChild(dsqCountScript);
- 
- window.onload = function() {
-  var container = document.getElementById('container');
-  var closeBtn = document.getElementById('close-btn');
-
-  var closeSound = new Audio('ERROR.mp3');
-
-  setTimeout(function() {
-    container.style.top = '250px';
-  }, 1000);
-
-  closeBtn.onclick = function() {
-    container.style.top = '-800px';
-    closeSound.play();
-  };
-
-  setTimeout(function() {
-    container.style.top = '-800px';
-  }, 20000);
-};
-</script>
 </body>
 
 </html>
