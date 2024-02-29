@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Anta&family=Protest+Guerrilla&display=swap" rel="stylesheet">
          <link rel="shortcut icon" href="list.png"/>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
@@ -450,8 +451,7 @@
        }
        #container{
   position: fixed;
- 
-  top: -500px; /* يضع الإشعار خارج الشاشة في البداية */
+  top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
   width: 340px;
   height:auto;
@@ -483,16 +483,26 @@
 }
 
 #container-content {
-  font-size:12px;
+  font-size:18px;
 }
 
 #container-content p {
-  color: black;
-  text-align: left;
+  color: pink;
+  text-align: center;
+  size:12px
 }
 #container-content h4 {
   color: red;
   text-align: left;
+  size:16px
+}
+#container-content h5 {
+  color: green;
+  text-align: left;
+  size:14px;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 #close-btn{
   margin-left:35%;
@@ -517,6 +527,10 @@
                 background-position: 0% 50%;
             }
 }
+            .container-img{
+              border:solid 2px blue ;
+              box-shadow: -10px -10px 10px yellow, 10px 10px 10px pink;
+            }
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
@@ -526,7 +540,9 @@
   <div id="container-content">
     <p >Hello! Welcome to our website.</p>
     <h4>NEW :</h4>
-    <!-- يمكنك إضافة وسم img هنا لإدراج صورة -->
+   <h5><u>MINECRAFT: MC PE 1.20.62 </u></h5>
+   <h5 style="color:yellow;"><u><strong>There is no version for TOOLBOX 1.20.62</strong></u></h5>
+   <img class='container-img' src="A.png">
     <button id="close-btn">Close</button>
   </div>
 </div>
@@ -678,16 +694,16 @@ dsqCountScript.async = true;
   var closeSound = new Audio('ERROR.mp3');
 
   setTimeout(function() {
-    container.style.top = '300px';
+    container.style.top = '250px';
   }, 1000);
 
   closeBtn.onclick = function() {
-    container.style.top = '-500px';
+    container.style.top = '-800px';
     closeSound.play();
   };
 
   setTimeout(function() {
-    container.style.top = '-500px';
+    container.style.top = '-800px';
   }, 20000);
 };
 </script>
