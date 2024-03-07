@@ -16,11 +16,6 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
-// التحقق من نوع المتصفح
-if (/Brave/i.test(navigator.userAgent)) {
-  // إظهار الإشعار
-  document.getElementById("notification").classList.add("show");
-}
 
   var disqus_config = function () {
     this.page.url = window.location.href;
@@ -634,28 +629,13 @@ li::before {
     float: left;
     color:#0fa3bd;
 }
-.notification-container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index:9999999999;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
 
-.notification-container.show {
-  display: block;
-}
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
 
 <body>
-<div class="notification-container" id="notification">
-  <h1>مرحبًا بك!</h1>
-  <p>هذا الموقع لا يعمل على متصفح Brave. الرجاء التبديل إلى متصفح Chrome.</p>
-</div>
+
       <div id="container">
   <div id="container-content" >
     <section class='container-header'>
@@ -793,5 +773,23 @@ li::before {
 </section>
 
 </body>
+<script>
+    var adblockEnabled = false;
+    var testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'ad-test';
+    document.body.appendChild(testAd);
+    window.setTimeout(function() {
+        if (testAd.offsetHeight === 0) {
+            adblockEnabled = true;
+        }
+        document.body.removeChild(testAd);
+        if (adblockEnabled) {
+            var adblockMessage = document.createElement('div');
+            adblockMessage.innerHTML = "<p>يبدو أنك تستخدم مانع إعلانات. يرجى تعطيل مانع الإعلانات لعرض المحتوى.</p>";
+            document.body.insertBefore(adblockMessage, document.body.firstChild);
+        }
+    }, 100);
+</script>
 
 </html>
