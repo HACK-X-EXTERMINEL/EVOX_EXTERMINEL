@@ -16,29 +16,10 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
-     // التحقق من نوع المتصفح
+// التحقق من نوع المتصفح
 if (/Brave/i.test(navigator.userAgent)) {
-  // إنشاء الإشعار
-  function showNotification() {
-    if (Notification.permission === "granted") {
-      new Notification("يرجى انتقال إلى متصفح Chrome لتشغيل هذا الموقع", {
-        body: "هذا الموقع لا يعمل على متصفح Brave.",
-      });
-    } else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(function (permission) {
-        if (permission === "granted") {
-          new Notification("يرجى انتقال إلى متصفح Chrome لتشغيل هذا الموقع", {
-            body: "هذا الموقع لا يعمل على متصفح Brave.",
-          });
-        }
-      });
-    }
-  }
-
-  // عرض الإشعار عند تحميل الصفحة
-  window.onload = function () {
-    showNotification();
-  };
+  // إظهار الإشعار
+  document.getElementById("notification").classList.add("show");
 }
 
   var disqus_config = function () {
@@ -654,18 +635,24 @@ li::before {
     color:#0fa3bd;
 }
 .notification-container {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index:9999999999;
   transform: translate(-50%, -50%);
   text-align: center;
-	z-index:77777777777777;
+}
+
+.notification-container.show {
+  display: block;
+}
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
 
 <body>
-  <div class="notification-container">
+<div class="notification-container" id="notification">
   <h1>مرحبًا بك!</h1>
   <p>هذا الموقع لا يعمل على متصفح Brave. الرجاء التبديل إلى متصفح Chrome.</p>
 </div>
