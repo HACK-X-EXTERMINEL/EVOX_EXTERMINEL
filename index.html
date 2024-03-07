@@ -16,35 +16,6 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
-     const adBlockerDNS = ["dns.adguard.com"];
-
-        // التحقق من الـ DNS المستخدم
-        const userDNS = window.location.hostname;
-
-        // التحقق مما إذا كان المستخدم يستخدم أحد أسماء مانع الإعلانات
-        if (adBlockerDNS.includes(userDNS)) {
-            // عرض رسالة تنبيهية
-            alert("تم اكتشاف استخدام مانع الإعلانات.");
-        }
-window.onload = function() {
-            // Check if an ad blocker is enabled
-            var adBlockEnabled = false;
-            var testAd = document.createElement('div');
-            testAd.innerHTML = '&nbsp;';
-            testAd.className = 'adsbox';
-            document.body.appendChild(testAd);
-            window.setTimeout(function() {
-                if (testAd.offsetHeight === 0) {
-                    adBlockEnabled = true;
-                }
-                testAd.remove();
-                
-                // If ad blocker is enabled, show alert message
-                if (adBlockEnabled) {
-                    document.getElementById('adBlockAlert').style.display = 'block';
-                }
-            }, 100);
-        };
   var disqus_config = function () {
     this.page.url = window.location.href;
     this.page.identifier = 'HOME';
@@ -677,11 +648,6 @@ li::before {
 </head>
 
 <body>
-<div id="adBlockAlert">
-        <h2>تنبيه</h2>
-        <p>تم اكتشاف مانع الإعلانات في متصفحك.</p>
-        <p>يرجى تعطيل مانع الإعلانات للوصول الكامل إلى الموقع.</p>
-    </div>
       <div id="container">
   <div id="container-content" >
     <section class='container-header'>
@@ -817,6 +783,31 @@ li::before {
 	document.write('<scr' + 'ipt type="text/javascript" src="//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js"></scr' + 'ipt>');
 </script>
 </section>
+<div class='adblcr hidden' id='superadblocker'>
+                    <div class='textsshow'>
+                        <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                            <circle cx='12' cy='12' r='10' />
+                            <line x1='12' x2='12' y1='8' y2='12' />
+                            <line x1='12' x2='12.01' y1='16' y2='16' />
+                        </svg>
+                        <h2>Ad-Blocker Detected!</h2>
+                        <p>Please turn off the ad blocker. This is only way that we can earn some penny. Please support us by trun off the ad blocker.Thank you!!</p>
+                        <a href="/">HOME</a><a class="watermark" href="https://fluratech.com">Anti Adblocker</a>
+                        
+                    </div>
+                </div>
+<style>
+.adblcr{position:fixed;z-index:99999;top:0;bottom:0;left:0;right:0;padding:20px;background-color: #ffffff; display:flex;justify-content:center;align-items:center}
+.adblcr.hidden{display:none}
+.adblcr .textsshow{position:relative;background-color: #7b00bd;max-width:400px;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;border-radius:30px}
+.adblcr .textsshow svg{display:block;width:50px;height:50px;fill:none !important;stroke: #08102b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+.adblcr .textsshow h2{margin:10px 0 15px 0;font-size:1.2rem;font-weight:800; color: #00ffff}
+.adblcr .textsshow p{margin:0;line-height:1.7em;font-size:0.9rem;color: #08102b}
+.watermark{ position: absolute; top: 0%; font-size: 7px; color: #333;}
+</style>
+
+<script>var lazyAnti=!1;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&!1===lazyAnti||0!=document.body.scrollTop&&!1===lazyAnti)&&(!function(){var superadblocker=document.querySelector("#superadblocker");var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";e.onerror=function(){if(superadblocker!=null){superadblocker.classList.remove("hidden");window.lazyAnti=!0}};var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyAnti=!0)},!0); </script>
+
 
 </body>
 
