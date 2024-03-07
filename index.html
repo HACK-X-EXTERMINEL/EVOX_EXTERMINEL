@@ -16,6 +16,16 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
+     const adBlockerDNS = ["dns.adguard.com"];
+
+        // التحقق من الـ DNS المستخدم
+        const userDNS = window.location.hostname;
+
+        // التحقق مما إذا كان المستخدم يستخدم أحد أسماء مانع الإعلانات
+        if (adBlockerDNS.includes(userDNS)) {
+            // عرض رسالة تنبيهية
+            alert("تم اكتشاف استخدام مانع الإعلانات.");
+        }
 window.onload = function() {
             // Check if an ad blocker is enabled
             var adBlockEnabled = false;
