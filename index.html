@@ -16,7 +16,25 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
-
+window.onload = function() {
+            // Check if an ad blocker is enabled
+            var adBlockEnabled = false;
+            var testAd = document.createElement('div');
+            testAd.innerHTML = '&nbsp;';
+            testAd.className = 'adsbox';
+            document.body.appendChild(testAd);
+            window.setTimeout(function() {
+                if (testAd.offsetHeight === 0) {
+                    adBlockEnabled = true;
+                }
+                testAd.remove();
+                
+                // If ad blocker is enabled, show alert message
+                if (adBlockEnabled) {
+                    document.getElementById('adBlockAlert').style.display = 'block';
+                }
+            }, 100);
+        };
   var disqus_config = function () {
     this.page.url = window.location.href;
     this.page.identifier = 'HOME';
@@ -57,6 +75,20 @@ dsqCountScript.async = true;
 };
 </script>
   <style>
+  #adBlockAlert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #f00;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            text-align: center;
+        }
         body {
             margin: 0;
             font-family: 'Agbalumo', system-ui;
@@ -635,7 +667,11 @@ li::before {
 </head>
 
 <body>
-
+<div id="adBlockAlert">
+        <h2>تنبيه</h2>
+        <p>تم اكتشاف مانع الإعلانات في متصفحك.</p>
+        <p>يرجى تعطيل مانع الإعلانات للوصول الكامل إلى الموقع.</p>
+    </div>
       <div id="container">
   <div id="container-content" >
     <section class='container-header'>
@@ -773,23 +809,5 @@ li::before {
 </section>
 
 </body>
-<script>
-    var adblockEnabled = false;
-    var testAd = document.createElement('div');
-    testAd.innerHTML = '&nbsp;';
-    testAd.className = 'ad-test';
-    document.body.appendChild(testAd);
-    window.setTimeout(function() {
-        if (testAd.offsetHeight === 0) {
-            adblockEnabled = true;
-        }
-        document.body.removeChild(testAd);
-        if (adblockEnabled) {
-            var adblockMessage = document.createElement('div');
-            adblockMessage.innerHTML = "<p>يبدو أنك تستخدم مانع إعلانات. يرجى تعطيل مانع الإعلانات لعرض المحتوى.</p>";
-            document.body.insertBefore(adblockMessage, document.body.firstChild);
-        }
-    }, 100);
-</script>
 
 </html>
