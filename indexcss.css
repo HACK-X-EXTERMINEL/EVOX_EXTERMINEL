@@ -1,0 +1,708 @@
+        body {
+            margin: 0;
+            font-family: 'Agbalumo', system-ui;
+            background-color: purple;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header img.SIZE {
+            border-radius: 50%;
+            width: 120px;
+            height: 115px;
+        }
+
+        .options {
+            display: flex;
+        }
+
+        .option {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        footer {
+           background-color: black;
+           border-radius: 20px;
+           padding: 10px;
+           text-align: center;
+        }
+
+        .copyright {
+            font-size: 12px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .social-options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .social-option {
+            padding: 9px 240px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        section {
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .social-option.YT {
+            background-color: red;
+        }
+
+        .social-option.Telegram {
+            background-color: blue;
+        }
+
+        .spacing1 {
+            letter-spacing: 1px;
+            background-color: red;
+        }
+
+        .spacing2 {
+            letter-spacing: 2px;
+            background: blue;
+        }
+
+        .social-optionyt {
+            padding: 6px 1px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social-optiontl {
+            padding: 6px 1px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+ 
+
+        .toolbox {
+            background: linear-gradient(45deg, #008000, #8B4513);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .font-toolbox {
+            background: linear-gradient(45deg, #5d4037, #5d4037,green,green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .background {
+            background: linear-gradient(45deg, black, blue, purple, purple, blue, black);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 200% 200%;
+            animation: gradientMoveBackground 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-pubg{
+            background: linear-gradient(45deg,#29b6f6,#29b6f6,#29b6f6, yellow,yellow,yellow,white,white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontPubg 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontPubg{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .pubg {
+            background: linear-gradient(45deg, yellow,yellow, white, white,#29b6f6,#29b6f6);
+            background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .freefire{
+            background: linear-gradient(45deg, red, red ,black,black,red,red);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMoveFreefire 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveFreefire {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .font-freefire {
+            background: linear-gradient(45deg, black,black,black,red,black,black,black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontFreefire 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontFreefire{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #SIZE{
+          font-size:10px;
+          
+        }
+        #SIZE1{
+          font-size:7px;
+          font-family: 'Agbalumo', system-ui;
+        }
+        .MCPE {
+            background: linear-gradient(45deg, #3e2723,#3e2723, #00c853,#616161,#616161);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-mcpe {
+            background: linear-gradient(45deg,#00c853 ,#00c853, #616161,#616161,#3e2723,#3e2723);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .ads{
+          background-color: black;
+           border-radius: 20px;
+           padding: 10px;
+           text-align: center;
+        }
+        .PROTO {
+            background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-proto {
+            background: linear-gradient(45deg,#29b6f6,#29b6f6 , #6a1b9a,#6a1b9a,#6a1b9a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .search {
+            background: linear-gradient(45deg, #ffff00,#ffff00, #212121,#212121);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .font-search {
+            background: linear-gradient(45deg,#212121,#212121,#212121,#212121 , #ffff00,#ffff00,#ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #disqus_thread{
+          background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
+            padding: 10px 20px;
+            border-radius: 40px;
+            background-size: 200% 200%;
+            animation: gradientMoveBackground 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMoveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+       }
+       #container{
+  position: fixed;
+  top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width: 340px;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 1s ease;
+  background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:999;
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+#container-content {
+  font-size:18px;
+}
+.container-header{
+            background: linear-gradient(45deg, #cc0e60, #cc0e60, #750c8a, #750c8a,#1481a6,#1481a6,#1481a6);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            border:none;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:999;
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+#container-content p {
+  text-align: center;
+  size:12px;
+  background: linear-gradient(45deg,#1481a6, #1481a6,#1481a6, #1481a6, #750c8a,#750c8a ,#cc0e60, #cc0e60);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            z-index:999;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+       
+#container-content h4 {
+  color: red;
+  text-align: left;
+  size:16px
+}
+#container-content h5 {
+  color: green;
+  text-align: left;
+  size:14px;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#close-btn{
+  margin-left:35%;
+  vertical-align: bottom;
+        cursor: pointer;
+       font-family: 'Agbalumo', Arial, sans-serif;
+        background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
+             background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            }
+      @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+            .container-img{
+              border:solid 2px blue ;
+              box-shadow: -10px -10px 10px yellow, 10px 10px 10px pink;
+              border-radius:40px;
+            }
+            ul {
+    list-style-type: none;
+}
+
+li::before {
+    content: "✔";
+    margin-right: 0.5em;
+    font-size:12px;
+    float: left;
+    color:#0fa3bd;
+}
+.secret {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/*ممسكسشكشكسكس*/
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .search-container {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .mute-button {
+    padding: 10px 20px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+    margin-left: 20px;
+    position: relative;
+  }
+
+  .mute-button:hover .mute-info {
+    display: block;
+  }
+
+  .mute-info {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 200px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+  }
+
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+  input[type=text] {
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+  }
+
+  .search  {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+  }
+
+  .search :hover {
+    background-color: #45a049;
+  }
+
+  /* Styles for game images */
+  .game {
+    text-align: center;
+  }
+
+  .game img {
+    width: 80%; /* تقليل عرض الصورة */
+    height: auto;
+    cursor: pointer;
+  }
+
+  .game p {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  #notification {
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 30px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+    box-shadow: -10px -10px 10px red, 10px 10px 10px blue, 0 0 10px purple;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .section-container{
+    position: fixed;
+  top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width: 340px;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 1s ease;
+  z-index:99999999999999999999999;
+  }
