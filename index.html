@@ -16,6 +16,31 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
+     // التحقق من نوع المتصفح
+if (/Brave/i.test(navigator.userAgent)) {
+  // إنشاء الإشعار
+  function showNotification() {
+    if (Notification.permission === "granted") {
+      new Notification("يرجى انتقال إلى متصفح Chrome لتشغيل هذا الموقع", {
+        body: "هذا الموقع لا يعمل على متصفح Brave.",
+      });
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(function (permission) {
+        if (permission === "granted") {
+          new Notification("يرجى انتقال إلى متصفح Chrome لتشغيل هذا الموقع", {
+            body: "هذا الموقع لا يعمل على متصفح Brave.",
+          });
+        }
+      });
+    }
+  }
+
+  // عرض الإشعار عند تحميل الصفحة
+  window.onload = function () {
+    showNotification();
+  };
+}
+
   var disqus_config = function () {
     this.page.url = window.location.href;
     this.page.identifier = 'HOME';
@@ -558,6 +583,7 @@ dsqCountScript.async = true;
             background-size: 300% 300%;
             padding: 10px;
             border-radius: 10px;
+            z-index:999;
             animation: gradientMoveFontToolbox 5s linear infinite;
         }
 
