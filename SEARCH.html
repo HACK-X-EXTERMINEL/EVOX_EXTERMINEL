@@ -52,6 +52,35 @@
 
   .search-container {
     grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .mute-button {
+    padding: 10px 20px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Agbalumo', system-ui;
+    margin-left: 20px;
+    position: relative;
+  }
+
+  .mute-button:hover .mute-info {
+    display: block;
+  }
+
+  .mute-info {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 200px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
   }
 
   .games-container {
@@ -140,11 +169,30 @@
     <input type="text" id="searchInput" placeholder="Search here...">
     <div id="suggestions"></div>
     <button onclick="search()">Search</button>
+    <button class="mute-button" onclick="toggleMute()">MUTE
+      <div class="mute-info">
+        <p>This button toggles the sound on and off.</p>
+      </div>
+    </button>
   </div>
   <div class="games-container" id="games"></div>
 </div>
 <div id="notification"></div>
 <script>
+var isMuted = false;
+
+function toggleMute() {
+  isMuted = !isMuted;
+  var audios = document.getElementsByTagName("audio");
+  for (var i = 0; i < audios.length; i++) {
+    if (isMuted) {
+      audios[i].pause();
+    } else {
+      audios[i].play();
+    }
+  }
+}
+
 var games = [
   { name: "PUBG (3.0)", imageUrl: "PUB.png", downloadLink: "https://try2link.com/eEu77n", description: "هذي النسخة لنزع مشاكل تحميل الخرائط داخل اللعبة التي تواجه اغلب اللاعبين" },
   { name: "FREE FIRE", imageUrl: "FF.png", downloadLink: "FF.html", description: "" },
@@ -219,24 +267,25 @@ document.getElementById("searchInput").addEventListener("input", function () {
 });
 
 function search() {
-  var input = document.getElementById("searchInput").value.toUpperCase();
-  var games = document.querySelectorAll('.game');
-  var noResults = document.getElementById("noResults");
-  var found = false;
+  var input = document.getElementById("searchInput").value.toUpperCase();{
+    var games = document.querySelectorAll('.game');
+    var noResults = document.getElementById("noResults");
+    var found = false;
 
-  games.forEach(function (game) {
-    var gameName = game.querySelector('p').textContent.toUpperCase();
-    if (gameName.startsWith(input) || input === "") {
-      game.style.display = "block";
-      found = true;
-    } else {
-      game.style.display = "none";
+    games.forEach(function (game) {
+      var gameName = game.querySelector('p').textContent.toUpperCase();
+      if (gameName.startsWith(input) || input === "") {
+        game.style.display = "block";
+        found = true;
+      } else {
+        game.style.display = "none";
+      }
+    });
+
+    if (!found) {
+      showNotification("Invalid code, please try again");
+      playErrorSound();
     }
-  });
-
-  if (!found) {
-    showNotification("Invalid code, please try again");
-    playErrorSound();
   }
 }
 
@@ -251,7 +300,9 @@ function showNotification(message) {
 
 function playErrorSound() {
   var errorSound = document.getElementById("errorSound");
-  errorSound.play();
+  if (!isMuted) {
+    errorSound.play();
+  }
 }
 
 </script>

@@ -12,69 +12,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    <link rel="stylesheet" href="indexcss.css">
          <link rel="shortcut icon" href="list.png"/>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
      <script>
   var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = 'HOME';
-};
+            this.page.url = window.location.href;
+            this.page.identifier = 'HOME';
+        };
 
-(function () {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
 
-// Disqus Counter
-var dsqCountScript = document.createElement('script');
-dsqCountScript.id = 'dsq-count-scr';
-dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
-dsqCountScript.async = true;
-(document.head || document.body).appendChild(dsqCountScript);
- 
- window.onload = function() {
-  var container = document.getElementById('container');
-  var closeBtn = document.getElementById('close-btn');
+        // Disqus Counter
+        var dsqCountScript = document.createElement('script');
+        dsqCountScript.id = 'dsq-count-scr';
+        dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+        dsqCountScript.async = true;
+        (document.head || document.body).appendChild(dsqCountScript);
 
-  var closeSound = new Audio('ERROR.mp3');
+        window.onload = function() {
+            var container = document.getElementById('container');
+            var closeBtn = document.getElementById('close-btn');
+            
 
-  setTimeout(function() {
-    container.style.top = '250px';
-  }, 1000);
+            var close= new Audio('close.wav');
 
-  closeBtn.onclick = function() {
-    container.style.top = '-800px';
-    closeSound.play();
-  };
+            setTimeout(function() {
+                container.style.top = '250px';
+            }, 1);
 
-  setTimeout(function() {
-    container.style.top = '-800px';
-  }, 20000);
-};
-function showSecret() {
-  var container = document.getElementById('secret');
-  var closeBtn = document.getElementById('button');
+            closeBtn.onclick = function() {
+                container.style.top = '-800px';
+                close.play();
+            };
 
-  var closeSound = new Audio('ERRsOR.mp3');
+            setTimeout(function() {
+                container.style.top = '-800px';
+            }, 20000);
+        };
 
-  button.onclick = function() {
-    container.style.top = '250px';
-    closeSound.play();
-  };
+        function showSecret() {
+            var container = document.getElementById('secret');
+            var closeBtn = document.getElementById('button');
+            var closebutton = document.getElementById('closebutton');
+
+            var click = new Audio('click.wav');
+            var close = new Audio('close.wav');
+            button.onclick = function() {
+                container.style.top = '250px';
+                button.style.left = '-100px';
+                click.play();
+             };
+            closebutton.onclick = function() {
+                container.style.top = '-800px';
+                button.style.left = '0px';
+                close.play();
+            };
+        }
+
+        function search() {
+    var input = document.getElementById("searchInput").value;
+    var error = new Audio('ERROR.mp3');
+    var confirm = new Audio('CONF.mp3');
+    var secretLinks = {
+        "SSs": "https://example.com/secret1",
+        "SS": "https://example.com/secret2",
+        "lll": "https://example.com/secret3"
+    }; 
+
+    if (secretLinks.hasOwnProperty(input)) { 
+        setTimeout(function() {
+          confirm.play();
+          document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
+                document.getElementById("alert1").style.display = "block";
+                    window.location.href = secretLinks[input];
+                }, 5000);
+    } else {
+    document.getElementById("alert").innerHTML = "Invalid keyword.Please try again.";
+                document.getElementById("alert").style.display = "block";
+                error.play();
 }
-function search() {
-  var secretKeyword = "SSS"; // تغييرها إلى الكلمة السرية المطلوبة
-  var userInput = document.getElementById("searchInput").value.trim().toLowerCase();
-
-  if (userInput === secretKeyword) {
-    window.location.href = "https://example.com"; // تغيير هذا برابط الموقع المطلوب
-  } else {
-    alert("Invalid keyword. Please try again.");
-  }
+    
 }
 </script>
   <style>
@@ -84,28 +109,24 @@ function search() {
 </head>
 
 <body>
-   <button onclick="showSecret()" id="button">إظهار السر</button>
-       
-  <section class="section-container" id="secret">
-    <div>
-      <audio id="errorSound">
-        <source src="ERROR.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade"></i></button>
 
-<div class="container">
-  <div class="search-container" >
-    <input type="text" id="searchInput" placeholder="Search here...">
-    <div id="suggestions"></div>
-    <button onclick="search()" class="search">Search</button>
-    
-      </div>
-  </div>
-  <div class="games-container" id="games"></div>
-</div>
-<div id="notification"></div>
-    
-  </section>
+    <section class="section-container" id="secret">
+        <div>
+            <div class="container">
+                <div class="search-container" >
+                    <input type="text" id="searchInput" placeholder="Enter secret keyword...">
+                    <div id="suggestions"></div>
+                    <button onclick="search()" class="search">Search</button>
+                    </div>
+                    <p id="alert" ></p>
+                    <p id="alert1" ></p>
+                    <button id="closebutton" class="search">Close</button>
+                
+            </div>
+        </div>
+        <div id="notification"></div>
+    </section>
       <div id="container">
   <div id="container-content" >
     <section class='container-header'>
@@ -142,7 +163,7 @@ function search() {
 
     <section class="background">
       
-      <section class="search">
+      <section class="search" id="APP">
         <div class="social-button">
             <img src="SEARCH.png" alt="SEARCH ICON" class="social-icon">
             <a href="SEARCH.html" style="text-decoration:none">
@@ -150,7 +171,7 @@ function search() {
             </a>
         </div>
     </section>
-    <section class="freefire">
+    <section class="freefire" id="APP">
         <div class="social-button">
             <img src="FF.png" alt="FREE FIRE ICON" class="social-icon">
             <a href="LOGFF.html" style="text-decoration:none">
@@ -158,7 +179,7 @@ function search() {
             </a>
         </div>
     </section>
-     <section class="pubg">
+     <section class="pubg" id="APP">
         <div class="social-button">
             <img src="PUB.png" alt="PUBG ICON" class="social-icon">
             <a href="LOGPUBG.html" style="text-decoration:none">
@@ -167,7 +188,7 @@ function search() {
         </div>
     </section>
 
-    <section class="toolbox">
+    <section class="toolbox" id="APP">
         <div class="social-button">
             <img src="TOL.png" alt="TOOLBOX ICON" class="social-icon">
             <a href="LOGTOOLBOX.html" style="text-decoration:none">
@@ -175,7 +196,7 @@ function search() {
             </a>
         </div>
     </section>
-    <section class="PROTO">
+    <section class="PROTO" id="APP">
         <div class="social-button">
             <img src="PROTO.png" alt="PROTO HACK ICON" class="social-icon">
             <a href="LOGPROTO.html" style="text-decoration:none">
@@ -183,7 +204,7 @@ function search() {
             </a>
         </div>
     </section>
-    <section class="MCPE">
+    <section class="MCPE" id="APP">
         <div class="social-button">
             <img src="MCPE.png" alt="MINECRAFT ICON" class="social-icon">
             <a href="LOGMCPE.html" style="text-decoration:none">
