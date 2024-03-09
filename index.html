@@ -77,7 +77,7 @@
             };
         }
 
-        function search() {
+    function search() {
     var input = document.getElementById("searchInput").value;
     var error = new Audio('ERROR.mp3');
     var confirm = new Audio('CONF.mp3');
@@ -88,18 +88,23 @@
     }; 
 
     if (secretLinks.hasOwnProperty(input)) { 
+        confirm.play();
+        document.getElementById("alert1").innerHTML = "loading...";
+        document.getElementById("alert1").style.display = "block";
+        // إخفاء رسالة الخطأ في حالة إدخال كلمة مرور صحيحة
+        document.getElementById("alert").style.display = "none";
         setTimeout(function() {
-          confirm.play();
-          document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
-                document.getElementById("alert1").style.display = "block";
-                    window.location.href = secretLinks[input];
-                }, 5000);
+            document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
+            document.getElementById("alert1").style.display = "block";
+        }, 2000);
+        setTimeout(function() {
+            window.location.href = secretLinks[input];
+        }, 5000);
     } else {
-    document.getElementById("alert").innerHTML = "Invalid keyword.Please try again.";
-                document.getElementById("alert").style.display = "block";
-                error.play();
-}
-    
+        document.getElementById("alert").innerHTML = "Invalid keyword.Please try again.";
+        document.getElementById("alert").style.display = "block";
+        error.play();
+    }
 }
 </script>
   <style>
