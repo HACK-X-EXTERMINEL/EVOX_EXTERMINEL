@@ -414,7 +414,7 @@
   position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
-  width: 340px;
+  width: 300px;
   height:auto;
   transform: translateX(-50%);
   border: 1px solid black;
