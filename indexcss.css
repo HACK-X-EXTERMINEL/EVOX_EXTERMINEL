@@ -19,7 +19,6 @@
         }
 
         .header img.SIZE {
-            
             width: 30%;
             height: 20%;
         }
@@ -28,7 +27,7 @@
             display: flex;
         }
 
-        .option {
+        .optio {
             width: 100px;
             height: 100px;
             margin: 10px;
