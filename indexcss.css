@@ -11,7 +11,7 @@
             backdrop-filter: blur(5px);
             background-attachment: fixed;
             background-repeat: no-repeat;
-            background-size: cover;
+           background-position: center; 
         }
 
         .header {
@@ -409,7 +409,7 @@
   position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
-  width: 300px;
+  width: 0%;
   height:auto;
   transform: translateX(-50%);
   border: 1px solid black;
@@ -606,7 +606,7 @@ li::before {
             }
   }
 #APP{
-  width:70%;
+  width:72%;
   box-shadow: 2px 3px 0px black;
 }
 
