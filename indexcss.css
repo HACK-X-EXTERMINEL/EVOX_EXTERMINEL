@@ -628,7 +628,7 @@ li::before {
   .section-container{
     position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
-  left: 50%;
+  left: 48%;
   width: 80%;
   height:auto;
   transform: translateX(-50%);
