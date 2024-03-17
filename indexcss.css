@@ -13,8 +13,6 @@
             background-repeat: no-repeat;
            background-position: right center; 
            background-size:cover;
-           width:90%;
-           
         }
 
         .header {
@@ -536,7 +534,7 @@
               border:solid 2px blue ;
               box-shadow: -10px -10px 10px yellow, 10px 10px 10px pink;
               border-radius:40px;
-              width:70%;
+              width:90%;
             }
             ul {
     list-style-type: none;
