@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Anta&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/TOL.png"/>
+    <link rel="stylesheet" href="css/TOOLCSS.css">
+    <title>HACK-X EXTERMINEL FOR TOOLBOX</title>
+</head>
+
+<body>
+  <div id="container">
+  <div id="container-content" >
+    <section class='container-header'>
+    <p class='container-content'>Hello! Welcome to our website.</p>
+    </section>
+    <h4>NEW :</h4>
+    <button id="close-btn">Close</button>
+  </div>
+</div>
+
+    <div id="board" class="board">
+      <div class="header">
+        <img src="img/TOL.png" alt="Circular Image" class="SIZE">
+        <br>
+        </div>
+        <h2>HACK-X EXTERMINEL FOR TOOLBOX</h2>
+
+        <form>
+            <label for="game">Your favorite App:</label>
+            <select id="game" name="game" onchange="handleGameChange()">
+                <option value="Nothing">Nothing</option>
+                <option value="lotusclient">Lotus Client 1.20.51</option>
+                <option value="cezarclient">Cezar Client 1.20.51</option>
+                
+                
+            </select>
+
+            <br>
+
+            <label for="bit">Bit:</label>
+            <select id="bit" name="bit">
+                <option value="Nothing">Nothing</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+               
+            </select>
+
+            <br>
+
+            <label for="choice">Choice:</label>
+            <select id="choice" name="choice">
+                <option value="Nothing">Nothing</option>
+                <option value="APK">APK</option>
+                <option value="PASS">PASSWORD</option>
+                
+            </select>
+
+            <br>
+
+            <label for="action">Link quality:</label>
+            <select id="action" name="action">
+                <option value="Nothing">Nothing</option>
+                <option value="(APK)">APK (link 1)</option>
+                <option value="(APK1)">APK (link2)</option>
+                <option value="(PASS)">PASSWORD (link 1)</option>
+                <option value="(PASS1)">PASSWORD (link 2)</option>
+            </select>
+
+            <br>
+
+            <button type="button" onclick="redirectUser()" id="B1" target="_blank">CONFIRMATION</button>
+
+            <br>
+
+            <p id="Parag" class="arabic"> هذا الرابط لدعم المادي</p>
+            <p id="Parag">This link is for financial support through link shortening</p>
+            <button id="B2"><a href="https://exe.io/HACK-X_Support_link" style="text-decoration:none">Financial support link</a></button>
+            <br>
+            
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>HACK-X EXTERMINEL</span></p>
+    </footer>
+
+    <div id="notification">Please select a valid link combination!</div>
+    <!-- كود Disqus -->
+    <div id="disqus_thread"></div>
+    <script>
+    window.onload = function() {
+  var container = document.getElementById('container');
+  var closeBtn = document.getElementById('close-btn');
+
+  var closeSound = new Audio('sounds/ERROR.mp3');
+
+  setTimeout(function() {
+    container.style.top = '160px';
+  }, 1);
+
+  closeBtn.onclick = function() {
+    container.style.top = '-800px';
+    closeSound.play();
+  };
+
+  setTimeout(function() {
+    container.style.top = '-800px';
+  }, 20000);
+};
+    function handleGameChange() {
+    var selectedGame = document.getElementById("game").value;
+    var bitSelect = document.getElementById("bit");
+    var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
+
+    // إعادة الخيارات إلى الحالة الأصلية
+    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option><option value="PASS">PASSWORD</option>';
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option><option value="(PASS)">PASSWORD (link 1)</option><option value="(PASS1)">PASSWORD (link 2)</option>';
+    
+    if (selectedGame === "lotusclient") {
+        removeOption("bit", "32");
+        removeOption("bit", "64");
+        removeOption("bit","Nothing");
+        bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
+    } else if (selectedGame === "cezarclient") {
+      removeOption("bit", "32");
+        removeOption("bit", "64");
+        removeOption("bit","Nothing");
+        bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
+    } else if (selectedGame === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
+    }
+}
+function redirectUser() {
+    var confirmationButton = document.getElementById("B1");
+    var countdownDiv = document.createElement("div");
+    var selectedGame = document.getElementById("game").value;
+    var selectedBit = document.getElementById("bit").value;
+    var selectedChoice = document.getElementById("choice").value;
+    var selectedAction = document.getElementById("action").value;
+
+    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+        document.getElementById("notification").innerHTML = "Please select a valid link combination!";
+        document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('sounds/ERROR.mp3');
+        errorSound.play();
+
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+        document.getElementById("notification").innerHTML = "Invalid link combination!";
+        document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('sounds/ERROR.mp3');
+        errorSound.play();
+
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
+
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
+
+    // عرض الإعلان
+    var adScript = document.createElement("script");
+adScript.setAttribute("type", "text/javascript");
+adScript.setAttribute("async", "async");
+adScript.setAttribute("src", "//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js");
+
+var adContainer = document.createElement("div");
+adContainer.setAttribute("id", "container-6b06c616fd56534111ed2480216ef224");
+
+var atOptions = {
+    'key': '6b06c616fd56534111ed2480216ef224',
+    'format': 'iframe', // إضافة format هنا
+    'height': 250,
+    'width': 300,
+    'params': {}
+};
+
+var adScript2 = document.createElement("script");
+adScript2.setAttribute("type", "text/javascript");
+adScript2.innerHTML = "var atOptions = " + JSON.stringify(atOptions) + ";";
+document.head.appendChild(adScript2);
+
+countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
+countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
+
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
+
+            // إخفاء الإعلان بعد انتهاء العداد
+            adScript.remove();
+            adContainer.remove();
+
+    var links = {
+        lotusclient: {
+            BIT36: {
+                PASS: {
+                    "(PASS)": "https://exe.io/JA70G",
+                    "(PASS1)": "https://cuty.io/aV5GWk4WL"
+                },
+                APK: {
+                    "(APK)": "https://shrinkme.us/lotusclient",
+                    "(APK1)": "https://try2link.com/lotusclient1"
+                }
+            }
+        },
+        cezarclient:{
+          BIT36:{
+            PASS:{
+                   "(PASS)": "https://exe.io/OG28H",
+                   "(PASS1)": "https://cuty.io/KxJsd67n"
+            },
+            APK:{
+                  "(APK)": "https://try2link.com/Lduf",
+                  "(APK1)": "https://shrinkme.us/uBIpPe2"
+            }
+          }
+        }
+    };
+
+    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                window.open(link, '_blank');
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }, 1000);
+        }
+    }, 1000);
+    var verificationSound = new Audio('sounds/CONF.mp3');
+        verificationSound.play();
+    }
+
+
+function removeOption(selectId, optionValue) {
+    var select = document.getElementById(selectId);
+    var option = select.querySelector("option[value='" + optionValue + "']");
+    if (option) {
+        select.removeChild(option);
+    }
+}
+
+var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'TOOLBOX';
+};
+
+(function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+// Disqus Counter
+var dsqCountScript = document.createElement('script');
+dsqCountScript.id = 'dsq-count-scr';
+dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+dsqCountScript.async = true;
+(document.head || document.body).appendChild(dsqCountScript);
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+
+</html>
