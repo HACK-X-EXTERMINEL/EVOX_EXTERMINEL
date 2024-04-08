@@ -106,7 +106,41 @@ function search() {
         error.play();
     }
 }
+function showWordSecret() {
+  var container = document.getElementById('secretWord');
+  var button2 = document.getElementById('button2');
+  var closebutton2 = document.getElementById('close-btnSW');
+  var countdown = document.getElementById('countdown');
 
+  var click = new Audio('click.wav');
+  var close = new Audio('close.wav');
+  var number = new Audio('pop.mp3');
+  button2.onclick = function () {
+    button2.style.left = '-1000px';
+    countdown.style.display = 'block';
+    click.play();
+    var counter = 3;
+    var timer = setInterval(function() {
+      countdown.innerHTML = "wait..." + counter;
+      counter--;
+      number.play();
+      if (counter < 0) {
+        clearInterval(timer);
+        countdown.style.display = 'none';
+
+        setTimeout(function() {
+          container.style.display = 'block';
+        }, 1000);
+      }
+    }, 1000);
+  };
+
+  closebutton2.onclick = function () {
+    container.style.top = '-800px';
+    button2.style.left = '0px';
+    close.play();
+  };
+}
 const phrases1 = [
     "1.20.71",
     "1.20.62",
@@ -168,14 +202,15 @@ function writeText2() {
 setInterval(writeText2, 150);
 </script>
   <style>
-
+  
+  
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
 </head>
 
 <body>
-<button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" style="color:rgba( 90, 6, 143,0.8);"></i></button>
-
+  <div id="countdown"></div>
+<button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" id="style1" ></i></button>
     <section class="section-container" id="secret">
         <div>
             <div class="container">
@@ -190,8 +225,20 @@ setInterval(writeText2, 150);
                 
             </div>
         </div>
-        <div id="notification"></div>
     </section>
+    <button onclick="showWordSecret()" id="button2"><i class="fa-solid fa-list fa-fade" id="style2" ></i></button>
+    <div id="secretWord">
+  <div id="secretWord-content" >
+    <section class='secretWord-header'>
+    <p class='secretWord-content'>Hello! This interface is for secret words</p>
+    </section>
+    <h4>the words:</h4>
+    <ul>
+      <li><h6>secret words</h6></li>
+   </ul>
+    <button id="close-btnSW">Close</button>
+  </div>
+</div>
       <div id="container">
   <div id="container-content" >
     <section class='container-header'>
@@ -222,8 +269,7 @@ setInterval(writeText2, 150);
 
 
         <br>
-        <h5><span id="text2"></span></h5>
-        <div class="options"></div>
+        <h5><span id="text2"></span></h5
     </div>
 
     <section class="background">
@@ -240,7 +286,7 @@ setInterval(writeText2, 150);
         <div class="social-button">
             <img src="FF.png" alt="FREE FIRE ICON" class="social-icon">
             <a href="LOGFF.html" style="text-decoration:none">
-                <div class="font-freefire" id="SIZE">FREE FIRE (HACK AND SICPRIT)</div>
+                <div class="font-freefire" id="SIZE">FREE FIRE (HACK AND SICPRIT) </div>
             </a>
         </div>
     </section>

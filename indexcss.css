@@ -113,6 +113,10 @@
         .toolbox {
             background: linear-gradient(45deg, #008000, #8B4513);
             padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
             animation: gradientMove 5s linear infinite;
@@ -200,10 +204,14 @@
 
         .pubg {
             background: linear-gradient(45deg, yellow,yellow, white, white,#29b6f6,#29b6f6);
-            background-size: 200% 200%;
             padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
-            animation: gradientMovePubg 5s linear infinite;
+            background-size: 200% 200%;
+            animation: gradientMove 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -222,9 +230,13 @@
         .freefire{
             background: linear-gradient(45deg, red, red ,black,black,red,red);
             padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
-            animation: gradientMoveFreefire 5s linear infinite;
+            animation: gradientMove 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -274,6 +286,10 @@
         .MCPE {
             background: linear-gradient(45deg, #3e2723,#3e2723, #00c853,#616161,#616161);
             padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
             animation: gradientMove 5s linear infinite;
@@ -323,6 +339,10 @@
         .PROTO {
             background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
             padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
             animation: gradientMove 5s linear infinite;
@@ -424,7 +444,7 @@
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-            z-index:999;
+            z-index:20;
         }
 
         @keyframes gradientMovePubg {
@@ -451,7 +471,6 @@
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-            z-index:999;
         }
 
         @keyframes gradientMovePubg {
@@ -475,7 +494,6 @@
             background-size: 300% 300%;
             padding: 10px;
             border-radius: 10px;
-            z-index:999;
             animation: gradientMoveFontToolbox 5s linear infinite;
         }
 
@@ -500,7 +518,7 @@
 #container-content h5 {
   color: green;
   text-align: left;
-  size:14px;
+  font-size:14px;
   font-family: "Protest Guerrilla", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -542,8 +560,8 @@
 
 li::before {
     content: "✔";
-    margin-right: 0.5em;
-    font-size:12px;
+    margin-right: 0.2em;
+    font-size:9px;
     float: left;
     color:#0fa3bd;
 }
@@ -575,7 +593,6 @@ li::before {
     cursor: pointer;
     width: 60%;
     box-shadow: 2px 3px 0px black;
-    border-radius: 50px;
     font-family: 'Agbalumo', system-ui;
     background: linear-gradient(45deg, #ffff00,#ffff00, #212121,#212121);
             border-radius: 40px;
@@ -601,30 +618,7 @@ li::before {
   box-shadow: 2px 3px 0px black;
 }
 
-  #notification {
-    display: none;
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #000;
-    color: #FFF;
-    border-radius: 30px;
-    z-index: 1000;
-    animation: fadeIn 0.5s ease-out;
-    text-align: center;
-    box-shadow: -10px -10px 10px red, 10px 10px 10px blue, 0 0 10px purple;
-  }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
   .section-container{
     position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
@@ -636,7 +630,6 @@ li::before {
   border-radius: 18px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: top 1s ease;
-  z-index:9999;
   background: linear-gradient(45deg, #212121,#212121,#ffff00, #ffff00);
             padding: 10px 10px;
             border-radius: 40px;
@@ -644,6 +637,7 @@ li::before {
             animation: gradientMove 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
+            z-index: 2;
         }
   #button{
   background-color: rgba( 90, 6, 143,0.4);
@@ -651,6 +645,29 @@ li::before {
   padding: 10px 30px;
   border-radius: 8px;
   position: absolute;
+}
+#style1{
+  color:rgba( 90, 6, 143,0.8);
+}
+  #button2{
+  background-color: rgba(245, 245, 12,0.4);
+  border: 2px solid rgba(245, 245, 12,0.4);
+  padding: 10px 30px;
+  border-radius: 8px;
+  position: absolute;
+  margin-left:85%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+  #button2:hover {
+  background-color: rgba(245, 12, 12, 0.4);
+  border: 2px solid rgba(245, 12, 12, 0.4);
+}
+#style2{
+  color:rgba(245, 245, 12,0.8);
+}
+#style2:hover{
+  color:rgba(245, 12, 12, 0.4); 
 }
 #closebutton{
   vertical-align: bottom;
@@ -662,7 +679,6 @@ li::before {
     display: none;
     background-color: #19dcc587;
     color:#d60735;
-    z-index:99999;
     border-radius:40px;
     opacity: 0.5;
     
@@ -671,7 +687,6 @@ li::before {
     display: none;
     background-color: #19dcc587;
     color:#10f642df;
-    z-index:99999;
     border-radius:40px;
     opacity: 0.5;
     
@@ -698,4 +713,150 @@ li::before {
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
+  }
+  #secretWord{
+  position: fixed;
+  top: 185px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width:70%;
+  display: none;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 1s ease;
+  background: linear-gradient(45deg, black, #f5f50c, #2bf50c, #2bf50c, #f5f50c, black);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:19;
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+#secretWord-content {
+  font-size:16px;
+}
+.secretWord-header{
+            background: linear-gradient(45deg, #cc0e60, #cc0e60, #f5f50c, #f5f50c,#1481a6,#1481a6,#1481a6);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            border:none;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+#secretWord-content p {
+  text-align: center;
+  size:12px;
+  background: linear-gradient(45deg,#1481a6, #1481a6,#1481a6, #1481a6, #f5f50c,#f5f50c ,#cc0e60, #cc0e60);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+       
+#secretWord-content h4 {
+  color: red;
+  text-align: left;
+  size:16px
+}
+#secretWord-content h6 {
+  color: #520f3e;
+  text-align: left;
+  font-size:12px;
+  font-weight:400;
+  font-style: normal;
+}
+#close-btnSW{
+  margin-left:35%;
+  margin-top:15px;
+  vertical-align: bottom;
+        cursor: pointer;
+       font-family: 'Agbalumo', Arial, sans-serif;
+        background: linear-gradient(45deg, black, #f5f50c, #2bf50c, #2bf50c, #f5f50c, black);
+             background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            }
+      @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+#countdown {
+    position: fixed;
+    text-align: center;
+    font-size:24px;
+  top:250px;
+  color:red;
+  left: 50%;
+  width:20%;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 1s ease;
+  background: linear-gradient(45deg, black, #f5f50c, #2bf50c, #2bf50c, #f5f50c, black);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:21;
+            display:none;
   }
