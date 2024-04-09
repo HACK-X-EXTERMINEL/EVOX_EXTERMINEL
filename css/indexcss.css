@@ -860,3 +860,26 @@ li::before {
             z-index:21;
             display:none;
   }
+  #VIPFREE{
+    color:#0cc8cf;
+    background:red;
+    border-radius: 60px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+  }
+  .list{
+    -webkit-touch-callout: default;
+-webkit-user-select: all;
+-khtml-user-select: all;
+-moz-user-select: all;
+-ms-user-select: all;
+user-select: all;
+  }
+  ::selection {
+  color: white;
+  background: black;
+}
