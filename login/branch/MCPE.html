@@ -25,7 +25,7 @@
     </section>
     <h4>NEW :</h4>
     <ul>
-   <li><h5><u>MINECRAFT: MC PE 1.20.73 </u></h5></li>
+   <li><h5><u>MINECRAFT: MC PE 1.20.80 </u></h5></li>
    </ul>
     <button id="close-btn">Close</button>
   </div>
@@ -41,7 +41,8 @@
             <label for="game">Your favorite App:</label>
         <select id="game" name="game" onchange="handleGameChange()">
             <option value="Nothing">Nothing</option>
-            <option value="MCPE1_20_73">MC PE(1-20-73)</option>
+             <option value="MCPE1_20_80">MC PE(1-20-80)</option>
+            <option value="MCPE1_20_73">MC PE(1-20-73) 64BIT</option>
             <option value="MCPE1_20_71">MC PE(1-20-71)</option>
             <option value="MCPE1_20_62">MC PE(1-20-62)</option>
                 <option value="MCPE1_20_60">MC PE(1-20-60-20)</option>
@@ -184,7 +185,26 @@
   }, 20000);
 };
 
+function handleGameChange() {
+    var selectedGame = document.getElementById("game").value;
+    var bitSelect = document.getElementById("bit");
+    var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
 
+    // إعادة الخيارات إلى الحالة الأصلية
+    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="bit36">32+64</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option>';
+    
+    if (selectedGame === "MCPE1_20_73") {
+        removeOption("bit", "Nothing");
+        removeOption("bit", "bit36");
+        bitSelect.innerHTML += '<option value="bit64">64 BIT</option>';
+    } else if (selectedGame === "FF1") {
+        // تعديل الخيارات حسب لعبة FF1
+    } else if (selectedGame === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
+    }
+}
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
     var countdownDiv = document.createElement("div");
@@ -254,8 +274,16 @@ countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
             adContainer.remove();
 
             var links = {
-              MCPE1_20_73: {
+              MCPE1_20_80: {
                     bit36: {
+                        APK: {
+                            "(APK)": "https://try2link.com/YgqqE5X",
+                            "(APK1)": "https://shrinkme.cc/aPEAEC"
+                        }
+                    }
+                },
+              MCPE1_20_73: {
+                    bit64: {
                         APK: {
                             "(APK)": "https://try2link.com/YQpzVwN6",
                             "(APK1)": "https://shrinkme.site/Q3D9QC"
