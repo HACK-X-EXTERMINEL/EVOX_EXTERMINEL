@@ -17,15 +17,6 @@
          <link rel="shortcut icon" href="image/list.png"/>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
-     <?php
-// أرسل رأس HTTP للتحقق من وجود مانع الإعلانات
-header('Content-Type: application/javascript');
-echo "var adBlockEnabled = false;";
-echo "document.write('<div id=\"ad-test\" style=\"display:none;\">test</div>');";
-echo "if(document.getElementById('ad-test')) {";
-echo "  adBlockEnabled = true;";
-echo "}";
-?>
      <script>
 var disqus_config = function () {
     this.page.url = window.location.href;
@@ -213,19 +204,26 @@ function writeText2() {
 
 setInterval(writeText2, 150);
 </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  // إنشاء عنصر iframe وهمي
-  var testAdIframe = document.createElement('iframe');
-  testAdIframe.style.height = '1px';
-  testAdIframe.style.width = '1px';
-  testAdIframe.style.position = 'absolute';
-  testAdIframe.style.visibility = 'hidden';
-  document.body.appendChild(testAdIframe);
+  <style>
+  
+  
+    </style>
+    <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
+</head>
+
+<body>
+  <script>
+    // الكود التالي يقوم بالتحقق من وجود مانع الإعلانات
+document.addEventListener('DOMContentLoaded', function() {
+  // إنشاء عنصر script وهمي
+  var testAd = document.createElement('script');
+  testAd.innerHTML = 'var adBlockEnabled = false;';
+  testAd.className = 'ad-class';
+  document.body.appendChild(testAd);
 
   // تحقق من وجود العنصر بعد فترة قصيرة
   setTimeout(function() {
-    if (testAdIframe.offsetHeight === 0) {
+    if (testAd.offsetHeight === 0) {
       // إظهار رسالة للمستخدم
       var messageDiv = document.createElement('div');
       messageDiv.textContent = 'يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.';
@@ -242,35 +240,11 @@ setInterval(writeText2, 150);
       console.log('الإعلانات ليست محظورة');
     }
     // إزالة العنصر الوهمي بعد الاختبار
-    document.body.removeChild(testAdIframe);
+    document.body.removeChild(testAd);
   }, 100);
 });
-</script>
-  <style>
-  
-  
-    </style>
-    <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
-</head>
 
-<body>
-  <script type="text/javascript">
-  // تحقق من قيمة المتغير adBlockEnabled
-  if (window.adBlockEnabled) {
-    // إظهار رسالة للمستخدم
-    var messageDiv = document.createElement('div');
-    messageDiv.textContent = 'يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.';
-    messageDiv.style.position = 'fixed';
-    messageDiv.style.bottom = '10px';
-    messageDiv.style.right = '10px';
-    messageDiv.style.backgroundColor = 'red';
-    messageDiv.style.color = 'white';
-    messageDiv.style.padding = '10px';
-    messageDiv.style.zIndex = '1000';
-    document.body.appendChild(messageDiv);
-  }
-</script>
-
+  </script>
   <div id="countdown"></div>
 <button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" id="style1" ></i></button>
     <section class="section-container" id="secret">
