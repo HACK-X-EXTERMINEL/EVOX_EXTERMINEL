@@ -236,6 +236,36 @@ setInterval(writeText2, 150);
     document.body.removeChild(testAdIframe);
   }, 100);
 });
+// الكود التالي يقوم بالتحقق من وجود مانع الإعلانات
+document.addEventListener('DOMContentLoaded', function() {
+  // إنشاء عنصر script وهمي
+  var testAd = document.createElement('script');
+  testAd.innerHTML = 'var adBlockEnabled = false;';
+  testAd.className = 'ad-class';
+  document.body.appendChild(testAd);
+
+  // تحقق من وجود العنصر بعد فترة قصيرة
+  setTimeout(function() {
+    if (testAd.offsetHeight === 0) {
+      // إظهار رسالة للمستخدم
+      var messageDiv = document.createElement('div');
+      messageDiv.textContent = 'يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.';
+      messageDiv.style.position = 'fixed';
+      messageDiv.style.bottom = '10px';
+      messageDiv.style.right = '10px';
+      messageDiv.style.backgroundColor = 'red';
+      messageDiv.style.color = 'white';
+      messageDiv.style.padding = '10px';
+      messageDiv.style.zIndex = '1000';
+      document.body.appendChild(messageDiv);
+    } else {
+      // الإعلانات ليست محظورة
+      console.log('الإعلانات ليست محظورة');
+    }
+    // إزالة العنصر الوهمي بعد الاختبار
+    document.body.removeChild(testAd);
+  }, 100);
+});
 
 </script>
   <style>
