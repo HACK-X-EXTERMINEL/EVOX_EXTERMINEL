@@ -204,6 +204,40 @@ function writeText2() {
 
 setInterval(writeText2, 150);
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // إنشاء عنصر iframe وهمي
+  var testAdIframe = document.createElement('iframe');
+  testAdIframe.style.height = '1px';
+  testAdIframe.style.width = '1px';
+  testAdIframe.style.position = 'absolute';
+  testAdIframe.style.visibility = 'hidden';
+  document.body.appendChild(testAdIframe);
+
+  // تحقق من وجود العنصر بعد فترة قصيرة
+  setTimeout(function() {
+    if (testAdIframe.offsetHeight === 0) {
+      // إظهار رسالة للمستخدم
+      var messageDiv = document.createElement('div');
+      messageDiv.textContent = 'يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.';
+      messageDiv.style.position = 'fixed';
+      messageDiv.style.bottom = '10px';
+      messageDiv.style.right = '10px';
+      messageDiv.style.backgroundColor = 'red';
+      messageDiv.style.color = 'white';
+      messageDiv.style.padding = '10px';
+      messageDiv.style.zIndex = '1000';
+      document.body.appendChild(messageDiv);
+    } else {
+      // الإعلانات ليست محظورة
+      console.log('الإعلانات ليست محظورة');
+    }
+    // إزالة العنصر الوهمي بعد الاختبار
+    document.body.removeChild(testAdIframe);
+  }, 100);
+});
+
+</script>
   <style>
   
   
