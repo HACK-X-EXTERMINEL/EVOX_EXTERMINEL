@@ -29,10 +29,11 @@
         }
 
         footer {
-           background-color: black;
+           background: linear-gradient(45deg, white, black);
            border-radius: 20px;
            padding: 10px;
            text-align: center;
+           border:5px solid black;
         }
 
         .copyright {
@@ -74,22 +75,23 @@
             border-radius: 10px;
         }
 
-        .social-option.YT {
-            background-color: red;
-        }
-
-        .social-option.Telegram {
-            background-color: blue;
-        }
+       
 
         .spacing1 {
             letter-spacing: 1px;
             background-color: red;
+            box-shadow: 0px 5px 3px black;
         }
 
         .spacing2 {
             letter-spacing: 2px;
             background: blue;
+            box-shadow: 0px 5px 3px black;
+        }
+        .spacing3 {
+            letter-spacing: 2px;
+            background: #198bfc;
+            box-shadow: 0px 5px 3px black;
         }
 
         .social-optionyt {
