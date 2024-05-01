@@ -17,6 +17,15 @@
          <link rel="shortcut icon" href="image/list.png"/>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
+     <?php
+// أرسل رأس HTTP للتحقق من وجود مانع الإعلانات
+header('Content-Type: application/javascript');
+echo "var adBlockEnabled = false;";
+echo "document.write('<div id=\"ad-test\" style=\"display:none;\">test</div>');";
+echo "if(document.getElementById('ad-test')) {";
+echo "  adBlockEnabled = true;";
+echo "}";
+?>
      <script>
 var disqus_config = function () {
     this.page.url = window.location.href;
@@ -245,6 +254,23 @@ setInterval(writeText2, 150);
 </head>
 
 <body>
+  <script type="text/javascript">
+  // تحقق من قيمة المتغير adBlockEnabled
+  if (window.adBlockEnabled) {
+    // إظهار رسالة للمستخدم
+    var messageDiv = document.createElement('div');
+    messageDiv.textContent = 'يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.';
+    messageDiv.style.position = 'fixed';
+    messageDiv.style.bottom = '10px';
+    messageDiv.style.right = '10px';
+    messageDiv.style.backgroundColor = 'red';
+    messageDiv.style.color = 'white';
+    messageDiv.style.padding = '10px';
+    messageDiv.style.zIndex = '1000';
+    document.body.appendChild(messageDiv);
+  }
+</script>
+
   <div id="countdown"></div>
 <button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" id="style1" ></i></button>
     <section class="section-container" id="secret">
