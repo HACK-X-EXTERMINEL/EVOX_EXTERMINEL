@@ -204,6 +204,34 @@ function writeText2() {
 
 setInterval(writeText2, 150);
 </script>
+<script>
+  // الكشف عن مانع الإعلانات
+function detectAdBlocker() {
+  // إنشاء عنصر إعلان وهمي
+  let adBlockDetected = false;
+  const ad = document.createElement('div');
+  ad.innerHTML = ' ';
+  ad.className = 'adsbox';
+  document.body.appendChild(ad);
+
+  // التحقق مما إذا كان العنصر مخفيًا - مما يعني أن مانع الإعلانات نشط
+  window.setTimeout(function() {
+    if (ad.offsetHeight === 0) {
+      adBlockDetected = true;
+    }
+    ad.remove();
+
+    // إظهار رسالة للمستخدم إذا تم الكشف عن مانع الإعلانات
+    if (adBlockDetected) {
+      alert('يبدو أنك تستخدم مانع الإعلانات. يرجى تعطيله لدعم الموقع.');
+    }
+  }, 100);
+}
+
+// استدعاء الدالة عند تحميل الصفحة
+window.onload = detectAdBlocker;
+
+</script>
   <style>
   
   
