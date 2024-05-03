@@ -418,10 +418,9 @@ function detectBraveBrowser() {
 </script>
 </section>
 <script>
-// الكشف عن تحميل الإعلانات// الكشف عن متصفح Brave
-function detectBraveBrowser() {
-  // تحقق من وجود خصائص محددة تخص متصفح Brave
-  return navigator.brave && await navigator.brave.isBrave() || false;
+// الكشف عن متصفح Brave
+function isBraveBrowser() {
+  return navigator.userAgent.includes('Brave');
 }
 
 // الكشف عن تحميل الإعلانات
@@ -429,13 +428,11 @@ function checkAdsLoaded() {
   var adContainer = document.getElementById('ad-container');
   if (adContainer && adContainer.innerHTML.trim() === '') {
     // تحقق من نوع المتصفح قبل إظهار الشاشة التحذيرية
-    detectBraveBrowser().then(isBrave => {
-      if (isBrave) {
-        // إظهار الخلفية الشفافة والرسالة التحذيرية إذا كان المتصفح هو Brave
-        document.querySelector('.overlay').style.display = 'block';
-        document.querySelector('.warning-message').style.display = 'block';
-      }
-    });
+    if (isBraveBrowser()) {
+      // إظهار الخلفية الشفافة والرسالة التحذيرية إذا كان المتصفح هو Brave
+      document.querySelector('.overlay').style.display = 'block';
+      document.querySelector('.warning-message').style.display = 'block';
+    }
   }
 }
 
