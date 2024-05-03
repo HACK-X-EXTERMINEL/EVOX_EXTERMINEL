@@ -439,6 +439,28 @@ function checkAdsLoaded() {
 window.onload = function() {
   setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
 };
+// الكشف عن متصفح Google Chrome
+function isChromeBrowser() {
+  return navigator.userAgent.indexOf("Chrome") !== -1 && navigator.userAgent.indexOf("Edge") === -1;
+}
+
+// الكشف عن تحميل الإعلانات
+function checkAdsLoaded() {
+  var adContainer = document.getElementById('ad-container');
+  if (adContainer && adContainer.innerHTML.trim() === '') {
+    // تحقق من نوع المتصفح قبل إظهار الشاشة التحذيرية
+    if (!isChromeBrowser()) {
+      // إظهار الخلفية الشفافة والرسالة التحذيرية إذا لم يكن المتصفح هو Chrome
+      document.querySelector('.overlay').style.display = 'block';
+      document.querySelector('.warning-message').style.display = 'block';
+    }
+  }
+}
+
+// استدعاء الدالة بعد فترة زمنية كافية لتحميل الإعلانات
+window.onload = function() {
+  setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
+};
 
 </script>
 </body>
