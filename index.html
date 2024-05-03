@@ -211,24 +211,6 @@ function detectBraveBrowser() {
     alert('عذرًا، المتصفح Brave غير مدعوم على هذا الموقع.');
   }
 }
-
-// استدعاء الدالة عند تحميل الصفحة
-window.onload = detectBraveBrowser;
-// الكشف عن تحميل الإعلانات
-function checkAdsLoaded() {
-  // افترض أن لديك عنصر إعلان بمعرف 'ad-container'
-  var adContainer = document.getElementById('ad-container');
-  if (adContainer && adContainer.innerHTML.trim() === '') {
-    // الإعلان لم يتم تحميله، عرض رسالة تحذيرية
-    alert('هناك شيء غير متطابق، الرجاء التحقق من إعدادات الإعلانات.');
-  }
-}
-
-// استدعاء الدالة بعد فترة زمنية كافية لتحميل الإعلانات
-window.onload = function() {
-  setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
-};
-
 </script>
 
   <style>
@@ -239,7 +221,10 @@ window.onload = function() {
 </head>
 
 <body>
+<div id="ad-container">إعلان</div>
 
+<div class="overlay"></div>
+<div class="warning-message">هناك شيء غير متطابق، الرجاء التحقق من إعدادات الإعلانات.</div>
   <div id="countdown"></div>
 <button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" id="style1" ></i></button>
     <section class="section-container" id="secret">
@@ -412,6 +397,21 @@ window.onload = function() {
 	document.write('<scr' + 'ipt type="text/javascript" src="//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js"></scr' + 'ipt>');
 </script>
 </section>
+<script>
+// الكشف عن تحميل الإعلانات
+function checkAdsLoaded() {
+  var adContainer = document.getElementById('ad-container');
+  if (adContainer && adContainer.innerHTML.trim() === '') {
+    // إظهار الخلفية الشفافة والرسالة التحذيرية
+    document.querySelector('.overlay').style.display = 'block';
+    document.querySelector('.warning-message').style.display = 'block';
+  }
+}
 
+// استدعاء الدالة بعد فترة زمنية كافية لتحميل الإعلانات
+window.onload = function() {
+  setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
+};
+</script>
 </body>
 </html>
