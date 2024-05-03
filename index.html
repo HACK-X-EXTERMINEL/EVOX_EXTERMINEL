@@ -211,29 +211,6 @@ function detectBraveBrowser() {
     alert('عذرًا، المتصفح Brave غير مدعوم على هذا الموقع.');
   }
 }
-// الكشف عن متصفح Brave
-function isBraveBrowser() {
-  return navigator.brave && navigator.brave.isBrave || false;
-}
-
-// الكشف عن تحميل الإعلانات
-function checkAdsLoaded() {
-  var adContainer = document.getElementById('ad-container');
-  if (adContainer && adContainer.innerHTML.trim() === '') {
-    // تحقق من نوع المتصفح قبل إظهار الشاشة التحذيرية
-    if (isBraveBrowser()) {
-      // إظهار الخلفية الشفافة والرسالة التحذيرية إذا كان المتصفح هو Brave
-      document.querySelector('.overlay').style.display = 'block';
-      document.querySelector('.warning-message').style.display = 'block';
-    }
-  }
-}
-
-// استدعاء الدالة بعد فترة زمنية كافية لتحميل الإعلانات
-window.onload = function() {
-  setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
-};
-
 </script>
 
   <style>
@@ -440,6 +417,29 @@ window.onload = function() {
 	document.write('<scr' + 'ipt type="text/javascript" src="//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js"></scr' + 'ipt>');
 </script>
 </section>
+<script>// الكشف عن متصفح Brave
+function isBraveBrowser() {
+  return navigator.brave && navigator.brave.isBrave || false;
+}
 
+// الكشف عن تحميل الإعلانات
+function checkAdsLoaded() {
+  var adContainer = document.getElementById('ad-container');
+  if (adContainer && adContainer.innerHTML.trim() === '') {
+    // تحقق من نوع المتصفح قبل إظهار الشاشة التحذيرية
+    if (isBraveBrowser()) {
+      // إظهار الخلفية الشفافة والرسالة التحذيرية إذا كان المتصفح هو Brave
+      document.querySelector('.overlay').style.display = 'block';
+      document.querySelector('.warning-message').style.display = 'block';
+    }
+  }
+}
+
+// استدعاء الدالة بعد فترة زمنية كافية لتحميل الإعلانات
+window.onload = function() {
+  setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
+};
+
+</script>
 </body>
 </html>
