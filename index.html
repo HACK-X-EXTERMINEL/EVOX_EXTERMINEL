@@ -418,13 +418,24 @@ function detectBraveBrowser() {
 </script>
 </section>
 <script>
+// الكشف عن تحميل الإعلانات// الكشف عن متصفح Brave
+function detectBraveBrowser() {
+  // تحقق من وجود خصائص محددة تخص متصفح Brave
+  return navigator.brave && await navigator.brave.isBrave() || false;
+}
+
 // الكشف عن تحميل الإعلانات
 function checkAdsLoaded() {
   var adContainer = document.getElementById('ad-container');
   if (adContainer && adContainer.innerHTML.trim() === '') {
-    // إظهار الخلفية الشفافة والرسالة التحذيرية
-    document.querySelector('.overlay').style.display = 'block';
-    document.querySelector('.warning-message').style.display = 'block';
+    // تحقق من نوع المتصفح قبل إظهار الشاشة التحذيرية
+    detectBraveBrowser().then(isBrave => {
+      if (isBrave) {
+        // إظهار الخلفية الشفافة والرسالة التحذيرية إذا كان المتصفح هو Brave
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.warning-message').style.display = 'block';
+      }
+    });
   }
 }
 
@@ -432,6 +443,7 @@ function checkAdsLoaded() {
 window.onload = function() {
   setTimeout(checkAdsLoaded, 5000); // تحقق بعد 5 ثواني
 };
+
 </script>
 </body>
 </html>
