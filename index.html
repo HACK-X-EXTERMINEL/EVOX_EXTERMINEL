@@ -214,7 +214,27 @@ function detectBraveBrowser() {
 </script>
 
   <style>
-  
+.overlay {
+    position: fixed; /* ثابت في الشاشة */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.5); /* نصف شفاف */
+    z-index: 2; /* فوق العناصر الأخرى */
+  }
+
+  /* تنسيق الرسالة التحذيرية */
+  .warning-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* نص أبيض */
+    background-color: red; /* خلفية حمراء */
+    padding: 20px;
+    z-index: 3; /* فوق الخلفية الشفافة */
+  }
   
     </style>
     <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
