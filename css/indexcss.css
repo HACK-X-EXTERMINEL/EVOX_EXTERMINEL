@@ -169,7 +169,7 @@
             font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
-            animation: gradientMove 5s linear infinite, heartbeat 5s infinite;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -215,7 +215,7 @@
             font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 200% 200%;
-            animation: gradientMove 5s linear infinite, heartbeat 5s infinite;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -229,7 +229,7 @@
             font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
-            animation: gradientMove 5s linear infinite, heartbeat 5s infinite;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -261,7 +261,7 @@
             font-family: 'Agbalumo', system-ui;
             border-radius: 40px;
             background-size: 300% 300%;
-            animation: gradientMove 5s linear infinite, heartbeat 5s infinite;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
         }
@@ -292,7 +292,7 @@
             background-size: 300% 300%;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-            animation: gradientMove 5s linear infinite, heartbeat 5s infinite;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
         }
 
         @keyframes gradientMove {
@@ -871,3 +871,27 @@ user-select: all;
 .copyright span:nth-child(17):after {
   animation-delay: 0.6s;
 }
+.SHOP{
+            background: linear-gradient(45deg, #7f12b2, #7f12b2 ,black,black,#7f12b2,#7f12b2);
+            padding: 10px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 60%;
+            font-family: 'Agbalumo', system-ui;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite, heartbeat 8s infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        .font-SHOP {
+            background: linear-gradient(45deg, black,black,black,#7f12b2,black,black,black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMove 5s linear infinite;
+        }
