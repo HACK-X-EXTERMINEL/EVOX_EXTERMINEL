@@ -442,6 +442,7 @@
               box-shadow: -10px -10px 10px yellow, 10px 10px 10px pink;
               border-radius:40px;
               width:90%;
+              b
             }
             ul {
     list-style-type: none;
@@ -475,8 +476,7 @@ li::before {
     border-radius: 50px;
     font-family: 'Agbalumo', system-ui;
   }
-
-    .search {
+.searchblock {
     padding: 10px 30px;
     border: 1px solid black;
     cursor: pointer;
@@ -487,6 +487,20 @@ li::before {
             border-radius: 40px;
             background-size: 300% 300%;
             animation:gradientMove 5s linear infinite,fade 5s infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+    }
+    .search {
+    padding: 10px 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 60%;
+    box-shadow: 2px 3px 0px black;
+    font-family: 'Agbalumo', system-ui;
+    background: linear-gradient(45deg, #ffff00,#ffff00, #212121,#212121);
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation:gradientMove 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
     }
@@ -513,7 +527,6 @@ li::before {
     opacity: 0.8;
   }
 }
-
 #APP{
   width:75%;
   box-shadow: 2px 3px 0px black;
@@ -575,6 +588,20 @@ li::before {
   padding: 10px 10px;
   width: 40%;
   margin-left:30%;
+  background: linear-gradient(45deg #ffff00,black,black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+}
+#search{
+  background: linear-gradient(45deg #ffff00,black,black,black);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
 }
   #alert{
     display: none;
