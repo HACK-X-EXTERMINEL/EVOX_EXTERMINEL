@@ -23,7 +23,6 @@
             width: 30%;
             height: 20%;
         }
-
         .options {
             display: flex;
         }
@@ -753,7 +752,7 @@ li::before {
      user-select: none;
   }
   .list{
-    -webkit-touch-callout: default;
+   -webkit-touch-callout: default;
 -webkit-user-select: all;
 -khtml-user-select: all;
 -moz-user-select: all;
