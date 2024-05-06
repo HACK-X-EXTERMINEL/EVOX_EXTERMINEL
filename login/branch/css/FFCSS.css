@@ -33,7 +33,6 @@
         #board {
             border-radius: 40px;
             color: black;
-            padding: 20px;
             background: linear-gradient(45deg, red, red, black, red, red);
             padding: 10px 20px;
             background-size: 300% 300%;
