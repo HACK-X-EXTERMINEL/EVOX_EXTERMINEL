@@ -119,7 +119,7 @@
             padding: 20px;
             background-color: #000;
             border-radius: 10px;
-            z-index: 1000;
+            z-index: 100;
             color:red;
         }
 
@@ -241,7 +241,7 @@
   position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
-  width: 340px;
+  width: 70%;
   height:auto;
   transform: translateX(-50%);
   border: 1px solid black;
@@ -255,7 +255,7 @@
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-            z-index:999;
+            z-index:9;
         }
 
         @keyframes gradientMove {
@@ -282,7 +282,7 @@
             animation: gradientMovePubg 5s linear infinite;
             backdrop-filter: blur(10px);
             filter: brightness(120%) saturate(150%);
-            z-index:999;
+            z-index:9;
         }
 
         @keyframes gradientMovePubg {
@@ -306,7 +306,7 @@
             background-size: 300% 300%;
             padding: 10px;
             border-radius: 10px;
-            z-index:999;
+            z-index:9;
             animation: gradientMoveFontToolbox 5s linear infinite;
         }
 

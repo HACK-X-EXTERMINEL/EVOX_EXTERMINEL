@@ -36,7 +36,7 @@
             color: black;
             padding: 20px;
             background: linear-gradient(45deg, #008000,#008000, #8B4513,#008000,#008000);
-            padding: 10px 30px;
+            padding: 10px 20px;
             background-size: 300% 300%;
             animation: gradientMove 5s linear infinite;
             backdrop-filter: blur(10px);
@@ -229,7 +229,7 @@
   position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
-  width: 340px;
+  width: 70%;
   height:auto;
   transform: translateX(-50%);
   border: 1px solid black;
