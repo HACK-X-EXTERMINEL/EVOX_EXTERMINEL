@@ -40,6 +40,16 @@ function writeText1() {
     document.getElementById('text1').innerText = phrases1[currentPhrase1].slice(0, currentCharacter1);
 }
 setInterval(writeText1, 150);
+function copyText() {
+  var text = document.getElementById("sentence").innerText;
+  var tempInput = document.createElement("input");
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+  alert("تم نسخ الجملة: " + text);
+}
     </script>
 </head>
 
@@ -52,7 +62,9 @@ setInterval(writeText1, 150);
     <h4>NEW :</h4>
     <ul>
       <li><h5><u>Passwords are removed forever 🌟😻</u></h5></li>
-   <li><h5><u>EXOBOX 1.20.80 </u></h5></li>
+      <li><h5><u>Cezar Client 1.20.80</u></h5></li>
+   <li><h5><u>EXOBOX 1.20.80</u></h5></li>
+   <li><h5><u >TELEGRAM : <a class="list" href="https://t.me/HACKX_EXTERMINEL" id="sentence">https://t.me/HACKX_EXTERMINEL</a><button class="copy" onclick="copyText()">copy link</button></u></h5></li>
    <li><h5 style="color:yellow;"><u><strong>There is no version for Toolbox <span id="text1"></span></strong></u></h5></li>
    </ul>
     <button id="close-btn">Close</button>
@@ -70,7 +82,8 @@ setInterval(writeText1, 150);
             <label for="game">Your favorite App:</label>
             <select id="game" name="game" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
-                <option value="EXOBOX4_4V">EXOBOX 1.20.80</option>
+                <option value="Cezar_Client1_20_80">EXOBOX 1.20.80</option>
+                <option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>
             </select>
 
             <br>
@@ -153,13 +166,10 @@ setInterval(writeText1, 150);
     choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option>';
 actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
     
-    if (selectedGame === "EXOBOX4_4V") {
+    if (selectedGame === "EXOBOX1_20_80") {
         removeOption("bit", "32");
-    } else if (selectedGame === "cezarclient") {
+    } else if (selectedGame === "Cezar_Client1_20_80") {
       removeOption("bit", "32");
-        removeOption("bit", "64");
-        removeOption("bit","Nothing");
-        bitSelect.innerHTML += '<option value="BIT36">32+64</option>';
     } else if (selectedGame === "FF2") {
         // تعديل الخيارات حسب لعبة FF2
     }
@@ -252,7 +262,15 @@ countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
             adContainer.remove();
 
     var links = {
-        EXOBOX4_4V: {
+        EXOBOX1_20_80: {
+            64: {
+                APK: {
+                    "(APK)": "https://try2link.com/d8RRej",
+                    "(APK1)": "https://stfly.biz/6THGH"
+                }
+            }
+        },
+        Cezar_Client1_20_80: {
             64: {
                 APK: {
                     "(APK)": "https://try2link.com/wRsJ",
