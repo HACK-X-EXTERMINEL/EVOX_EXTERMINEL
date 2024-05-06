@@ -222,19 +222,19 @@ function redirectUser() {
     confirmationButton.innerText = "Loading...";
 
     // عرض الإعلان
-    var adScript = document.createElement("script");
+var adScript = document.createElement("script");
 adScript.setAttribute("type", "text/javascript");
 adScript.setAttribute("async", "async");
-adScript.setAttribute("src", "//noisesperusemotel.com/6b06c616fd56534111ed2480216ef224/invoke.js");
+adScript.setAttribute("src", "https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g");
 
 var adContainer = document.createElement("div");
-adContainer.setAttribute("id", "container-6b06c616fd56534111ed2480216ef224");
+adContainer.setAttribute("id", "container-udbaa");
 
 var atOptions = {
-    'key': '6b06c616fd56534111ed2480216ef224',
-    'format': 'iframe', // إضافة format هنا
-    'height': 250,
-    'width': 300,
+    'key': 'udbaa',
+    'format': 'iframe',
+    'height': 60,
+    'width':468,
     'params': {}
 };
 
@@ -246,21 +246,20 @@ document.head.appendChild(adScript2);
 countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
 countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
 
-    // عداد تنازلي من 5 إلى 0
-    var countdownValue = 5;
-    var countdownInterval = setInterval(function() {
-        countdownDiv.innerText = "wait..." + countdownValue;
-        countdownValue--;
-        if (countdownValue < 0) {
-            clearInterval(countdownInterval);
-            countdownDiv.style.display = "none";
-            countdownDiv.innerText = "5";
-            confirmationButton.innerText = "This is your link";
+// عداد تنازلي من 5 إلى 0
+var countdownValue = 5;
+var countdownInterval = setInterval(function() {
+    countdownDiv.innerText = "wait..." + countdownValue;
+    countdownValue--;
+    if (countdownValue < 0) {
+        clearInterval(countdownInterval);
+        countdownDiv.style.display = "none";
+        countdownDiv.innerText = "5";
+        confirmationButton.innerText = "This is your link";
 
-            // إخفاء الإعلان بعد انتهاء العداد
-            adScript.remove();
-            adContainer.remove();
-
+        // إخفاء الإعلان بعد انتهاء العداد
+        adScript.remove();
+        adContainer.remove();
     var links = {
         EXOBOX1_20_80: {
             64: {
