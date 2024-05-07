@@ -147,12 +147,12 @@ function copyText() {
   }, 1);
 
   closeBtn.onclick = function() {
-    container.style.top = '-800px';
+    container.style.top = '-900px';
     closeSound.play();
   };
 
   setTimeout(function() {
-    container.style.top = '-800px';
+    container.style.top = '-900px';
   }, 20000);
 };
     function handleGameChange() {
@@ -221,69 +221,41 @@ function redirectUser() {
     // تغيير نص الزر إلى "Loading"
     confirmationButton.innerText = "Loading...";
 
-    // عرض الإعلان
-var adScript = document.createElement("script");
-adScript.setAttribute("type", "text/javascript");
-adScript.setAttribute("async", "async");
-adScript.setAttribute("src", "https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g");
-
-var adContainer = document.createElement("div");
-adContainer.setAttribute("id", "container-udbaa");
-
-var atOptions = {
-    'key': 'udbaa',
-    'format': 'iframe',
-    'height': 60,
-    'width':468,
-    'params': {}
-};
-
-var adScript2 = document.createElement("script");
-adScript2.setAttribute("type", "text/javascript");
-adScript2.innerHTML = "var atOptions = " + JSON.stringify(atOptions) + ";";
-document.head.appendChild(adScript2);
-
-countdownDiv.parentNode.insertBefore(adScript, countdownDiv.nextSibling);
-countdownDiv.parentNode.insertBefore(adContainer, countdownDiv.nextSibling);
-
-// عداد تنازلي من 5 إلى 0
-var countdownValue = 5;
-var countdownInterval = setInterval(function() {
-    countdownDiv.innerText = "wait..." + countdownValue;
-    countdownValue--;
-    if (countdownValue < 0) {
-        clearInterval(countdownInterval);
-        countdownDiv.style.display = "none";
-        countdownDiv.innerText = "5";
-        confirmationButton.innerText = "This is your link";
-
-        // إخفاء الإعلان بعد انتهاء العداد
-        adScript.remove();
-        adContainer.remove();
-    var links = {
-        EXOBOX1_20_80: {
-            64: {
-                APK: {
-                    "(APK)": "https://try2link.com/d8RRej",
-                    "(APK1)": "https://stfly.biz/6THGH"
-                }
-            }
-        },
-        Cezar_Client1_20_80: {
-            64: {
-                APK: {
-                    "(APK)": "https://try2link.com/wRsJ",
-                    "(APK1)": "https://sox.link/oocFQP9"
-                }
-            }
-        },
-    };
-
-    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+        countdownDiv.innerText = "wait..." + countdownValue;
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.style.display = "none";
+            countdownDiv.innerText = "5";
+            confirmationButton.innerText = "This is your link";
 
             // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
             setTimeout(function () {
+                var links = {
+                    EXOBOX1_20_80: {
+                        64: {
+                            APK: {
+                                "(APK)": "https://try2link.com/d8RRej",
+                                "(APK1)": "https://stfly.biz/6THGH"
+                            }
+                        }
+                    },
+                    Cezar_Client1_20_80: {
+                        64: {
+                            APK: {
+                                "(APK)": "https://try2link.com/wRsJ",
+                                "(APK1)": "https://sox.link/oocFQP9"
+                            }
+                        }
+                    },
+                };
+
+                var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
+                
                 // إعادة تحميل الصفحة بعد 5 ثواني
                 setTimeout(function () {
                     location.reload();
@@ -292,9 +264,8 @@ var countdownInterval = setInterval(function() {
         }
     }, 1000);
     var verificationSound = new Audio('sounds/CONF.mp3');
-        verificationSound.play();
-    }
-
+    verificationSound.play();
+}
 
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
