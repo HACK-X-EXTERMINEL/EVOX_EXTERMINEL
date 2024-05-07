@@ -212,7 +212,9 @@ function redirectUser() {
             countdownDiv.style.display = "none";
             countdownDiv.innerText = "5";
             confirmationButton.innerText = "This is your link";
-         // إخفاء الإعلان بعد انتهاء العداد
+            // إخفاء الإعلان بعد انتهاء العداد
+            var adScript = document.getElementById("adScript");
+            var adContainer = document.getElementById("adContainer");
             adScript.remove();
             adContainer.remove();
 
@@ -269,8 +271,7 @@ function redirectUser() {
                         },
                         PASS:{
                           "(PASS)": "https://linkjust.com/TxJXrc",
-                           "(PASS1)": "https://best-cpm.com/ZQrEp",
-                          
+                          "(PASS1)": "https://best-cpm.com/ZQrEp"
                         }
                     }
                 },
@@ -288,8 +289,8 @@ function redirectUser() {
             }, 1000);
         }
     }, 1000);
-        var verificationSound = new Audio('sounds/CONF.mp3');
-        verificationSound.play();
+    var verificationSound = new Audio('sounds/CONF.mp3');
+    verificationSound.play();
 }
 
 
