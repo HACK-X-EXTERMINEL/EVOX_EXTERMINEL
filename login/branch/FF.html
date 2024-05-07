@@ -172,6 +172,7 @@ function redirectUser() {
         document.getElementById("notification").style.display = "block";
         var errorSound = new Audio('sounds/ERROR.mp3');
         errorSound.play();
+
         // إعادة نص الزر إلى "CONFIRMATION"
         confirmationButton.innerText = "CONFIRMATION";
 
@@ -181,21 +182,7 @@ function redirectUser() {
 
         return;
     }
-    if ((selectedChoice === "PASS" && (selectedAction === "(FILE)" || selectedAction === "(FILE1)")) || 
-        (selectedChoice === "FILE" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
-        document.getElementById("notification").innerHTML = "Invalid link combination!";
-        document.getElementById("notification").style.display = "block";
-        var errorSound = new Audio('sounds/ERROR.mp3');
-        errorSound.play();
-        // إعادة نص الزر إلى "CONFIRMATION"
-        confirmationButton.innerText = "CONFIRMATION";
 
-        setTimeout(function () {
-            document.getElementById("notification").style.display = "none";
-        }, 5000);
-
-        return;
-    }
     // إضافة العداد التنازلي قبل الزر
     confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
@@ -212,12 +199,9 @@ function redirectUser() {
             countdownDiv.style.display = "none";
             countdownDiv.innerText = "5";
             confirmationButton.innerText = "This is your link";
-            // إخفاء الإعلان بعد انتهاء العداد
-            var adScript = document.getElementById("adScript");
-            var adContainer = document.getElementById("adContainer");
-            adScript.remove();
-            adContainer.remove();
 
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
             var links = {
                 FF1: {
                     32: {
@@ -276,12 +260,9 @@ function redirectUser() {
                     }
                 },
             };
-
-            var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
-         
-            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-            setTimeout(function () {
+                var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
+                
                 // إعادة تحميل الصفحة بعد 5 ثواني
                 setTimeout(function () {
                     location.reload();
@@ -292,8 +273,6 @@ function redirectUser() {
     var verificationSound = new Audio('sounds/CONF.mp3');
     verificationSound.play();
 }
-
-
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
     var option = select.querySelector("option[value='" + optionValue + "']");
