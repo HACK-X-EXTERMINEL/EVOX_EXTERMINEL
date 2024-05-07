@@ -147,7 +147,6 @@ function handleGameChange() {
         // تعديل الخيارات حسب لعبة PUBG2
     }
 }
-
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
     var countdownDiv = document.createElement("div");
@@ -155,7 +154,8 @@ function redirectUser() {
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
-  if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+
+    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
         var errorSound = new Audio('sounds/ERROR.mp3');
@@ -170,11 +170,11 @@ function redirectUser() {
 
         return;
     }
-    if ((selectedChoice === "CODE" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
-        (selectedChoice === "APK" && (selectedAction === "(CODE)" || selectedAction === "(CODE1)"))) {
+
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
         document.getElementById("notification").innerHTML = "Invalid link combination!";
         document.getElementById("notification").style.display = "block";
-        
         var errorSound = new Audio('sounds/ERROR.mp3');
         errorSound.play();
 
@@ -187,7 +187,9 @@ function redirectUser() {
 
         return;
     }
- confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
+
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
     // تغيير نص الزر إلى "Loading"
     confirmationButton.innerText = "Loading...";
@@ -202,6 +204,9 @@ function redirectUser() {
             countdownDiv.style.display = "none";
             countdownDiv.innerText = "5";
             confirmationButton.innerText = "This is your link";
+
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
 
     var links = {
         PUBG1: {
@@ -258,11 +263,9 @@ function redirectUser() {
         },
     };
 
-    var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
-
-            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-            setTimeout(function () {
+var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
+                
                 // إعادة تحميل الصفحة بعد 5 ثواني
                 setTimeout(function () {
                     location.reload();
@@ -271,9 +274,8 @@ function redirectUser() {
         }
     }, 1000);
     var verificationSound = new Audio('sounds/CONF.mp3');
-        verificationSound.play();
-    }
-
+    verificationSound.play();
+}
 
 
 function removeOption(selectId, optionValue) {

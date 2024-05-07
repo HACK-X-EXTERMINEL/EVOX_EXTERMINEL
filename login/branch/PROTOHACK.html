@@ -138,7 +138,6 @@ actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="
         // تعديل الخيارات حسب لعبة FF2
     }
 }
-
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
     var countdownDiv = document.createElement("div");
@@ -148,19 +147,17 @@ function redirectUser() {
     var selectedAction = document.getElementById("action").value;
 
     if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
-        // تشغيل الصوت للخطأ
-        var errorSound = new Audio('sounds/ERROR.mp3');
-        errorSound.play();
-
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('sounds/ERROR.mp3');
+        errorSound.play();
 
         // إعادة نص الزر إلى "CONFIRMATION"
         confirmationButton.innerText = "CONFIRMATION";
 
         setTimeout(function () {
             document.getElementById("notification").style.display = "none";
-        }, 3000);
+        }, 5000);
 
         return;
     }
@@ -171,6 +168,7 @@ function redirectUser() {
         document.getElementById("notification").style.display = "block";
         var errorSound = new Audio('sounds/ERROR.mp3');
         errorSound.play();
+
         // إعادة نص الزر إلى "CONFIRMATION"
         confirmationButton.innerText = "CONFIRMATION";
 
@@ -180,7 +178,9 @@ function redirectUser() {
 
         return;
     }
- confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
+
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
 
     // تغيير نص الزر إلى "Loading"
     confirmationButton.innerText = "Loading...";
@@ -195,6 +195,9 @@ function redirectUser() {
             countdownDiv.style.display = "none";
             countdownDiv.innerText = "5";
             confirmationButton.innerText = "This is your link";
+
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
 
             var links = {
                 PROTO1: {
@@ -215,11 +218,9 @@ function redirectUser() {
                 }
             };
 
-            var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
-
-            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
-            setTimeout(function () {
+var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
+                
                 // إعادة تحميل الصفحة بعد 5 ثواني
                 setTimeout(function () {
                     location.reload();
@@ -227,10 +228,10 @@ function redirectUser() {
             }, 1000);
         }
     }, 1000);
-        // تشغيل الصوت للتأكيد
-        var verificationSound = new Audio('sounds/CONF.mp3');
-        verificationSound.play();
-    }
+    var verificationSound = new Audio('sounds/CONF.mp3');
+    verificationSound.play();
+}
+
 
 
 
