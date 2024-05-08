@@ -1,0 +1,379 @@
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-family: 'Agbalumo', Arial, sans-serif;
+            text-align: center;
+            margin: 5vh;
+            color: white;
+            background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #board {
+            border-radius: 40px;
+            color: black;
+            background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 10px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes gradientMoveFontFreefire {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        label {
+            margin: 2vh;
+            display: block;
+            color: #29b6f6;
+            background: black;
+            border-radius: 20px;
+            padding: 2vh 3vw;
+            font-size: 20px;
+        }
+
+        select {
+            width: 60vw;
+            padding: 2vh;
+            border-radius: 30px;
+            background-color: white;
+            color: blue;
+            font-size: 15px;
+            font-family: 'Lemon', serif;
+        }
+
+        #B1,
+        #B2 {
+            margin-top: 4vh;
+            padding: 1vh 9vw;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: 'Lemon', serif;
+        }
+
+        #B1 {
+            background-color: #FF0000;
+            color: blue;
+        }
+
+        #B1:active {
+            background-color: #000000;
+        }
+
+        #B2 {
+            background-color: pink;
+            color: black;
+        }
+
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            z-index: 1000;
+            color:#29b6f6;
+        }
+
+        .footer {
+            color: #0000FF;
+            padding: 2em;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 30px;background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+            
+        }
+
+        .arabic {
+            font-family: 'Reem Kufi Fun', sans-serif;
+        }
+
+        #Parag {
+            color: white;
+            background-color: black;
+            border-radius: 50px;
+        }
+
+        #disqus_thread {
+          background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            padding: 10px 30px;
+            border-radius: 40px;
+            background-size: 300% 300%;
+            animation: gradientMove 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+            
+        }
+
+        .footer-title {
+          background: linear-gradient(45deg,#29b6f6,#29b6f6 , #6a1b9a,#6a1b9a,#6a1b9a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+            
+        }
+        h2{
+          background: linear-gradient(45deg,#29b6f6,#29b6f6 , #6a1b9a,#6a1b9a,#6a1b9a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+          
+        }
+            .header {
+            text-align: center;
+        }
+
+        .header img.SIZE {
+            border-radius: 50%;
+            width: 110px;
+            height: 110px;
+            box-shadow: 0px 0px 10px black;
+        }
+        #container{
+  position: fixed;
+  top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
+  left: 50%;
+  width: 75%;
+  height:auto;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 1s ease;
+  background: linear-gradient(45deg, #6a1b9a,#6a1b9a, #29b6f6,#29b6f6);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:999;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+#container-content {
+  font-size:18px;
+}
+.container-header{
+            background: linear-gradient(45deg, #cc0e60, #cc0e60, #750c8a, #750c8a,#1481a6,#1481a6,#1481a6);
+            background-size: 200% 200%;
+            padding: 20px 50px;
+            border-radius: 40px;
+            border:none;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            z-index:999;
+        }
+
+        @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+#container-content p {
+  text-align: center;
+  size:12px;
+  background: linear-gradient(45deg,#1481a6, #1481a6,#1481a6, #1481a6, #750c8a,#750c8a ,#cc0e60, #cc0e60);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            padding: 10px;
+            border-radius: 10px;
+            z-index:999;
+            animation: gradientMoveFontToolbox 5s linear infinite;
+        }
+
+        @keyframes gradientMoveFontToolbox{
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+       
+#container-content h4 {
+  color: red;
+  text-align: left;
+  size:16px
+}
+#container-content h5 {
+  color: green;
+  text-align: left;
+  size:14px;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#close-btn{
+  vertical-align: bottom;
+        cursor: pointer;
+       font-family: 'Agbalumo', Arial, sans-serif;
+        background: linear-gradient(45deg, black, purple, blue, blue, purple, black);
+             background-size: 200% 200%;
+            padding: 10px 20px;
+            border-radius: 40px;
+            animation: gradientMovePubg 5s linear infinite;
+            backdrop-filter: blur(10px);
+            filter: brightness(120%) saturate(150%);
+            }
+      @keyframes gradientMovePubg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+            .container-img{
+              border:solid 2px blue ;
+              box-shadow: -10px -10px 10px yellow, 10px 10px 10px pink;
+              border-radius:40px;
+            }
+            ul {
+    list-style-type: none;
+}
+
+li::before {
+    content: "✔";
+    margin-right: 0.5em;
+    font-size:12px;
+    float: left;
+    color:#0fa3bd;
+}
