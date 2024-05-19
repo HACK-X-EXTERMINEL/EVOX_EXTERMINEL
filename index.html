@@ -19,6 +19,7 @@
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
       <link rel="stylesheet" href="login/branch/css/LOAD.css">
+      <link rel="stylesheet" href="login/branch/css/GLOBAL.css">
      <script>
      // منع النقر بزر الفأرة الأيمن على الصور
 document.addEventListener('contextmenu', function(e) {
@@ -113,25 +114,47 @@ function search() {
     var secretLinks = {
         "lll": "https://t.me/HACK_X_EXTERMINEL",
         "SS": "https://example.com/secret2",
-        "lll": "https://example.com/secret3"
+        "lll2": "https://example.com/secret3"
     };
 
-    if (secretLinks.hasOwnProperty(input)) {
-        confirm.play();
-        document.getElementById("alert1").innerHTML = "loading...";
-        document.getElementById("alert1").style.display = "block";
-        document.getElementById("alert").style.display = "none";
-        setTimeout(function () {
-            document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
-            document.getElementById("alert1").style.display = "block";
-        }, 2000);
-        setTimeout(function () {
-            window.location.href = secretLinks[input];
-        }, 5000);
-    } else {
-        document.getElementById("alert").innerHTML = "Invalid keyword.Please try again.";
+    // تحقق إذا كان المدخل فارغًا
+    if (input.trim() === "") {
+        document.getElementById("alert").innerHTML = "Empty !??";
         document.getElementById("alert").style.display = "block";
         error.play();
+        setTimeout(function () {
+            document.getElementById("alert").style.display = "none";
+        }, 7000);
+        return;
+    }
+
+    if (secretLinks.hasOwnProperty(input)) {
+        
+        document.getElementById("alert").style.display = "none";
+        document.getElementById("alert1").innerHTML = "loading...";
+        document.getElementById("alert1").style.display = "block";
+        setTimeout(function () {
+            document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
+            confirm.play();
+        }, 2000);
+        setTimeout(function () {
+            document.getElementById("alert1").style.display = "none";
+        }, 8000);
+        setTimeout(function () {
+            window.location.href = secretLinks[input];
+        }, 4000);
+    } else {
+        document.getElementById("alert1").innerHTML = "loading...";
+        document.getElementById("alert1").style.display = "block";
+        setTimeout(function () {
+            document.getElementById("alert1").style.display = "none";
+            document.getElementById("alert").innerHTML = "Invalid keyword. Please try again.";
+            document.getElementById("alert").style.display = "block";
+            error.play();
+        }, 2000);
+        setTimeout(function () {
+            document.getElementById("alert").style.display = "none";
+        }, 7000);
     }
 }
 function showWordSecret() {
@@ -461,10 +484,6 @@ setInterval(writeText2, 150);
     <br>
   <div id="disqus_thread"></div>
     </section>
-<section class="ads">
-  <script type="text/javascript" src="https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g"></script>
-
-</section>
       <script src="login/branch/js/LOAD.js"></script>
 </body>
 </html>
