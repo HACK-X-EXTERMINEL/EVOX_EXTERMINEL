@@ -213,11 +213,11 @@ li::before {
     align-items: center;
   }
   input[type=text] {
-    padding: 10px;
-    width: 90%;
+   
+    width: 80%;
     margin-bottom: 10px;
     font-family: 'Agbalumo', system-ui;
-    background: transparent;
+    background: rgba(255, 255, 255, .2);
   border: none;
   outline: none;
   border: 2px solid rgba(255, 255, 255, .2);
@@ -295,17 +295,23 @@ li::before {
   background:transparent;
   color:black;
   text-shadow: 0 0 10px rgba(194,17,17,0.9);
-  transition:0.5s;
+  transition:0.5s ease-in-out;
   cursor:pointer;
 }
 #closebutton:hover{
-  background:rgba(216,131,131,0.9);
+  background:rgba(194,17,17,0.7);
   border-radius:0 0 50% 50%;
 }
 #search{
   background:transparent;
   color:black;
   text-shadow: 0 0 10px rgba(37,100,160,0.9);
+  transition: 1s ease-in-out;
+  cursor:pointer;
+}
+#search:hover{
+  background: #c4c42d;
+  border-radius:50% 50% 0 0;
 }
   #alert{
     display: none;
@@ -409,7 +415,7 @@ li::before {
             border-radius: 20px;
             z-index:21;
             display:none;
-            color:#040086;
+            color:white;
             background:#1c1b3d;
   }
   #VIPFREE{
@@ -602,7 +608,7 @@ user-select: all;
       }
       .cards .card .content {
         position: absolute;
-        top: 200px;
+        top: 190px;
         width: 100%;
         padding: 0 30px;
         height: 80px;
@@ -646,189 +652,6 @@ user-select: all;
             text-align: center;
             margin-left:10%;
         }*/
-        header{
-        position:relative;
-        top:0;
-        left:0;
-        width: 90%;
-        padding: 1.3rem 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index:100;
-      }
-      header::before{
-        content:"";
-        position:absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background:rgba(0,0,0,0.3);
-        backdrop-filter: blur(50px);
-        z-index: -1;
-      }
-      .navbar span{
-        font-size: 1.15rem;
-        font-weight: 500;
-        margin-left: 0rem;
-      }
-      .navbar .words{
-        letter-spacing: 5px;
-      }
-      .navbar span a{
-        text-decoration: none;
-        color: white;
-      }
-      #check{
-        display: none;
-      }
-      .icons{
-        position: absolute;
-        right: 5%;
-        font-size: 2.2rem;
-        color:white;
-        cursor: pointer;
-        display:none;
-        background-color:rgba(0,0,0,0.01);
-      }
-      @media (max-width: 992px){
-        header{
-          padding: 1.3rem 5%;
-        }
-      }
-      @media (max-width: 768px){
-        .icons{
-          display:inline-flex;
-        }
-        #check:checked~.icons #menu-icon{
-          display: none;
-        }
-        .icons #close-icon{
-          display: none;
-        }
-        #check:checked~.icons #close-icon{
-          display: block;
-        }
-        .navbar{
-          position: absolute;
-          top:100%;
-          left: 0;
-          width: 100%;
-          height: 0;
-          background: rgba(0,0,0, .1);
-          backdrop-filter: blur(50px);
-          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-          overflow:hidden ;
-          transition: .3s ease;
-        }
-        #check:checked~.navbar {
-          height:40.7rem;
-        }
-        .navbar span{
-          display: block;
-          font-size: 1.1rem;
-          margin: 0.9rem 10px;
-          text-align: left;
-          transform: translateY(-50px);
-          opacity: 0;
-          transform: .3s ease;
-        }
-        #check:checked~.navbar span{
-          transform: translateY(0px);
-          opacity: 1;
-          transition-delay: calc(.05s * var(--i));
-        }
-      }
-      .games{
-        position:flex;
-      }
-      .PROTOHACK,
-      .MCPEE,
-      .PUBG,
-      .FF,
-      .TOOL {
-         display: inline-block;
-         vertical-align: middle;
-      }
-
-.img-games {
-  width: 44px;
-  height: 44px;
-  border-radius: 60px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-  padding-bottom:3px;
-  padding-top:3px;
-}
-      .FF{
-        background: linear-gradient(45deg,#c70000,#000000);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-      }
-      .TOOL {
-            background:linear-gradient(-45deg,#8c480f,#14c701);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-        }
-        .PUBG {
-            background: linear-gradient(45deg,white,#29b6f6);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-        }
-        .MCPEE {
-            background:linear-gradient(0deg,#7c3c16,#005d18);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-        }
-        .PROTOHACK {
-            background:linear-gradient(45deg,#0f92c3,#7b06a4);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-        }
-        .SHOP{
-            background: linear-gradient(45deg,#7f12b2,black);
-            border: 1px solid black;
-            cursor: pointer;
-            font-family: 'Agbalumo', system-ui;
-            border-radius: 40px;
-            color:white;
-            text-align: center;
-            margin-top:15px;
-        }
-        .logo-img{
-          width: 60px;
-           height: 60px;
-        }
-        hr{
-          width:90%;
-          margin-left:2%;
-        }
-        .igames{
-          background: linear-gradient(45deg, purple, blue, blue, purple);
-            padding: 10px 20px;
-            border-radius: 40px;
-            color:white;
-            text-align:center ;
-        }
-        .go{
-          padding-bottom: 10px;
-          padding-top:10px;
-          background-color: rgba(0,0,0,.6);
-          border-radius:40px;
-        }
-        
 .auto-text{
       background: #172033;
       border-radius: 40px 20px 40px 20px;
