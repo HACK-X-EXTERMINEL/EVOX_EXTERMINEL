@@ -279,7 +279,7 @@ li::before {
   padding: 10px 30px;
   border-radius: 30px 15px 30px 15px;
   position: absolute;
-  margin-left:83%;
+  margin-left:80%;
 }
   #button2-open{
     display:none;
@@ -753,8 +753,8 @@ user-select: all;
       }
 
 .img-games {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 60px;
   margin-left: 10px;
   margin-right: 10px;
@@ -808,8 +808,8 @@ user-select: all;
             margin-top:15px;
         }
         .logo-img{
-          width: 90px;
-           height: 90px;
+          width: 70px;
+           height: 70px;
         }
         hr{
           width:90%;
