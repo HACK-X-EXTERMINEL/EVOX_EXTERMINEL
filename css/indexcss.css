@@ -569,7 +569,7 @@ user-select: all;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        width: 290px;
+        width: 270px;
         height: 290px;
         background: #fff;
         border-radius: 20px;
@@ -753,8 +753,8 @@ user-select: all;
       }
 
 .img-games {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 60px;
   margin-left: 10px;
   margin-right: 10px;
