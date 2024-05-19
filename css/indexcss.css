@@ -602,7 +602,7 @@ user-select: all;
       }
       .cards .card .content {
         position: absolute;
-        top: 225px;
+        top: 200px;
         width: 100%;
         padding: 0 30px;
         height: 80px;
@@ -808,8 +808,8 @@ user-select: all;
             margin-top:15px;
         }
         .logo-img{
-          width: 70px;
-           height: 70px;
+          width: 60px;
+           height: 60px;
         }
         hr{
           width:90%;
