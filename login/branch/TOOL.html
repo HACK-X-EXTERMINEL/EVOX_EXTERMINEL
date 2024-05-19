@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Anta&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+               <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/TOL.png"/>
+    <link rel="stylesheet" href="css/TOOLCSS.css">
+            <link rel="stylesheet" href="css/LOAD.css">
+    <title>HACK-X EXTERMINEL FOR TOOLBOX</title>
+    <script>
+      const phrases1 = [
+    "1.20.81",
+];
+let currentPhrase1 = 0;
+let currentCharacter1 = 0;
+let deleting1 = false;
+
+function writeText1() {
+    if (deleting1) {
+        currentCharacter1--;
+        if (currentCharacter1 < 0) {
+            currentCharacter1 = 0;
+            deleting1 = false;
+            currentPhrase1++;
+            if (currentPhrase1 >= phrases1.length) currentPhrase1 = 0;
+        }
+    } else {
+        currentCharacter1++;
+        if (currentCharacter1 > phrases1[currentPhrase1].length) {
+            deleting1 = true;
+        }
+    }
+
+    document.getElementById('text1').innerText = phrases1[currentPhrase1].slice(0, currentCharacter1);
+}
+setInterval(writeText1, 150);
+function copyText() {
+  var text = document.getElementById("sentence").innerText;
+  var tempInput = document.createElement("input");
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+  alert("تم نسخ الجملة: " + text);
+}
+    </script>
+</head>
+
+<body>
+    <div class="like" id="preload">
+  <div class="dice">
+  <div class="dice-dot one"></div>
+  <div class="dice-dot two"></div>
+  <div class="dice-dot three"></div>
+  <div class="dice-dot four"></div>
+  <div class="dice-dot five"></div>
+  <div class="dice-dot six"></div>
+</div>
+</div>
+    <header>
+    <span class="logo"><a href="TOOL.html"><img src="contact/img/TOL.png" class="logo-img"></a></span>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <i class='bx bx-x' id="close-icon"></i>
+    </label>
+    <nav class="navbar">
+      <span  style="--i:0;" class="words"><a href="https://evox-exterminel.netlify.app/">Home</a></span>
+      <hr>
+      <span style="--i:1;" class="words"><a href="#">About</a></span>
+      <hr>
+      <span style="--i:2;" class="words"><a href="#">Services</a></span>
+      <hr>
+      <span style="--i:3;" class="words"><a href="contact/index.html">Contacts</a></span>
+      <hr>
+      <section class="go">
+      <h4 class="igames"><u>Games</u></h4>
+      <span style="--i:4;">
+   <div class="FF">
+    <a href="FF.html" style="text-decoration:none">
+      <img src="contact/img/FF.png" class="img-games">
+    </a>
+  </div>
+  <div class="TOOL">
+    <a href="TOOL.html" style="text-decoration:none">
+      <img src="contact/img/TOL.png" class="img-games">
+    </a>
+    </div>
+    <div class="PUBG">
+    <a href="PUBG.html" style="text-decoration:none">
+      <img src="contact/img/PUB.png" class="img-games">
+    </a>
+  </div>
+  <div class="MCPEE">
+    <a href="MCPE.html" style="text-decoration:none">
+      <img src="contact/img/MCPE.png" class="img-games">
+    </a>
+  </div>
+  <div class="PROTOHACK">
+    <a href="PROTOHACK.html" style="text-decoration:none">
+      <img src="contact/img/PROTO.png" class="img-games">
+    </a>
+  </div>
+  <div class="SHOP">
+    <a href="https://evox-exterminel.mysellix.io/" style="text-decoration:none; color:white;">
+      <img src="contact/img/SHOP.png" class="img-games">MY SHOP
+    </a>
+  </div>
+</span>
+</section>
+    </nav>
+  </header>
+  <div id="container">
+  <div id="container-content" >
+    <section class='container-header'>
+    <p class='container-content'>Hello! Welcome to our website.</p>
+    </section>
+    <h4>NEW :</h4>
+    <ul>
+      <li><h5><u>Passwords are removed forever 🌟😻</u></h5></li>
+      <li><h5><u>Cezar Client 1.20.80</u></h5></li>
+   <li><h5><u>EXOBOX 1.20.80</u></h5></li>
+   <li><h5><u >TELEGRAM : <a class="list" href="https://t.me/HACKX_EXTERMINEL" id="sentence">https://t.me/HACKX_EXTERMINEL</a><button class="copy" onclick="copyText()">copy link</button></u></h5></li>
+   <li><h5 style="color:yellow;"><u><strong>There is no version for Toolbox <span id="text1"></span></strong></u></h5></li>
+   </ul>
+     <img class='container-img' src="contact/img//A.png">
+    <button id="close-btn">Close</button>
+  </div>
+</div>
+
+    <div id="board" class="board">
+      <div class="header">
+        <img src="contact/img/TOL.png" alt="Circular Image" class="SIZE">
+        <br>
+        </div>
+        <h2>HACK-X EXTERMINEL FOR TOOLBOX</h2>
+
+        <form>
+            <label for="game">Your favorite App:</label>
+            <select id="game" name="game" onchange="handleGameChange()">
+                <option value="Nothing">Nothing</option>
+                <option value="Cezar_Client1_20_80">Cezar Client 1.20.80</option>
+                <option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>
+            </select>
+
+            <br>
+
+            <label for="bit">Bit:</label>
+            <select id="bit" name="bit">
+                <option value="Nothing">Nothing</option>
+                <option value="32">32 BIT</option>
+                <option value="64">64 BIT</option>
+               
+            </select>
+
+            <br>
+
+            <label for="choice">Choice:</label>
+            <select id="choice" name="choice">
+                <option value="Nothing">Nothing</option>
+                <option value="APK">APK</option>
+                
+            </select>
+
+            <br>
+
+            <label for="action">Link quality:</label>
+            <select id="action" name="action">
+                <option value="Nothing">Nothing</option>
+                <option value="(APK)">APK (link 1)</option>
+                <option value="(APK1)">APK (link2)</option>
+            </select>
+
+            <br>
+
+            <button type="button" onclick="redirectUser()" id="B1" target="_blank" class="btn-primary btn-ghost">CONFIRMATION</button>
+            <br>
+            <br>
+
+
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>HACK-X EXTERMINEL</span></p>
+    </footer>
+   <div id="countdown"></div>
+    <div id="notification">Please select a valid link combination!</div>
+    <!-- كود Disqus -->
+    <div id="disqus_thread"></div>
+    <script>
+    window.onload = function() {
+  var container = document.getElementById('container');
+  var closeBtn = document.getElementById('close-btn');
+
+  var closeSound = new Audio('sounds/ERROR.mp3');
+
+  setTimeout(function() {
+    container.style.display = 'block';
+  }, 1);
+
+closeBtn.onclick = function () {
+    setTimeout(function () {
+        closeSound.play();
+        container.style.display = 'none';
+    }, 300);
+}
+  setTimeout(function() {
+    container.style.display = 'none';
+  }, 20000);
+};
+    function handleGameChange() {
+    var selectedGame = document.getElementById("game").value;
+    var bitSelect = document.getElementById("bit");
+    var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
+
+    // إعادة الخيارات إلى الحالة الأصلية
+    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option>';
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
+    
+    if (selectedGame === "EXOBOX1_20_80") {
+        removeOption("bit", "32");
+    } else if (selectedGame === "Cezar_Client1_20_80") {
+      removeOption("bit", "32");
+    } else if (selectedGame === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
+    }
+}
+function redirectUser() {
+    var confirmationButton = document.getElementById("B1");
+    var countdownDiv = document.getElementById("countdown");
+    var selectedGame = document.getElementById("game").value;
+    var selectedBit = document.getElementById("bit").value;
+    var selectedChoice = document.getElementById("choice").value;
+    var selectedAction = document.getElementById("action").value;
+
+    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+        document.getElementById("notification").innerHTML = "Please select a valid link combination!";
+        document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('sounds/ERROR.mp3');
+        errorSound.play();
+var boxShadowColor = "0 0 20px 5px red";
+confirmationButton.style.boxShadow = boxShadowColor;
+setTimeout(function() {
+    confirmationButton.style.boxShadow = ""; 
+}, 5000); 
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
+    if ((selectedChoice === "PASS" && (selectedAction === "(APK)" || selectedAction === "(APK1)")) || 
+        (selectedChoice === "APK" && (selectedAction === "(PASS)" || selectedAction === "(PASS1)"))) {
+        document.getElementById("notification").innerHTML = "Invalid link combination!";
+        document.getElementById("notification").style.display = "block";
+        var errorSound = new Audio('sounds/ERROR.mp3');
+        errorSound.play();
+    var boxShadowColor = "0 0 20px 5px red";
+confirmationButton.style.boxShadow = boxShadowColor;
+setTimeout(function() {
+    confirmationButton.style.boxShadow = ""; 
+}, 5000); 
+        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.innerText = "CONFIRMATION";
+
+        setTimeout(function () {
+            document.getElementById("notification").style.display = "none";
+        }, 5000);
+
+        return;
+    }
+
+    // إضافة العداد التنازلي قبل الزر
+    confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
+var number = new Audio('sounds/pop.mp3');
+    // تغيير نص الزر إلى "Loading"
+    confirmationButton.innerText = "Loading...";
+  var boxShadowColor = "0 0 20px 5px green";
+confirmationButton.style.boxShadow = boxShadowColor;
+setTimeout(function() {
+    confirmationButton.style.boxShadow = ""; 
+}, 7000); 
+    // عداد تنازلي من 5 إلى 0
+    var countdownValue = 5;
+    var countdownInterval = setInterval(function() {
+      countdownDiv.style.display = 'block';
+      number.play();
+        confirmationButton.innerText = "Loading... "+ "(" +countdownValue+")";
+        countdownDiv.innerText = "wait... " +"(" +countdownValue+")";
+        countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            countdownDiv.innerText = "HACK-X" ;
+            confirmationButton.innerText = "go to link";
+
+            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
+            setTimeout(function () {
+                var links = {
+                    EXOBOX1_20_80: {
+                        64: {
+                            APK: {
+                                "(APK)": "https://try2link.com/d8RRej",
+                                "(APK1)": "https://stfly.biz/6THGH"
+                            }
+                        }
+                    },
+                    Cezar_Client1_20_80: {
+                        64: {
+                            APK: {
+                                "(APK)": "https://try2link.com/wRsJ",
+                                "(APK1)": "https://sox.link/oocFQP9"
+                            }
+                        }
+                    },
+                };
+
+                var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+                window.open(link, '_blank');
+                countdownDiv.style.display = 'none';
+                confirmationButton.innerText = "CONFIRMATION";
+                // إعادة تحميل الصفحة بعد 5 ثواني
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }, 1500);
+        }
+    }, 1000);
+    var verificationSound = new Audio('sounds/CONF.mp3');
+    verificationSound.play();
+}
+
+function removeOption(selectId, optionValue) {
+    var select = document.getElementById(selectId);
+    var option = select.querySelector("option[value='" + optionValue + "']");
+    if (option) {
+        select.removeChild(option);
+    }
+}
+
+var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'TOOLBOX';
+};
+
+(function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hack-x-exterminel.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+// Disqus Counter
+var dsqCountScript = document.createElement('script');
+dsqCountScript.id = 'dsq-count-scr';
+dsqCountScript.src = '//hack-x-exterminel.disqus.com/count.js';
+dsqCountScript.async = true;
+(document.head || document.body).appendChild(dsqCountScript);
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <script src="js/LOAD.js"></script>
+</body>
+
+</html>

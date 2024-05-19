@@ -15,9 +15,30 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    <link rel="stylesheet" href="css/indexcss.css">
          <link rel="shortcut icon" href="image/logo.png"/>
+         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="login/branch/css/LOAD.css">
      <script>
+     // منع النقر بزر الفأرة الأيمن على الصور
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
+
+// منع السحب والإفلات للصور
+document.addEventListener('dragstart', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
+window.addEventListener('touchstart', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
+
 var disqus_config = function () {
     this.page.url = window.location.href;
     this.page.identifier = 'HOME';
@@ -44,22 +65,26 @@ window.onload = function () {
     var close = new Audio('login/branch/sounds/close.wav');
 
     setTimeout(function () {
-        container.style.top = '150px';
+        container.style.display = 'block';
     }, 1);
 
     closeBtn.onclick = function () {
-        container.style.top = '-900px';
+    setTimeout(function () {
         close.play();
-    };
+        container.style.display = 'none';
+    }, 300);
+}
+      
 
     setTimeout(function () {
-        container.style.top = '-900px';
-    }, 20000);
+        container.style.display = 'none';
+    }, 45000);
 };
 
 function showSecret() {
     var container = document.getElementById('secret');
     var button = document.getElementById('button');
+    var buttonOpen = document.getElementById('button-open');
     var closebutton = document.getElementById('closebutton');
 
     var click = new Audio('login/branch/sounds/click.wav');
@@ -67,17 +92,20 @@ function showSecret() {
 
     button.onclick = function () {
         container.style.top = '185px';
-        button.style.left = '-100px';
+        button.style.display = 'none';
+        buttonOpen.style.display = 'block';
         click.play();
     };
 
     closebutton.onclick = function () {
-        container.style.top = '-800px';
-        button.style.left = '0px';
-        close.play();
+        setTimeout(function () {
+            container.style.top = '-800px';
+            buttonOpen.style.display = 'none';
+            button.style.display = 'block';
+            close.play();
+        }, 300);
     };
 }
-
 function search() {
     var input = document.getElementById("searchInput").value;
     var error = new Audio('login/branch/sounds/ERROR.mp3');
@@ -109,6 +137,7 @@ function search() {
 function showWordSecret() {
   var container = document.getElementById('secretWord');
   var button2 = document.getElementById('button2');
+  var button2Open = document.getElementById('button2-open');
   var closebutton2 = document.getElementById('close-btnSW');
   var countdown = document.getElementById('countdown');
 
@@ -116,7 +145,8 @@ function showWordSecret() {
   var close = new Audio('login/branch/sounds/close.wav');
   var number = new Audio('login/branch/sounds/pop.mp3');
   button2.onclick = function () {
-    button2.style.left = '-1000px';
+    button2.style.display = 'none';
+    button2Open.style.display = 'block';
     countdown.style.display = 'block';
     click.play();
     var counter = 3;
@@ -130,14 +160,15 @@ function showWordSecret() {
 
         setTimeout(function() {
           container.style.display = 'block';
-        }, 1000);
+        }, 200);
       }
     }, 1000);
   };
 
   closebutton2.onclick = function () {
     container.style.display = 'none';
-    button2.style.left = '0px';
+    button2.style.display = 'block';
+    button2Open.style.display = 'none';
     close.play();
   };
 }
@@ -170,9 +201,11 @@ function writeText1() {
 setInterval(writeText1, 150);
 
 const phrases2 = [
-    { text2: "Welcome, to HACK-X WORLD", color: "blue" },
-    { text2: "Welcome, to HACK-X WORLD", color: "yellow" },
-    { text2: "Welcome, to HACK-X WORLD", color: "green" }
+    { text2: "Free Fire", color: "#732b2b" },
+    { text2: "Pubg", color: "#848429" },
+    { text2: "Toolbox", color: "#714620" },
+    { text2: "ProtoHack", color: "#6c236e" },
+    { text2: "Minecraft pe", color: "#234623" }
 ];
 let currentPhrase2 = 0;
 let currentCharacter2 = 0;
@@ -199,6 +232,7 @@ function writeText2() {
 }
 
 setInterval(writeText2, 150);
+
 </script>
   <style>
 
@@ -207,24 +241,91 @@ setInterval(writeText2, 150);
 </head>
 
 <body>
-  <div id="countdown"></div>
-<button onclick="showSecret()" id="button"><i class="fa-solid fa-list fa-fade" id="style1" ></i></button>
+    <div class="like" id="preload">
+  <div class="dice">
+  <div class="dice-dot one"></div>
+  <div class="dice-dot two"></div>
+  <div class="dice-dot three"></div>
+  <div class="dice-dot four"></div>
+  <div class="dice-dot five"></div>
+  <div class="dice-dot six"></div>
+</div>
+</div>
+  <header>
+    <span><a href="https://evox-exterminel.netlify.app/login/branch/ff"><img src="image/logo.png" class="logo-img" loading="lazy"></a></span>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <i class='bx bx-x' id="close-icon"></i>
+    </label>
+    <nav class="navbar">
+      <span  style="--i:0;" class="words"><a href="https://evox-exterminel.netlify.app/">Home</a></span>
+      <hr>
+      <span style="--i:1;" class="words"><a href="#">About</a></span>
+      <hr>
+      <span style="--i:2;" class="words"><a href="#">Services</a></span>
+      <hr>
+      <span style="--i:3;" class="words"><a href="contact/index.html">Contacts</a></span>
+      <hr>
+      <section class="go">
+      <h4 class="igames"><u>Games</u></h4>
+      <span style="--i:4;">
+   <div class="FF">
+    <a href="login/LOGFF.html" style="text-decoration:none">
+      <img src="login/branch/contact/img/FF.png" class="img-games" loading="lazy">
+    </a>
+  </div>
+  <div class="TOOL">
+    <a href="login/LOGTOOLBOX.html" style="text-decoration:none">
+      <img src="login/branch/contact/img/TOL.png" class="img-games" loading="lazy">
+    </a>
+    </div>
+    <div class="PUBG">
+    <a href="login/LOGPUBG.html" style="text-decoration:none">
+      <img src="login/branch/contact/img/PUB.png" class="img-games">
+    </a>
+  </div>
+  <div class="MCPEE">
+    <a href="login/LOGMCPE.html" style="text-decoration:none">
+      <img src="login/branch/contact/img/MCPE.png" class="img-games" loading="lazy">
+    </a>
+  </div>
+  <div class="PROTOHACK">
+    <a href="login/LOGPROTO.html" style="text-decoration:none">
+      <img src="login/branch/contact/img/PROTO.png" class="img-games" loading="lazy">
+    </a>
+  </div>
+  <div class="SHOP">
+    <a href="https://evox-exterminel.mysellix.io/" style="text-decoration:none; color:white;">
+      <img src="login/branch/contact/img/SHOP.png" class="img-games" loading="lazy">MY SHOP
+    </a>
+  </div>
+</span>
+</section>
+    </nav>
+  </header>
+<button onclick="showSecret()" id="button"><i class="fa-solid fa-lock" id="style1"></i></button>
+<button onclick="showSecret()" id="button-open"><i class="fa-solid fa-lock-open" id="style1"></i></button>
     <section class="section-container" id="secret">
         <div>
             <div class="container">
                 <div class="search-container" >
                     <input type="text" id="searchInput" placeholder="Enter secret keyword...">
                     <div id="suggestions"></div>
-                    <button onclick="search()" class="search" id="search">Search</button>
-                    </div>
                     <p id="alert" ></p>
                     <p id="alert1" ></p>
+                    <button onclick="search()" class="search" id="search">Search</button>
+                    </div>
                     <button id="closebutton" class="search">Close</button>
                 
             </div>
         </div>
     </section>
-    <button onclick="showWordSecret()" id="button2"><i class="fa-solid fa-list fa-fade" id="style2" ></i></button>
+    <div class="countdown">
+    <div id="countdown"></div>
+    </div>
+    <button onclick="showWordSecret()" id="button2"><i class="fa-solid fa-key"  id="style2" ></i></button>
+        <button onclick="showWordSecret()" id="button2-open"><i class="fa-solid fa-box-archive" id="style2" ></i></button>
     <div id="secretWord">
   <div id="secretWord-content" >
     <section class='secretWord-header'>
@@ -243,12 +344,12 @@ setInterval(writeText2, 150);
     </section>
     <h4>NEW :</h4>
     <ul>
-   <li><h5><u>MINECRAFT: MC PE 1.20.81 🔥 </u></h5></li>
-   <li><h5><u>Cezar Client: FOR MC PE 1.20.80 🔥 </u></h5></li>
-   <li><h5><u>EXOBOX: FOR MC PE 1.20.80 🔥 </u></h5></li>
-   <li><h5 style="color:yellow;"><u><strong>There is no version for Toolbox <span id="text1"></span></strong></u></h5></li>
+   <li><h5><u>MINECRAFT: MC PE 1.20.81</u></h5></li>
+   <li><h5><u>Cezar Client: FOR MC PE 1.20.80</u></h5></li>
+   <li><h5><u>EXOBOX: FOR MC PE 1.20.80</u></h5></li>
+   <li><h5><u><strong>There is no version for Toolbox : <span id="text1"></span></strong></u></h5></li>
    </ul>
-    <img class='container-img' src="image/A.png">
+    <img class='container-img' src="login/branch/contact/img/A.png">
     <button id="close-btn">Close</button>
   </div>
 </div>
@@ -258,6 +359,7 @@ setInterval(writeText2, 150);
         <script type="text/javascript">
 	atOptions = {
 		'key' : '2f659b71cec329b8211fe6e2a59d707a',
+		'key' : '2f659b71cec329b8211fe6e2a59d707a',
 		'format' : 'iframe',
 		'height' : 60,
 		'width' : 468,
@@ -265,102 +367,94 @@ setInterval(writeText2, 150);
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="//streetmonumentemulate.com/2f659b71cec329b8211fe6e2a59d707a/invoke.js"></scr' + 'ipt>');
 </script>
-
-
-        <br>
-        <h5><span id="text2"></span></h5
     </div>
 
-    <section class="background">
-      <div class="list-games">
-        <p class="title-games"><u>GAMES</u></p>
-      <section class="searchblock" id="APP">
-        <div class="social-button">
-            <img src="image/SEARCH.png" alt="SEARCH ICON" class="social-icon">
-            <a href="login/branch/SEARCH.html" style="text-decoration:none">
-                <div class="font-search" id="SIZE">CLICK HERE TO SEARCH </div>
-            </a>
-        </div>
-    </section>
-    <section class="freefire" id="APP" >
-        <div class="social-button">
-            <img src="login/branch/contact/img/FF.png" alt="FREE FIRE ICON" class="social-icon">
-            <a href="login/LOGFF.html" style="text-decoration:none">
-                <div class="font-freefire" id="SIZE">FREE FIRE (HACK AND SICPRIT) </div>
-            </a>
-        </div>
-    </section>
-     <section class="pubg" id="APP">
-        <div class="social-button">
-            <img src="login/branch/contact/img/PUB.png" alt="PUBG ICON" class="social-icon">
-            <a href="login/LOGPUBG.html" style="text-decoration:none">
-                <div class="font-pubg" id="SIZE">PUBG : HACKS (FREE)</div>
-            </a>
-        </div>
-    </section>
-
-    <section class="toolbox" id="APP">
-        <div class="social-button">
-            <img src="login/branch/contact/img/TOL.png" alt="TOOLBOX ICON" class="social-icon">
-            <a href="login/LOGTOOLBOX.html" style="text-decoration:none">
-                <div class="font-toolbox" id="SIZE">TOOLBOX PREMIUM INFINITE TIME</div>
-            </a>
-        </div>
-    </section>
-    <section class="PROTO" id="APP">
-        <div class="social-button">
-            <img src="login/branch/contact/img/PROTO.png" alt="PROTO HACK ICON" class="social-icon">
-            <a href="login/LOGPROTO.html" style="text-decoration:none">
-                <div class="font-proto" id="SIZE">PROTOHACK FOR MC PE </div>
-            </a>
-        </div>
-    </section>
-    <section class="MCPE" id="APP">
-        <div class="social-button">
-            <img src="login/branch/contact/img/MCPE.png" alt="MINECRAFT ICON" class="social-icon">
-            <a href="login/LOGMCPE.html" style="text-decoration:none">
-                <div class="font-mcpe" id="SIZE">MINECRAFT PE (ALL VERSION)</div>
-            </a>
-        </div>
-    </section>
-   <section class="SHOP" id="APP">
-        <div class="social-button">
-            <img src="login/branch/contact/img/shop.png" alt="SHOP ICON" class="social-icon">
-            <a href="https://evox-exterminel.mysellix.io/" style="text-decoration:none">
-                <div class="font-SHOP" id="SIZE">EVOX SHOP </div>
-            </a>
-        </div>
-    </section>
-    <br>
+    <section class="background" align="left">
+      <br>
+      <div id="icons-socials">
+      <a href="#"><i style="border-radius:10px;padding:-3px 0px -3px 0px" class="fa-brands fa-youtube" ></i></a><a href="#"><i class="fa-brands fa-telegram" ></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+      <br>
+      <div class="auto-text">
+        <h5><b>This site for : </b>  <span id="text2"></span></h5>
 </div>
 <br>
-    <footer>
-        <section class="spacing1">
-            <div class="social-optionsyt">
-                <div class="social-button" onclick="window.location.href='https://youtube.com/@ALX_EXT?si=KOUxevYz-k0FowKD'">
-                    <img src="image/YT.jpg" alt="YouTube Icon" class="social-icon">
-                    <div class="social-option social-optionyt" id="SIZE1">YouTube : SUBSCRIBE</div>
-                </div>
-            </div>
-        </section>
+      <div class="list-games">
+    <div class="cards">
+      <div class="card " style="--clr:#9c9c08;" >
+       <div class="imgBx">
+         <img src="image/SEARCH.png" loading="lazy">
+         </div>
+       <div class="content">
+         <h2>Block Search</h2>
+       <p>Here you will find additional things mentioned in the videos</p>
+       <a href="login/branch/SEARCH.html">Download</a>
+       </div>
+     </div>
+     <div class="card " style="--clr:#ac0000;" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/FF.png" loading="lazy">
+         </div>
+       <div class="content">
+         <h2>Free Fire</h2>
+       <p>Free Fire: Battle royale game (shooter) </p>
+       <a href="login/LOGFF.html">Download</a>
+       </div>
+     </div>
+     <div class="card " style="--clr:#101074;" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/PUB.png" loading="lazy">
+       </div>
+       <div class="content">
+         <h2>Pubg</h2>
+       <p>Pubg: Battle royale game (shooter)</p>
+       <a href="login/LOGPUBG.html">Download</a>
+       </div>
+     </div>
+     <div class="card " style="--clr:rgb(55,177,32);" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/TOL.png" loading="lazy">
+       </div>
+       <div class="content">
+         <h2>Toolbox</h2>
+       <p>Tooblox: Infinite time and also a Premium version</p>
+       <a href="login/LOGTOOLBOX.html">Download</a>
+       </div>
+     </div>
+      <div class="card " style="--clr:rgb(152,24,161);" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/PROTO.png" loading="lazy">
+       </div>
+       <div class="content">
+         <h2>Protoahack</h2>
+       <p>Protohack: VPN with proper and effective penetration </p>
+       <a href="login/LOGPROTO.html">Download</a>
+       </div>
+     </div>
+      <div class="card " style="--clr:rgb(113,57,6);" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/MCPE.png" loading="lazy">
+       </div>
+       <div class="content">
+         <h2>Minecraft</h2>
+       <p>Minecraft: Creativity and adventure in endless worlds.</p>
+       <a href="login/LOGMCPE.html">Download</a>
+       </div>
+     </div>
+      <div class="card " style="--clr:rgb(136,42,176);" >
+       <div class="imgBx">
+         <img src="login/branch/contact/img/SHOP.png" loading="lazy">
+       </div>
+       <div class="content">
+         <h2>My Shop</h2>
+       <p>A store selling Wealth inside the games using digital currencies</p>
+       <a href="https://evox-exterminel.mysellix.io/">Download</a>
+       </div>
+     </div>
+   </div>
+</div>
+<br>
 
-        <section class="spacing2">
-            <div class="social-optionsyt">
-                <div class="social-button" onclick="window.location.href='https://t.me/HACK_X_FOR_ALL_GAMES'">
-                    <img src="image/TL.png" alt="Telegram Icon" class="social-icon">
-                    <div class="social-option social-optiontl" id="SIZE1">Telegram : Join</div>
-                </div>
-            </div>
-        </section>
-          <section class="spacing3">
-            <div class="social-optionsyt">
-                <div class="social-button" onclick="window.location.href='https://www.facebook.com/share/VEThXHQiWjVn7Ji5/?mibextid=A7sQZp'">
-                    <img src="image/FC.png" alt="FACEBOOK Icon" class="social-icon">
-                    <div class="social-option social-optiontl" id="SIZE1">facebook : Join the group now</div>
-                </div>
-            </div>
-        </section>
-        </footer>
 <br>
     <div class="copyright" ><span data-text="C">C</span><span data-text="o">o</span><span data-text="p">p</span><span data-text="y">y</span><span data-text="R">R</span><span data-text="i">i</span><span data-text="g">g</span><span data-text="h">h</span><span data-text="t">t</span><span data-text="@">@</span> <span data-text="H">H</span><span data-text="A">A</span><span data-text="C">C</span><span data-text="K">K</span><span data-text="-">-</span><span data-text="X">X</span> <span data-text="F">F</span><span data-text="O">O</span><span data-text="R">R</span> <span data-text="A">A</span><span data-text="L">L</span><span data-text="L">L</span> <span data-text="G">G</span><span data-text="A">A</span><span data-text="M">M</span><span data-text="E">E</span><span data-text="S">S</span>
 </div>
@@ -371,6 +465,6 @@ setInterval(writeText2, 150);
   <script type="text/javascript" src="https://udbaa.com/bnr.php?section=General&pub=526372&format=468x60&ga=g"></script>
 
 </section>
-
+      <script src="login/branch/js/LOAD.js"></script>
 </body>
 </html>
