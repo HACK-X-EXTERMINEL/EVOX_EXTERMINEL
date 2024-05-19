@@ -460,7 +460,7 @@ user-select: all;
 .copyright {
   font-size: 16px;
   position: relative;
-  margin: 0;
+  margin-left:-10px;
   padding: 20px 10px;
   letter-spacing: 2px;
   background-color: black;
@@ -570,14 +570,14 @@ user-select: all;
         justify-content: center;
         align-items: flex-start;
         width: 270px;
-        height: 290px;
+        height: 270px;
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 35px 80px rgba(0,0,0,0.15);
         transition: 0.5s;
       }
       .cards .card:hover {
-        height: 330px;
+        height: 320px;
       }
       .cards .card .imgBx {
         position: absolute;
@@ -589,7 +589,7 @@ user-select: all;
         transition: 0.5s;
       }
       .cards .card:hover .imgBx {
-        top: -100px;
+        top: -90px;
         scale:0.75;
       }
       .cards .card .imgBx img {
