@@ -28,10 +28,11 @@
             border: 2px solid black;
         }
 
-form label{
+        form label{
+            display: block;
+            position:flex;
             margin-top:2vh;
             margin-bottom: 2vh;
-            display: block;
             color: #52d13f;
             background: rgb(0,0,0,0.4);
             border-radius: 40px 20px 40px 20px;
@@ -41,7 +42,8 @@ form label{
             box-shadow: 0 0 20px #52d13f;
             backdrop-filter: blur(10px);
             width: 60%;
-            margin-left:100px;
+            margin-left:20%;
+            text-align: center;
         }
 
         select {

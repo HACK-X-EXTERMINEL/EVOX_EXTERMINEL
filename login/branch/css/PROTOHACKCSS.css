@@ -28,21 +28,22 @@
         }
 
         form label{
+            display: block;
+            position:flex;
             margin-top:2vh;
             margin-bottom: 2vh;
-            display: block;
-            color: #29b6f6;
+            color: red;
             background: rgb(0,0,0,0.4);
             border-radius: 40px 20px 40px 20px;
             padding-top:10px;
             padding-bottom: 12px;
             font-size: 20px;
-            box-shadow: 0 0 20px #6a1b9a;
+            box-shadow: 0 0 20px #ffffff;
             backdrop-filter: blur(10px);
             width: 60%;
-            margin-left:100px;
+            margin-left:20%;
+            text-align: center;
         }
-
         select {
             width: 60vw;
             padding: 2vh;
