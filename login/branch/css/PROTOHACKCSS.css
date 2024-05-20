@@ -32,13 +32,13 @@
             position:flex;
             margin-top:2vh;
             margin-bottom: 2vh;
-            color: red;
+            color: #29b6f6;
             background: rgb(0,0,0,0.4);
             border-radius: 40px 20px 40px 20px;
             padding-top:10px;
             padding-bottom: 12px;
             font-size: 20px;
-            box-shadow: 0 0 20px #ffffff;
+            box-shadow: 0 0 20px #6a1b9a;
             backdrop-filter: blur(10px);
             width: 60%;
             margin-left:20%;
