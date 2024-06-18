@@ -586,8 +586,8 @@ user-select: all;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        width: 270px;
-        height: 270px;
+        width: 240px;
+        height: 260px;
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 35px 80px rgba(0,0,0,0.15);
@@ -619,7 +619,7 @@ user-select: all;
       }
       .cards .card .content {
         position: absolute;
-        top: 190px;
+        top: 170px;
         width: 100%;
         padding: 0 30px;
         height: 80px;
@@ -628,8 +628,8 @@ user-select: all;
         transition: 0.5s;
       }
       .cards .card:hover .content {
-        top: 60px;
-        height: 300px;
+        top: 30px;
+        height: 340px;
       }
       .cards .card .content h2 {
         font-size: 1.5em;
@@ -694,7 +694,7 @@ user-select: all;
       box-shadow: 0 0 10px white;
       border-radius:40px;
       text-align: left;
-      width: 40%;
+      width: 200px;
       padding-top:5px;
       padding-bottom:5px;
     }
