@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Download all hacked games, download all games for free, and download PUBG and Free Fire scripts and Minecraft hacks ">
-  <meta name="description" lang="ar" content="تحميل جميع العاب مهكرة و تحميل العاب المدفوعة مجانا و تحميل سكريبتات ببجي و فري فاير و تحميل هكرات للعبة ماين كرافت">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Protest+Guerrilla&display=swap" rel="stylesheet">
@@ -18,7 +17,7 @@
          <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8773179365594906"
      crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="login/branch/css/LOAD.css">
+      <link rel="stylesheet" href="login/branch/contact/css/LOAD.css">
       <link rel="stylesheet" href="login/branch/css/GLOBAL.css">
      <script>
      // منع النقر بزر الفأرة الأيمن على الصور
@@ -124,17 +123,19 @@ function search() {
         error.play();
         setTimeout(function () {
             document.getElementById("alert").style.display = "none";
-        }, 7000);
+        }, 5000);
         return;
     }
 
     if (secretLinks.hasOwnProperty(input)) {
         
         document.getElementById("alert").style.display = "none";
-        document.getElementById("alert1").innerHTML = "loading...";
-        document.getElementById("alert1").style.display = "block";
+        document.getElementById("alert0").innerHTML = "loading...";
+        document.getElementById("alert0").style.display = "block";
         setTimeout(function () {
-            document.getElementById("alert1").innerHTML = "correct keyword, thanks!";
+          document.getElementById("alert0").style.display = "none";
+          document.getElementById("alert1").style.display = "block";
+            document.getElementById("alert1").innerHTML = "correct keyword, Congratulations!";
             confirm.play();
         }, 2000);
         setTimeout(function () {
@@ -144,10 +145,10 @@ function search() {
             window.location.href = secretLinks[input];
         }, 4000);
     } else {
-        document.getElementById("alert1").innerHTML = "loading...";
-        document.getElementById("alert1").style.display = "block";
+        document.getElementById("alert0").innerHTML = "loading...";
+        document.getElementById("alert0").style.display = "block";
         setTimeout(function () {
-            document.getElementById("alert1").style.display = "none";
+            document.getElementById("alert0").style.display = "none";
             document.getElementById("alert").innerHTML = "Invalid keyword. Please try again.";
             document.getElementById("alert").style.display = "block";
             error.play();
@@ -224,11 +225,11 @@ function writeText1() {
 setInterval(writeText1, 150);
 
 const phrases2 = [
-    { text2: "Free Fire", color: "#732b2b" },
-    { text2: "Pubg", color: "#848429" },
-    { text2: "Toolbox", color: "#714620" },
-    { text2: "ProtoHack", color: "#6c236e" },
-    { text2: "Minecraft pe", color: "#234623" }
+    { text2: "Free Fire", color: "#cd1c1c" },
+    { text2: "Pubg", color: "#d7d729" },
+    { text2: "Toolbox", color: "#2fa02f" },
+    { text2: "ProtoHack", color: "#af23b3" },
+    { text2: "Minecraft pe", color: "#c2691a" }
 ];
 let currentPhrase2 = 0;
 let currentCharacter2 = 0;
@@ -260,7 +261,7 @@ setInterval(writeText2, 150);
   <style>
 
     </style>
-    <title>HACK-X EXTERMINEL FOR ALL GAMES</title>
+    <title>EVOX</title>
 </head>
 
 <body>
@@ -282,13 +283,13 @@ setInterval(writeText2, 150);
       <i class='bx bx-x' id="close-icon"></i>
     </label>
     <nav class="navbar">
-      <span  style="--i:0;" class="words"><a href="https://evox-exterminel.netlify.app/">Home</a></span>
+      <span  style="--i:0;" class="words"><a href="index.html">Home</a></span>
       <hr>
       <span style="--i:1;" class="words"><a href="#">About</a></span>
       <hr>
       <span style="--i:2;" class="words"><a href="#">Services</a></span>
       <hr>
-      <span style="--i:3;" class="words"><a href="contact/index.html">Contacts</a></span>
+      <span style="--i:3;" class="words"><a href="login/branch/contact/index.html">Contacts</a></span>
       <hr>
       <section class="go">
       <h4 class="igames"><u>Games</u></h4>
@@ -337,9 +338,10 @@ setInterval(writeText2, 150);
                     <div id="suggestions"></div>
                     <p id="alert" ></p>
                     <p id="alert1" ></p>
-                    <button onclick="search()" class="search" id="search">Search</button>
+                    <p id="alert0"></p>
+                    <button onclick="search()" class="btn-primary btn-ghost" id="search" >Search</button>
                     </div>
-                    <button id="closebutton" class="search">Close</button>
+                    <button id="closebutton" class="btn-primary btn-ghost">Close</button>
                 
             </div>
         </div>
@@ -395,7 +397,9 @@ setInterval(writeText2, 150);
     <section class="background" align="left">
       <br>
       <div id="icons-socials">
-      <a href="#"><i style="border-radius:10px;padding:-3px 0px -3px 0px" class="fa-brands fa-youtube" ></i></a><a href="#"><i class="fa-brands fa-telegram" ></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://youtube.com/@alx_ext?si=5-Ooyz-hBW6Mh0oU"><i style="border-radius:10px;padding:-3px 0px -3px 0px" class="fa-brands fa-youtube" ></i></a>
+      <a href="login/branch/contact/TELEGRAM.html"><i class="fa-brands fa-telegram" ></i></a>
+      <a href="https://m.facebook.com/groups/459075609907042/?ref=share&mibextid=NSMWBT"><i class="fa-brands fa-facebook"></i></a>
       </div>
       <br>
       <div class="auto-text">
