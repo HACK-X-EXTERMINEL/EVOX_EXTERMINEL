@@ -619,10 +619,10 @@ user-select: all;
       }
       .cards .card .content {
         position: absolute;
-        top: 200px;
+        top: 185px;
         width: 100%;
         padding: 0 30px;
-        height: 80px;
+        height: 65px;
         overflow: hidden;
         text-align: center;
         transition: 0.5s;
@@ -694,7 +694,7 @@ user-select: all;
       box-shadow: 0 0 10px white;
       border-radius:40px;
       text-align: left;
-      width: 170px;
+      width: 150px;
       padding-top:5px;
       padding-bottom:5px;
     }
