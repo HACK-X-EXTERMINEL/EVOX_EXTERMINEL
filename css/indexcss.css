@@ -594,7 +594,7 @@ user-select: all;
         transition: 0.5s;
       }
       .cards .card:hover {
-        height: 320px;
+        height: 290px;
       }
       .cards .card .imgBx {
         position: absolute;
@@ -619,7 +619,7 @@ user-select: all;
       }
       .cards .card .content {
         position: absolute;
-        top: 170px;
+        top: 200px;
         width: 100%;
         padding: 0 30px;
         height: 80px;
@@ -628,8 +628,8 @@ user-select: all;
         transition: 0.5s;
       }
       .cards .card:hover .content {
-        top: 30px;
-        height: 340px;
+        top: 50px;
+        height: 310px;
       }
       .cards .card .content h2 {
         font-size: 1.5em;
@@ -694,7 +694,7 @@ user-select: all;
       box-shadow: 0 0 10px white;
       border-radius:40px;
       text-align: left;
-      width: 200px;
+      width: 170px;
       padding-top:5px;
       padding-bottom:5px;
     }
