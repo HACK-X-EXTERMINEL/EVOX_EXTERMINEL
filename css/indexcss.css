@@ -223,6 +223,7 @@ li::before {
   border-radius: 20px;
   color: #fff;
   padding: 15px 35px 15px 20px;
+  margin-right:20px;
   }
   .section-container{
     position: fixed;
@@ -276,7 +277,7 @@ li::before {
         color:#fff;
         font-weight: 700;
         text-decoration: uppercase;
-        margin-top:20px;
+        margin-top:5px;
         overflow: hidden;
         position: relative;
         border-radius: 20px 10px 20px 10px;
@@ -304,7 +305,7 @@ li::before {
       }
       #search{
         padding: 8px 20px 20px 20px;
-        width: 155px;
+        width: 150px;
         height: 38px;
         color:#fff;
         font-weight: 700;
