@@ -261,7 +261,7 @@ li::before {
   padding: 8.5px 30px;
   border-radius: 30px 15px 30px 15px;
   position: absolute;
-  margin-left:77%;
+  margin-left:77.5%;
 }
   #button2-open{
     display:none;
@@ -508,8 +508,8 @@ user-select: all;
 
 .copyright span:before {
   z-index: 10;
-  -webkit-text-stroke: 2px rgba(131, 9, 184,1);
-  text-stroke: 2px rgba(131, 9, 184,1); /* للتوافق مع المتصفحات الأخرى */
+  -webkit-text-stroke: 1px rgba(131, 9, 184,1);
+  text-stroke: 1px rgba(131, 9, 184,1); /* للتوافق مع المتصفحات الأخرى */
   animation: animate1 1s ease-in-out infinite;
 }
 
@@ -525,8 +525,8 @@ user-select: all;
 
 .copyright span:after{
   z-index:9;
-  -webkit-text-stroke: 2px rgba(255,255,255,0.23);
-  animation: animate2 1s ease-in-out infinite;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.23);
+  animation: animate2 0.9s ease-in-out infinite;
 }
 @keyframes animate2 {
   0%, 100% {
