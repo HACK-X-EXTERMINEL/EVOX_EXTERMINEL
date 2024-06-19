@@ -68,7 +68,7 @@
 
        #container{
   position: fixed;
-  top: 140px; /* يضع الإشعار خارج الشاشة في البداية */
+  top: 130px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
   width:70%;
   height:auto;
@@ -481,7 +481,7 @@ user-select: all;
   }
 }
 .copyright {
-  font-size: 12px;
+  font-size: 14px;
   position: relative;
   margin-left:-10px;
   padding: 20px 10px;
@@ -494,7 +494,7 @@ user-select: all;
   position: relative;
   color: transparent;
   -webkit-text-stroke: 2px rgba(255,255,255,.2);
-  text-stroke: 2px rgba(255,255,255,.2);
+  text-stroke: 1px rgba(255,255,255,.2);
 }
 
 .copyright span:before,
@@ -678,6 +678,7 @@ user-select: all;
       background: linear-gradient(0deg,rgb(18,33,173),#7f12ad,#ad12a3);
       background-clip: text;
       text-shadow: 0 0 5px rgba(127,18,173,0.35);
+      font-size:16px;
     }
      .fa-brands{
      font-size: 30px;
