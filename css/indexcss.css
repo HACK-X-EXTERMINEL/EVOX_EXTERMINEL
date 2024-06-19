@@ -68,7 +68,7 @@
 
        #container{
   position: fixed;
-  top: 150px; /* يضع الإشعار خارج الشاشة في البداية */
+  top: 140px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
   width:70%;
   height:auto;
@@ -694,7 +694,7 @@ user-select: all;
       box-shadow: 0 0 10px white;
       border-radius:40px;
       text-align: left;
-      width: 150px;
+      width: 142px;
       padding-top:5px;
       padding-bottom:5px;
     }
