@@ -271,8 +271,8 @@ li::before {
 }
       #closebutton{
         padding: 8px 20px 20px 20px;
-        width: 200px;
-        height: 50px;
+        width: 150px;
+        height: 35px;
         color:#fff;
         font-weight: 700;
         text-decoration: uppercase;
@@ -282,7 +282,7 @@ li::before {
         border-radius: 20px 10px 20px 10px;
         background: #272761;
         box-shadow:0 0 20px 5px red ;
-        margin-left:25%;
+        margin-left:20%;
       }
       #closebutton::before{
         content:"";
@@ -510,7 +510,7 @@ user-select: all;
   z-index: 10;
   -webkit-text-stroke: 1px rgba(131, 9, 184,1);
   text-stroke: 1px rgba(131, 9, 184,1); /* للتوافق مع المتصفحات الأخرى */
-  animation: animate1 1s ease-in-out infinite;
+  animation: animate1 0.99s ease-in-out infinite;
 }
 
 @keyframes animate1 {
@@ -526,7 +526,7 @@ user-select: all;
 .copyright span:after{
   z-index:9;
   -webkit-text-stroke: 1px rgba(255,255,255,0.23);
-  animation: animate2 0.9s ease-in-out infinite;
+  animation: animate2 1s ease-in-out infinite;
 }
 @keyframes animate2 {
   0%, 100% {
