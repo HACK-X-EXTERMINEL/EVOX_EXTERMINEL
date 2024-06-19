@@ -228,8 +228,8 @@ li::before {
   .section-container{
     position: fixed;
   top: -800px; /* يضع الإشعار خارج الشاشة في البداية */
-  left: 48%;
-  width: 80%;
+  left: 50%;
+  width: 75%;
   height:auto;
   transform: translateX(-50%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
