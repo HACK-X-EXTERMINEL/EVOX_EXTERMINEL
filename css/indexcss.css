@@ -213,7 +213,7 @@ li::before {
     align-items: center;
   }
   input[type=text] {
-    width: 80%;
+    width: 70%%;
     margin-bottom: 10px;
     font-family: 'Agbalumo', system-ui;
     background: rgba(255, 255, 255, .2);
@@ -222,7 +222,7 @@ li::before {
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 20px;
   color: #fff;
-  padding: 20px 45px 20px 20px;
+  padding: 15px 35px 15px 20px;
   }
   .section-container{
     position: fixed;
@@ -304,8 +304,8 @@ li::before {
       }
       #search{
         padding: 8px 20px 20px 20px;
-        width: 200px;
-        height: 50px;
+        width: 155px;
+        height: 38px;
         color:#fff;
         font-weight: 700;
         text-decoration: uppercase;
