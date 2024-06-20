@@ -20,24 +20,6 @@
       <link rel="stylesheet" href="login/branch/contact/css/LOAD.css">
       <link rel="stylesheet" href="login/branch/css/GLOBAL.css">
      <script>
-     // منع النقر بزر الفأرة الأيمن على الصور
-document.addEventListener('contextmenu', function(e) {
-  if (e.target.nodeName === 'IMG') {
-    e.preventDefault();
-  }
-}, false);
-
-// منع السحب والإفلات للصور
-document.addEventListener('dragstart', function(e) {
-  if (e.target.nodeName === 'IMG') {
-    e.preventDefault();
-  }
-}, false);
-window.addEventListener('touchstart', function(e) {
-  if (e.target.nodeName === 'IMG') {
-    e.preventDefault();
-  }
-}, false);
 
 var disqus_config = function () {
     this.page.url = window.location.href;
