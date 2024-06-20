@@ -1,3 +1,20 @@
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
+
+// منع السحب والإفلات للصور
+document.addEventListener('dragstart', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
+window.addEventListener('touchstart', function(e) {
+  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+}, false);
 var loader = document.getElementById("preload");
 
 // تعطيل التمرير
