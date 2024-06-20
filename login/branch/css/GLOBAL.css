@@ -232,7 +232,7 @@
   border-radius: 20px 10px 20px 10px;
 }
        #container{
-  position: fixed;
+  position: absolute;
   top: 120px; /* يضع الإشعار خارج الشاشة في البداية */
   left: 50%;
   width:70%;
