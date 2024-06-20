@@ -152,7 +152,7 @@
         border-radius: 20px 10px 20px 10px;
         background: #272761;
         box-shadow:0 0 20px 5px red ;
-        margin-left:20%;
+        margin-left:21%;
       }
       #closebutton::before{
         content:"";
