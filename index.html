@@ -108,6 +108,7 @@ function showSecret() {
 }
 function search() {
     var input = document.getElementById("searchInput").value;
+    var search = document.getElementById('search');
     var error = new Audio('login/branch/sounds/ERROR.mp3');
     var confirm = new Audio('login/branch/sounds/CONF.mp3');
     var secretLinks = {
@@ -118,8 +119,15 @@ function search() {
 
     // تحقق إذا كان المدخل فارغًا
     if (input.trim() === "") {
+      document.getElementById("alert1").style.display = "none";
+        document.getElementById("alert0").style.display = "none";
         document.getElementById("alert").innerHTML = "Empty !??";
         document.getElementById("alert").style.display = "block";
+         var boxShadowColor = "0 0 20px 5px red";
+search.style.boxShadow = boxShadowColor;
+setTimeout(function() {
+    search.style.boxShadow = ""; 
+}, 5000); 
         error.play();
         setTimeout(function () {
             document.getElementById("alert").style.display = "none";
@@ -128,14 +136,21 @@ function search() {
     }
 
     if (secretLinks.hasOwnProperty(input)) {
-        
+        document.getElementById("alert1").style.display = "none";
         document.getElementById("alert").style.display = "none";
         document.getElementById("alert0").innerHTML = "loading...";
         document.getElementById("alert0").style.display = "block";
+        search.style.boxShadow = ""; 
         setTimeout(function () {
           document.getElementById("alert0").style.display = "none";
+          document.getElementById("alert").style.display = "none";
           document.getElementById("alert1").style.display = "block";
             document.getElementById("alert1").innerHTML = "correct keyword, Congratulations!";
+            var boxShadowColor = "0 0 20px 5px green";
+             search.style.boxShadow = boxShadowColor;
+             setTimeout(function() {
+              search.style.boxShadow = ""; 
+              }, 5000); 
             confirm.play();
         }, 2000);
         setTimeout(function () {
@@ -145,12 +160,20 @@ function search() {
             window.location.href = secretLinks[input];
         }, 4000);
     } else {
+      document.getElementById("alert").style.display = "none";
+        document.getElementById("alert").style.display = "none";
         document.getElementById("alert0").innerHTML = "loading...";
         document.getElementById("alert0").style.display = "block";
+         search.style.boxShadow = ""; 
         setTimeout(function () {
             document.getElementById("alert0").style.display = "none";
             document.getElementById("alert").innerHTML = "Invalid keyword. Please try again.";
             document.getElementById("alert").style.display = "block";
+            var boxShadowColor = "0 0 20px 5px red";
+             search.style.boxShadow = boxShadowColor;
+             setTimeout(function() {
+             search.style.boxShadow = ""; 
+             }, 5000); 
             error.play();
         }, 2000);
         setTimeout(function () {
@@ -163,7 +186,7 @@ function showWordSecret() {
   var button2 = document.getElementById('button2');
   var button2Open = document.getElementById('button2-open');
   var closebutton2 = document.getElementById('close-btnSW');
-  var countdown = document.getElementById('countdown');
+  var countdown = document.getElementById('countdown1');
 
   var click = new Audio('login/branch/sounds/click.wav');
   var close = new Audio('login/branch/sounds/close.wav');
@@ -347,7 +370,7 @@ setInterval(writeText2, 150);
         </div>
     </section>
     <div class="countdown">
-    <div id="countdown"></div>
+    <div id="countdown1"></div>
     </div>
     <button onclick="showWordSecret()" id="button2"><i class="fa-solid fa-key"  id="style2" ></i></button>
         <button onclick="showWordSecret()" id="button2-open"><i class="fa-solid fa-box-archive" id="style2" ></i></button>
@@ -359,7 +382,7 @@ setInterval(writeText2, 150);
     <h4>the words:</h4>
     <ul class="list">
    </ul>
-    <button id="close-btnSW">Close</button>
+    <button id="close-btnSW" style="margin-left:35%;">Close</button>
   </div>
 </div>
       <div id="container">
@@ -375,7 +398,7 @@ setInterval(writeText2, 150);
    <li><h5><u><strong>There is no version for Toolbox : <span id="text1"></span></strong></u></h5></li>
    </ul>
     <img class='container-img' src="login/branch/contact/img/A.png">
-    <button id="close-btn">Close</button>
+    <button id="close-btn" style="margin-left:35%;">Close</button>
   </div>
 </div>
     <div class="header">
