@@ -91,7 +91,7 @@
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 20px;
   color: #fff;
-  padding: 15px 35px 15px 20px;
+  padding: 15px 25px 15px 20px;
   margin-right:20px;
   }
   .section-container{
@@ -152,7 +152,7 @@
         border-radius: 20px 10px 20px 10px;
         background: #272761;
         box-shadow:0 0 20px 5px red ;
-        margin-left:21%;
+        margin-left:20%;
       }
       #closebutton::before{
         content:"";
@@ -464,7 +464,7 @@ user-select: all;
         transition: 0.5s;
       }
       .cards .card:hover {
-        height: 260px;
+        height: 240px;
       }
       .cards .card .imgBx {
         position: absolute;
