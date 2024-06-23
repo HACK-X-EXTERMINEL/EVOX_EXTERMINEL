@@ -1,165 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/SEARCHCSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/GLOBAL.css">
 <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="img/search.png"/>
-        <link rel="stylesheet" href="contact/css/LOAD.css">
-<title>Search Bar</title>
-<style>
-  body {
-    -webkit-touch-callout: none;
-     -webkit-user-select: none;
-     -khtml-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-      user-select: none;
-    margin: 0;
-    padding: 0;
-    font-family: 'Agbalumo', system-ui;
-    background: linear-gradient(45deg, #6a1b9a, #29b6f6);
-    border-radius: 40px;
-    background-size: 300% 300%;
-    animation: gradientMove 5s linear infinite;
-    backdrop-filter: blur(10px);
-    filter: brightness(120%) saturate(150%);
-  }
+  <link rel="stylesheet" href="contact/css/LOAD.css">
 
-  @keyframes gradientMove {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .search-container {
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-  }
-
-  .mute-button {
-    background-color: #FF0000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-family: 'Agbalumo', system-ui;
-    margin-left: 20px;
-    position: relative;
-  }
-
-  .mute-button:hover .mute-info {
-    display: block;
-  }
-
-  .mute-info {
-    position: absolute;
-    bottom: -100px;
-    left: -60px;
-    width: 200px;
-    background-color: black;
-    border-radius: 10px;
-    padding: 10px;
-    display: none;
-  }
-
-  .games-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-  }
-
-  input[type=text] {
-    padding: 10px;
-    width: 90%;
-    margin-bottom: 10px;
-    border-radius: 50px;
-    font-family: 'Agbalumo', system-ui;
-  }
-
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 90%;
-    border-radius: 50px;
-    font-family: 'Agbalumo', system-ui;
-  }
-
-  button:hover {
-    background-color: #45a049;
-  }
-
-  /* Styles for game images */
-  .game {
-    text-align: center;
-  }
-
-  .game img {
-    width: 80%;
-    border-radius: 60px;
-    height: auto;
-    cursor: pointer;
-  }
-
-  .game p {
-    font-weight: bold;
-    margin: 5px 0;
-  }
-
-  #notification {
-    display: none;
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #000;
-    color: #FFF;
-    border-radius: 30px;
-    z-index: 1000;
-    animation: fadeIn 0.5s ease-out;
-    text-align: center;
-    box-shadow: -10px -10px 10px red, 10px 10px 10px blue, 0 0 10px purple;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-.description {
-  text-align: left;
-}
-
-</style>
-</head>
-<body>
-    <div class="like" id="preload">
+        <title>search block</title>
+    </head>
+    <body>
+          <div class="like" id="preload">
   <div class="dice">
   <div class="dice-dot one"></div>
   <div class="dice-dot two"></div>
@@ -171,155 +30,20 @@
 </div>
 <audio id="errorSound">
   <source src="sounds/ERROR.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
-
-<div class="container">
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search here...">
-    <div id="suggestions"></div>
-    <button onclick="search()">Search</button>
-    <button class="mute-button" onclick="toggleMute()">MUTE
-      <div class="mute-info">
-        <p>This button toggles the sound on and off.</p>
-      </div>
-    </button>
-  </div>
-  <div class="games-container" id="games"></div>
-</div>
-<div id="notification"></div>
-<script>
-var isMuted = false;
-
-function toggleMute() {
-  isMuted = !isMuted;
-  var audios = document.getElementsByTagName("audio");
-  for (var i = 0; i < audios.length; i++) {
-    if (isMuted) {
-      audios[i].pause();
-    } else {
-      audios[i].play();
-    }
-  }
-}
-
-var games = [
-  { name: "SHOP", imageUrl: "contact/img/shop.png", downloadLink: "https://evox-exterminel.mysellix.io/", description: "Buy whatever goods you want, Free Fire gems, PUBG, hacked applications VIP PREMIUM " },
-  { name: "VIRTUAL", imageUrl: "img/virtual-android.jpg", downloadLink: "https://try2link.com/jNMhh", description: "This is a game copier and an Android emulator for Android devices" },
-  
-  // You can add more games here
-];
-
-var currentGame = null; // To keep track of the game with open description
-
-// Load games when the page loads
-window.onload = function () {
-  displayGames(games);
-};
-
-// Display games on the page
-function displayGames(games) {
-  var gamesContainer = document.getElementById("games");
-  gamesContainer.innerHTML = ""; // Clear previous content
-
-  games.forEach(function (game) {
-    var existingGame = document.getElementById(game.name.replace(/\s/g, ''));
-    if (!existingGame) {
-      var gameDiv = document.createElement("div");
-      gameDiv.classList.add("game");
-      gameDiv.id = game.name.replace(/\s/g, ''); // Remove spaces from game name to use as id
-
-      var img = document.createElement("img");
-      img.src = game.imageUrl;
-      img.alt = "Game Image";
-      img.onclick = function () {
-        window.location.href = game.downloadLink;
-      };
-
-      var namePara = document.createElement("p");
-      namePara.textContent = game.name;
-
-      if (game.description) {
-        var descriptionPara = document.createElement("p");
-        descriptionPara.textContent = game.description;
-        descriptionPara.classList.add("description");
-        descriptionPara.style.display = "none";
-      }
-
-      var toggleButton = document.createElement("button");
-toggleButton.textContent = "Learn more";
-toggleButton.onclick = function () {
-  if (descriptionPara.style.display === "none") {
-    descriptionPara.style.display = "block";
-    currentGame = gameDiv.id;
-    toggleButton.textContent = "less";
-  } else {
-    descriptionPara.style.display = "none";
-    toggleButton.textContent = "Learn more"; 
-    currentGame = null;
-  }
-};
-
-
-      gameDiv.appendChild(img);
-      gameDiv.appendChild(namePara);
-      if (game.description) {
-        gameDiv.appendChild(descriptionPara);
-      }
-      if (game.description) {
-        gameDiv.appendChild(toggleButton);
-      }
-
-      gamesContainer.appendChild(gameDiv);
-    }
-  });
-}
-
-// Search and display suggestions
-document.getElementById("searchInput").addEventListener("input", function () {
-  search();
-});
-
-function search() {
-  var input = document.getElementById("searchInput").value.toUpperCase();{
-    var games = document.querySelectorAll('.game');
-    var noResults = document.getElementById("noResults");
-    var found = false;
-
-    games.forEach(function (game) {
-      var gameName = game.querySelector('p').textContent.toUpperCase();
-      if (gameName.startsWith(input) || input === "") {
-        game.style.display = "block";
-        found = true;
-      } else {
-        game.style.display = "none";
-      }
-    });
-
-    if (!found) {
-      showNotification("Invalid code, please try again");
-      playErrorSound();
-    }
-  }
-}
-
-function showNotification(message) {
-  var notification = document.getElementById("notification");
-  notification.textContent = message;
-  notification.style.display = "block";
-  setTimeout(function () {
-    notification.style.display = "none";
-  }, 5000);
-}
-
-function playErrorSound() {
-  var errorSound = document.getElementById("errorSound");
-  if (!isMuted) {
-    errorSound.play();
-  }
-}
-
-</script>
-       <script src="js/LOAD.js"></script>
-</body>
+        <div class="container">
+            <div class="search" id="search-bar">
+                <input type="search" placeholder="Type something..." name="q" class="search__input" id="searchInput">
+                <div class="search__button" id="search-button">
+                    <i class="ri-search-2-line search__icon"></i>
+                    <i class="ri-close-line search__close"></i>
+                </div>
+            </div>
+        </div>
+          <div class="games-container" id="games"></div>
+          <div id="notification"></div>
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main.js"></script>
+               <script src="js/LOAD.js"></script>
+    </body>
 </html>
