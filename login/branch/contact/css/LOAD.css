@@ -1,0 +1,151 @@
+.like {
+  background: #131a2a;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  touch-action: none;
+}
+
+.dice {
+  display: flex;
+  position: fixed;
+  height: 120px;
+  width: 120px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: letsroll 6s forwards;
+  box-shadow: 0px 0px 200px #d82091;
+  z-index: 1000;
+}
+.dice-dot {
+  height: 20px;
+  width: 20px;
+  background: #000;
+  display: flex;
+  border-radius: 16px;
+  position: absolute;
+}
+
+.dice-dot.one {
+  transform: translate(30px, 30px);
+  animation: animate-position-1 0.75s 1s forwards;
+}
+
+.dice-dot.two {
+  transform: translate(30px, 30px);
+  opacity: 0;
+  animation: animate-position-2 0.75s 1.2s forwards;
+}
+
+.dice-dot.three {
+  opacity: 0;
+  transform: translate(30px, 30px);
+  animation: animate-position-3 0.75s 1.6s forwards,
+    animate-position-3-move 0.75s 2s forwards;
+}
+
+.dice-dot.four {
+  transform: translate(30px, 30px);
+  opacity: 0;
+  animation: animate-position-4 0.75s 2s forwards;
+}
+
+.dice-dot.five {
+  transform: translate(0px, 0px);
+  opacity: 0;
+  animation: animate-position-5 0.75s 2.3s forwards,
+    animate-position-5-move 0.75s 2.8s forwards;
+}
+
+.dice-dot.six {
+  transform: translate(30px, 30px);
+  opacity: 0;
+  animation: animate-position-6 0.75s 3s forwards;
+}
+
+@keyframes letsroll {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  75% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes animate-position-1 {
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes animate-position-2 {
+  100% {
+    opacity: 1;
+    transform: translate(60px, 60px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes animate-position-3 {
+  100% {
+    opacity: 1;
+    transform: translate(30px, 30px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes animate-position-3-move {
+  100% {
+    transform: translate(0px, 60px);
+  }
+}
+
+@keyframes animate-position-4 {
+  100% {
+    opacity: 1;
+    transform: translate(60px, 0px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes animate-position-5 {
+  100% {
+    opacity: 1;
+    transform: translate(30px, 30px);
+  }
+}
+
+@keyframes animate-position-5-move {
+  100% {
+    opacity: 1;
+    transform: translate(60px, 30px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes animate-position-6 {
+  100% {
+    opacity: 1;
+    transform: translate(0px, 30px);
+  }
+}
