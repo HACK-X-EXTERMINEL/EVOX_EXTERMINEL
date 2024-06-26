@@ -77,7 +77,7 @@
           transition: .3s ease;
         }
         #check:checked~.navbar {
-          height:40.7rem;
+          height:35.0rem;
         }
         .navbar span{
           display: block;
@@ -121,6 +121,7 @@
             border: 1px solid black;
             cursor: pointer;
             border-radius: 40px;
+            margin-left:10%;
       }
       .TOOL {
             background:linear-gradient(-45deg,#8c480f,#14c701);
