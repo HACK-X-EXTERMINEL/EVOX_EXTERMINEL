@@ -23,7 +23,16 @@ opacity: 0;
         </style>
 </head>
 <body>
-
+      <div class="like" id="preload">
+  <div class="dice">
+  <div class="dice-dot one"></div>
+  <div class="dice-dot two"></div>
+  <div class="dice-dot three"></div>
+  <div class="dice-dot four"></div>
+  <div class="dice-dot five"></div>
+  <div class="dice-dot six"></div>
+</div>
+</div>
   <header>
         <span class="logo"><a href="index.html"><img src="img/email.png" class="logo-img"></a></span>
     <input type="checkbox" id="check">
@@ -89,7 +98,7 @@ opacity: 0;
             <input type="text" name="subject" id="subject">
             <label for="message" class="form">Message</label>
             <textarea name="message" cols="30" rows="10"></textarea>
-            <div class="g-recaptcha" data-sitekey="6LcK2AEqAAAAABseIiTe9Il8phhekAH-sO1PKzYd"></div>
+            <div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LcK2AEqAAAAABseIiTe9Il8phhekAH-sO1PKzYd"></div>
             <input type="submit" value="Send">
         </form>
     </div>
