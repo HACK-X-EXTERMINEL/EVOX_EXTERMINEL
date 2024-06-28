@@ -147,8 +147,8 @@ function copyText() {
         <h2>HACK-X EXTERMINEL FOR TOOLBOX</h2>
 
         <form>
-            <label for="version">Version :</label>
-            <select id="version" name="version" onchange="handleGameChange()">
+            <label for="Version">Version :</label>
+            <select id="Version" name="Version" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
                 <option value="V_1_20_80">V-1.20.80</option> 
             </select>
@@ -211,8 +211,8 @@ function copyText() {
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
     <script>
-    function handleGameChange() {
-    var selectedversion = document.getElementById("version").value;
+function handleGameChange() {
+    var selectedVersion = document.getElementById("Version").value;
     var bitSelect = document.getElementById("bit");
     var choiceSelect = document.getElementById("choice");
     var actionSelect = document.getElementById("action");
@@ -220,19 +220,30 @@ function copyText() {
     // إعادة الخيارات إلى الحالة الأصلية
     bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
     choiceSelect.innerHTML = '<option value="Nothing">Nothing</option>';
-actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
+    actionSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
     
-    if (selectedversion === "V_1_20_80") {
+    if (selectedVersion === "V_1_20_80") {
         removeOption("bit", "32");
         removeOption("bit", "Nothing");
-        choiceSelect.innerHTML += '<option value="Cezar_Client1_20_80">Cezar Client 1.20.80</option> <option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>';
-    } else if (selectedversion === "Cezar_Client1_20_80") {
-      removeOption("bit", "32");
-    } else if (selectedversion === "FF2") {
+        choiceSelect.innerHTML += '<option value="Cezar_Client1_20_80">Cezar Client 1.20.80</option><option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>';
+    } else if (selectedVersion === "Cezar_Client1_20_80") {
+        removeOption("bit", "32");
+    } else if (selectedVersion === "FF2") {
         // تعديل الخيارات حسب لعبة FF2
     }
 }
-    let currentCode = generateRandomCode();
+
+function removeOption(selectId, valueToRemove) {
+    var select = document.getElementById(selectId);
+    for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === valueToRemove) {
+            select.remove(i);
+            break;
+        }
+    }
+}
+
+let currentCode = generateRandomCode();
 document.getElementById('randomCode').innerText = currentCode;
 
 function generateRandomCode() {
@@ -293,31 +304,28 @@ function clearInputs() {
         document.getElementById('code' + i).value = '';
     }
 }
+
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
     var countdownDiv = document.getElementById("countdown");
-    var selectedversion = document.getElementById("version").value;
+    var selectedVersion = document.getElementById("Version").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
 
-    if (selectedGame === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
+    if (selectedVersion === "Nothing" || selectedBit === "Nothing" || selectedChoice === "Nothing" || selectedAction === "Nothing") {
         document.getElementById("notification").innerHTML = "Please select a valid link combination!";
         document.getElementById("notification").style.display = "block";
         var errorSound = new Audio('sounds/ERROR.mp3');
         errorSound.play();
-var boxShadowColor = "0 0 20px 5px red";
-confirmationButton.style.boxShadow = boxShadowColor;
-setTimeout(function() {
-    confirmationButton.style.boxShadow = ""; 
-}, 5000); 
-        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.style.boxShadow = "0 0 20px 5px red";
+        setTimeout(function() {
+            confirmationButton.style.boxShadow = ""; 
+        }, 5000); 
         confirmationButton.innerText = "CONFIRMATION";
-
         setTimeout(function () {
             document.getElementById("notification").style.display = "none";
         }, 5000);
-
         return;
     }
 
@@ -327,45 +335,36 @@ setTimeout(function() {
         document.getElementById("notification").style.display = "block";
         var errorSound = new Audio('sounds/ERROR.mp3');
         errorSound.play();
-    var boxShadowColor = "0 0 20px 5px red";
-confirmationButton.style.boxShadow = boxShadowColor;
-setTimeout(function() {
-    confirmationButton.style.boxShadow = ""; 
-}, 5000); 
-        // إعادة نص الزر إلى "CONFIRMATION"
+        confirmationButton.style.boxShadow = "0 0 20px 5px red";
+        setTimeout(function() {
+            confirmationButton.style.boxShadow = ""; 
+        }, 5000); 
         confirmationButton.innerText = "CONFIRMATION";
-
         setTimeout(function () {
             document.getElementById("notification").style.display = "none";
         }, 5000);
-
         return;
     }
 
-    // إضافة العداد التنازلي قبل الزر
     confirmationButton.parentNode.insertBefore(countdownDiv, confirmationButton);
-var number = new Audio('sounds/pop.mp3');
-    // تغيير نص الزر إلى "Loading"
+    var number = new Audio('sounds/pop.mp3');
     confirmationButton.innerText = "Loading...";
-  var boxShadowColor = "0 0 20px 5px green";
-confirmationButton.style.boxShadow = boxShadowColor;
-setTimeout(function() {
-    confirmationButton.style.boxShadow = ""; 
-}, 7000); 
-    // عداد تنازلي من 5 إلى 0
+    confirmationButton.style.boxShadow = "0 0 20px 5px green";
+    setTimeout(function() {
+        confirmationButton.style.boxShadow = ""; 
+    }, 7000); 
+
     var countdownValue = 5;
     var countdownInterval = setInterval(function() {
-      countdownDiv.style.display = 'block';
-      number.play();
-        confirmationButton.innerText = "Loading... "+ "(" +countdownValue+")";
-        countdownDiv.innerText = "wait... " +"(" +countdownValue+")";
+        countdownDiv.style.display = 'block';
+        number.play();
+        confirmationButton.innerText = "Loading... (" + countdownValue + ")";
+        countdownDiv.innerText = "wait... (" + countdownValue + ")";
         countdownValue--;
         if (countdownValue < 0) {
             clearInterval(countdownInterval);
-            countdownDiv.innerText = "HACK-X" ;
+            countdownDiv.innerText = "HACK-X";
             confirmationButton.innerText = "go to link";
-
-            // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
             setTimeout(function () {
                 var links = {
                     V_1_20_80: {
@@ -373,23 +372,18 @@ setTimeout(function() {
                             EXOBOX1_20_80: {
                                 "(APK)": "https://try2link.com/d8RRej",
                                 "(APK1)": "https://stfly.biz/6THGH"
-                            }
-                        }
-                    },
-                    V_1_20_80: {
-                        64: {
+                            },
                             Cezar_Client1_20_80: {
                                 "(APK)": "https://try2link.com/wRsJ",
                                 "(APK1)": "https://sox.link/oocFQP9"
                             }
                         }
-                    },
+                    }
                 };
-                var link = links[selectedversion][selectedBit][selectedChoice][selectedAction];
+                var link = links[selectedVersion][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
                 countdownDiv.style.display = 'none';
                 confirmationButton.innerText = "CONFIRMATION";
-                // إعادة تحميل الصفحة بعد 5 ثواني
                 setTimeout(function () {
                     location.reload();
                 }, 2000);
