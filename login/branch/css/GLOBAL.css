@@ -77,7 +77,7 @@
           transition: .3s ease;
         }
         #check:checked~.navbar {
-          height:35.0rem;
+          height:40.7rem;
         }
         .navbar span{
           display: block;
@@ -121,7 +121,7 @@
             border: 1px solid black;
             cursor: pointer;
             border-radius: 40px;
-            margin-left:10%;
+            margin-left:5%;
       }
       .TOOL {
             background:linear-gradient(-45deg,#8c480f,#14c701);
@@ -170,6 +170,8 @@
             border-radius: 40px;
             color:white;
             text-align:center ;
+            font-size: 20px;
+            letter-spacing:8px;
         }
         .go{
           padding-bottom: 10px;
