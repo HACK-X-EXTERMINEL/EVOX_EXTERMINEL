@@ -114,7 +114,7 @@ function copyText() {
   </div>
   <div class="SHOP">
     <a href="https://evox-exterminel.mysellix.io/" style="text-decoration:none; color:white;">
-      <img src="contact/img/SHOP.png" class="img-games">MY SHOP
+      <img src="contact/img/SHOP.png" class="img-games">My Shop
     </a>
   </div>
 </span>
@@ -147,11 +147,10 @@ function copyText() {
         <h2>HACK-X EXTERMINEL FOR TOOLBOX</h2>
 
         <form>
-            <label for="game">Your favorite App:</label>
-            <select id="game" name="game" onchange="handleGameChange()">
+            <label for="version">Version :</label>
+            <select id="version" name="version" onchange="handleGameChange()">
                 <option value="Nothing">Nothing</option>
-                <option value="Cezar_Client1_20_80">Cezar Client 1.20.80</option>
-                <option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>
+                <option value="V_1_20_80">V-1.20.80</option> 
             </select>
 
             <br>
@@ -166,11 +165,10 @@ function copyText() {
 
             <br>
 
-            <label for="choice">Choice:</label>
+            <label for="choice">APK:</label>
             <select id="choice" name="choice">
                 <option value="Nothing">Nothing</option>
-                <option value="APK">APK</option>
-                
+                <option value="(APK)">APK</option>
             </select>
 
             <br>
@@ -213,6 +211,27 @@ function copyText() {
     <!-- كود Disqus -->
     <div id="disqus_thread"></div>
     <script>
+    function handleGameChange() {
+    var selectedversion = document.getElementById("version").value;
+    var bitSelect = document.getElementById("bit");
+    var choiceSelect = document.getElementById("choice");
+    var actionSelect = document.getElementById("action");
+
+    // إعادة الخيارات إلى الحالة الأصلية
+    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
+    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option>';
+actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
+    
+    if (selectedversion === "V_1_20_80") {
+        removeOption("bit", "32");
+        removeOption("bit", "Nothing");
+        choiceSelect.innerHTML += '<option value="Cezar_Client1_20_80">Cezar Client 1.20.80</option> <option value="EXOBOX1_20_80">EXOBOX 1.20.80</option>';
+    } else if (selectedversion === "Cezar_Client1_20_80") {
+      removeOption("bit", "32");
+    } else if (selectedversion === "FF2") {
+        // تعديل الخيارات حسب لعبة FF2
+    }
+}
     let currentCode = generateRandomCode();
 document.getElementById('randomCode').innerText = currentCode;
 
@@ -277,7 +296,7 @@ function clearInputs() {
 function redirectUser() {
     var confirmationButton = document.getElementById("B1");
     var countdownDiv = document.getElementById("countdown");
-    var selectedGame = document.getElementById("game").value;
+    var selectedversion = document.getElementById("version").value;
     var selectedBit = document.getElementById("bit").value;
     var selectedChoice = document.getElementById("choice").value;
     var selectedAction = document.getElementById("action").value;
@@ -349,24 +368,24 @@ setTimeout(function() {
             // فتح الرابط في نافذة جديدة بعد انتهاء 5 ثواني
             setTimeout(function () {
                 var links = {
-                    EXOBOX1_20_80: {
+                    V_1_20_80: {
                         64: {
-                            APK: {
+                            EXOBOX1_20_80: {
                                 "(APK)": "https://try2link.com/d8RRej",
                                 "(APK1)": "https://stfly.biz/6THGH"
                             }
                         }
                     },
-                    Cezar_Client1_20_80: {
+                    V_1_20_80: {
                         64: {
-                            APK: {
+                            Cezar_Client1_20_80: {
                                 "(APK)": "https://try2link.com/wRsJ",
                                 "(APK1)": "https://sox.link/oocFQP9"
                             }
                         }
                     },
                 };
-                var link = links[selectedGame][selectedBit][selectedChoice][selectedAction];
+                var link = links[selectedversion][selectedBit][selectedChoice][selectedAction];
                 window.open(link, '_blank');
                 countdownDiv.style.display = 'none';
                 confirmationButton.innerText = "CONFIRMATION";
@@ -400,25 +419,7 @@ closeBtn.onclick = function () {
     container.style.display = 'none';
   }, 20000);
 };
-    function handleGameChange() {
-    var selectedGame = document.getElementById("game").value;
-    var bitSelect = document.getElementById("bit");
-    var choiceSelect = document.getElementById("choice");
-    var actionSelect = document.getElementById("action");
-
-    // إعادة الخيارات إلى الحالة الأصلية
-    bitSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="32">32</option><option value="64">64</option>';
-    choiceSelect.innerHTML = '<option value="Nothing">Nothing</option><option value="APK">APK</option>';
-actionSelect.innerHTML ='<option value="Nothing">Nothing</option><option value="(APK)">APK (link 1)</option><option value="(APK1)">APK (link2)</option>';
     
-    if (selectedGame === "EXOBOX1_20_80") {
-        removeOption("bit", "32");
-    } else if (selectedGame === "Cezar_Client1_20_80") {
-      removeOption("bit", "32");
-    } else if (selectedGame === "FF2") {
-        // تعديل الخيارات حسب لعبة FF2
-    }
-}
 
 function removeOption(selectId, optionValue) {
     var select = document.getElementById(selectId);
