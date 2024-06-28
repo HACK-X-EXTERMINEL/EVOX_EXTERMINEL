@@ -107,8 +107,8 @@
       }
 
 .img-games {
-  width: 44px;
-  height:44px;
+  width: 46px;
+  height:46px;
   border-radius: 60px;
   margin-left: 8px;
   margin-right: 8px;
@@ -121,7 +121,6 @@
             border: 1px solid black;
             cursor: pointer;
             border-radius: 40px;
-            margin-left:5%;
       }
       .TOOL {
             background:linear-gradient(-45deg,#8c480f,#14c701);
