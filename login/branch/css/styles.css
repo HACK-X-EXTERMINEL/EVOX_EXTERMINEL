@@ -76,9 +76,9 @@ body{
 
 }
 .register-link p a{
-  color: #fff;
+  color: red;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 900;
 }
 .register-link p a:hover{
   text-decoration: underline;
