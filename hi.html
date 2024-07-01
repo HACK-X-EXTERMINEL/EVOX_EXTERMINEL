@@ -16,10 +16,10 @@
             text-align: center;
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            animation: slideDown 0.5s forwards;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.5s ease;
         }
 
         #offline-message .icon {
@@ -33,6 +33,20 @@
             background-color: white;
             color: red;
             font-weight: bold;
+            transition: all 0.5s ease;
+        }
+
+        #offline-message p {
+            margin: 0;
+            transition: all 0.5s ease;
+        }
+
+        .slideDown {
+            animation: slideDown 0.5s forwards;
+        }
+
+        .slideUp {
+            animation: slideUp 0.5s forwards;
         }
 
         @keyframes slideDown {
@@ -42,6 +56,25 @@
             to {
                 transform: translateY(0);
             }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        .hideText {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+        }
+
+        .hideText p {
+            display: none;
         }
     </style>
 </head>
@@ -58,8 +91,14 @@
             function checkOnlineStatus() {
                 if (!navigator.onLine) {
                     offlineMessage.style.display = 'flex';
+                    offlineMessage.classList.remove('slideUp');
+                    offlineMessage.classList.add('slideDown');
                 } else {
-                    offlineMessage.style.display = 'none';
+                    offlineMessage.classList.remove('slideDown');
+                    offlineMessage.classList.add('slideUp');
+                    setTimeout(function() {
+                        offlineMessage.classList.add('hideText');
+                    }, 500); // وقت التأخير لمزامنة الحركة
                 }
             }
 
@@ -68,7 +107,10 @@
 
             // Check connection status when it changes
             window.addEventListener('online', checkOnlineStatus);
-            window.addEventListener('offline', checkOnlineStatus);
+            window.addEventListener('offline', function() {
+                offlineMessage.classList.remove('hideText');
+                checkOnlineStatus();
+            });
         });
     </script>
 </body>
