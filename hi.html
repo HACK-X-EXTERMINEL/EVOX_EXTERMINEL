@@ -17,6 +17,22 @@
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             animation: slideDown 0.5s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #offline-message .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: white;
+            color: red;
+            font-weight: bold;
         }
 
         @keyframes slideDown {
@@ -31,6 +47,7 @@
 </head>
 <body>
     <div id="offline-message">
+        <div class="icon">!</div>
         <p>Sorry, you are offline.</p>
     </div>
 
@@ -40,7 +57,7 @@
 
             function checkOnlineStatus() {
                 if (!navigator.onLine) {
-                    offlineMessage.style.display = 'block';
+                    offlineMessage.style.display = 'flex';
                 } else {
                     offlineMessage.style.display = 'none';
                 }
