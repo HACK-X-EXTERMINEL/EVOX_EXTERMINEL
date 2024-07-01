@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنبيه انقطاع الإنترنت</title>
+</head>
+<body>
+    <div id="offline-message" style="display: none;">
+        <p>عذرًا، أنت غير متصل بالإنترنت.</p>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var offlineMessage = document.getElementById('offline-message');
+
+            function checkOnlineStatus() {
+                if (!navigator.onLine) {
+                    offlineMessage.style.display = 'block';
+                } else {
+                    offlineMessage.style.display = 'none';
+                }
+            }
+
+            // التحقق من حالة الاتصال عند تحميل الصفحة
+            checkOnlineStatus();
+
+            // التحقق من حالة الاتصال عند تغيير الحالة
+            window.addEventListener('online', checkOnlineStatus);
+            window.addEventListener('offline', checkOnlineStatus);
+        });
+    </script>
+</body>
+</html>
