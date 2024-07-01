@@ -21,6 +21,9 @@ if (!online) {
     alert("عذرًا، ليس لدينا حاليًا اتصال بالإنترنت.");
     location.reload(); // إعادة تحميل الصفحة إذا كان المستخدم متصلاً بالإنترنت مرة أخرى
 }
+window.addEventListener('offline', function(event) {
+    alert("أنت غير متصل بالإنترنت، يرجى تشغيل الاتصال لتشغيل الموقع.");
+});
 
   </script>
 </head>
