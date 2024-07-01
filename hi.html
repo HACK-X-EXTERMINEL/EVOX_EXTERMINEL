@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تنبيه انقطاع الإنترنت</title>
+    <title>Internet Disconnection Alert</title>
+    <style>
+        #offline-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="offline-message" style="display: none;">
-        <p>عذرًا، أنت غير متصل بالإنترنت.</p>
+    <div id="offline-message">
+        <p>Sorry, you are offline.</p>
     </div>
 
     <script>
@@ -22,10 +46,10 @@
                 }
             }
 
-            // التحقق من حالة الاتصال عند تحميل الصفحة
+            // Check connection status when the page loads
             checkOnlineStatus();
 
-            // التحقق من حالة الاتصال عند تغيير الحالة
+            // Check connection status when it changes
             window.addEventListener('online', checkOnlineStatus);
             window.addEventListener('offline', checkOnlineStatus);
         });
